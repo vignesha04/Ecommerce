@@ -1,0 +1,2322 @@
+@media (min-width:801px) and (max-width:2500px) {
+    .mobile-nav {
+        display: none
+    }
+
+    .desktop-hide {
+        display: none
+    }
+
+    .invoice-section {
+        padding-left: 30px
+    }
+
+    .invoice-ul {
+        width: 70%;
+        padding-top: 5px
+    }
+
+    .invoice_continue_1 {
+        float: right
+    }
+
+    .btn-UpdateVendor {
+        width: 14% !important
+    }
+
+    .invoice-container .btn-primary {
+        width: 14%
+    }
+
+    .invoice-container .btn-secondary {
+        width: 14%
+    }
+
+    .thankbtn {
+        width: 27% !important
+    }
+
+    .mob-invoice-btn-center {
+        text-align: right
+    }
+
+    .invoice-section h3 {
+        font-size: 22px
+    }
+}
+
+@media (min-width:300px) and (max-width:768px) {
+    h4 {
+        padding-left: 15px
+    }
+
+    .mobile-hide {
+        display: none
+    }
+
+    .invoice_continue_1 {
+        text-align: center
+    }
+
+    .mob-invoice-btn-center {
+        text-align: center
+    }
+
+    #step_4_sec pb0 {
+        padding-bottom: 0
+    }
+
+    .mob-invoice-btn-center .btn-primary {
+        width: 40%
+    }
+
+    .mob-invoice-btn-center .btn-secondary {
+        width: 40%
+    }
+
+    .first {
+        display: none !important
+    }
+
+    .last {
+        display: none !important
+    }
+
+    .dataTables_paginate {
+        background-color: beige;
+        text-align: center
+    }
+
+    .pagination {
+        margin: 0
+    }
+
+    .quick_next {
+        display: none !important
+    }
+
+    .quick_previous {
+        font-size: 12px !important;
+        color: #fff !important
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        background-color: #005478 !important;
+        border-radius: 5px;
+        color: #fff !important
+    }
+
+    .mobile_tkimg {
+        width: 30%
+    }
+
+    .mobile-container {
+        max-width: 480px;
+        margin: auto;
+        background-color: #555;
+        height: 500px;
+        color: #fff;
+        border-radius: 10px
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #fff;
+        border-bottom: 3px solid #cbcbcb;
+        position: relative
+    }
+
+        .topnav #myLinks {
+            display: none
+        }
+
+        .topnav a.icon {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+    .sb2 {
+        margin-top: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .row .desktop-hide {
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .sb2-2 {
+        padding: 0 15px
+    }
+
+    .sb2-2-CreateInvoice {
+        padding: 0 25px 0 10px
+    }
+
+    .mobil-mr {
+        margin-right: 0 !important
+    }
+
+    .mobile-center {
+        text-align: center
+    }
+
+    .card {
+        box-shadow: none
+    }
+
+    input {
+        text-align: right;
+        font-weight: 700
+    }
+
+    .card td {
+        padding: 4px
+    }
+
+    .mob-invoice-t-p td {
+        padding: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 10px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5)
+    }
+
+    ::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        border: 1px solid #d5d5d5
+    }
+
+    .mobile-card {
+        padding-right: 0
+    }
+
+    .panel-custom {
+        width: 80%;
+        float: right;
+        height: 11%;
+        background: #e6ebf1;
+        position: absolute;
+        z-index: 9999999;
+        right: 8%;
+        border-radius: 2px
+    }
+
+    .slider-arrow {
+        width: 35px;
+        font: 400 12px Arial,Helvetica,sans-serif;
+        color: #000
+    }
+
+    .modal {
+        left: 3%;
+        top: 23%
+    }
+
+    .modal-content {
+        width: 98% !important
+    }
+
+    .modal p {
+        font-size: 10px;
+        padding-bottom: 0
+    }
+
+    .modal h5 {
+        font-size: 11px
+    }
+
+    .modal .form-control {
+        width: 100%;
+        height: 25px;
+        margin-bottom: 8px
+    }
+
+    .modal-header {
+        padding-bottom: 0
+    }
+
+    .modal-body {
+        padding-top: 0
+    }
+
+    .mobile-datatables tbody td {
+        display: block
+    }
+
+    .mobile-datatables thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables td:nth-of-type(1):before {
+        content: "Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(2):before {
+        content: "Percentage:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(3):before {
+        content: "ValidFrom:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(4):before {
+        content: "ValidTo:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(5):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(6):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 tbody td {
+        display: block
+    }
+
+    .mobile-datatables1 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables1-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables1-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables1 td:nth-of-type(1):before {
+        content: "Visit No:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(2):before {
+        content: "Dealer:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(3):before {
+        content: "Sales Executive:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(4):before {
+        content: "Check in Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(5):before {
+        content: "Check out Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(6):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 tbody td {
+        display: block
+    }
+
+    .mobile-datatables2 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables2-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables2-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables2 td:nth-of-type(1):before {
+        content: "Product Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(2):before {
+        content: "Product Type:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(3):before {
+        content: "Product Price:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(5):before {
+        content: "Delete:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 tbody td {
+        display: block
+    }
+
+    .mobile-datatables3 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables3-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables3-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables3 td:nth-of-type(1):before {
+        content: "Visit No:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(2):before {
+        content: "Dealer:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(3):before {
+        content: "Sales Executive:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(4):before {
+        content: "Check in Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(5):before {
+        content: "Check Out Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(6):before {
+        content: "Delete:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(1):before {
+        content: "Coupon Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(2):before {
+        content: "Coupon Code:";
+        font-weight: 600
+    }
+
+    /*.mobile-datatables6 td:nth-of-type(3):before {
+        content: "Percentage:";
+        font-weight: 600
+    }*/
+
+    .mobile-datatables6 td:nth-of-type(3):before {
+        content: "Valid From:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(4):before {
+        content: "Valid To:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(5):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(6):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 tbody td {
+        display: block
+    }
+
+    .mobile-datatables6 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables6 {
+        font-weight: 800
+    }
+
+    .mobile-datatables6 {
+        font-weight: 600
+    }
+
+        .mobile-datatables6 td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+    .mobile-datatables40 td:nth-of-type(1):before {
+        content: "Product:";
+        font-weight: 600
+    }
+
+    .mobile-datatables40 td:nth-of-type(2):before {
+        content: "CGST Percentage:";
+        font-weight: 600
+    }
+
+    .mobile-datatables40 td:nth-of-type(3):before {
+        content: "SGST Percentage:";
+        font-weight: 600
+    }
+
+    .mobile-datatables40 td:nth-of-type(4):before {
+        content: "IGST Percentage:";
+        font-weight: 600
+    }
+    .mobile-datatables40 td:nth-of-type(5):before {
+        content: "Status:";
+        font-weight: 600
+    }
+    .mobile-datatables40 td:nth-of-type(6):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables40 tbody td {
+        display: block
+    }
+
+    .mobile-datatables40 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables40 {
+        font-weight: 800
+    }
+
+    .mobile-datatables40 {
+        font-weight: 600
+    }
+
+        .mobile-datatables40 td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+    .mobile-datatables41 td:nth-of-type(1):before {
+        content: "SubCategory:";
+        font-weight: 600
+    }
+
+    .mobile-datatables41 td:nth-of-type(2):before {
+        content: "Category:";
+        font-weight: 600
+    }
+
+    .mobile-datatables41 td:nth-of-type(3):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatables41 td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables41 tbody td {
+        display: block
+    }
+
+    .mobile-datatables41 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables41 {
+        font-weight: 800
+    }
+
+    .mobile-datatables41 {
+        font-weight: 600
+    }
+
+        .mobile-datatables41 td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+
+
+     /*Category Mobile grid*/
+
+
+    .mobile-datatablescatmob td:nth-of-type(1):before {
+        content: "Category:";
+        font-weight: 600
+    }
+
+    .mobile-datatablescatmob td:nth-of-type(2):before {
+        content: "Image:";
+        font-weight: 600
+    }
+
+    .mobile-datatablescatmob td:nth-of-type(3):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatablescatmob td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatablescatmob tbody td {
+        display: block
+    }
+
+    .mobile-datatablescatmob thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablescatmob {
+        font-weight: 800
+    }
+
+    .mobile-datatablescatmob {
+        font-weight: 600
+    }
+
+        .mobile-datatablescatmob td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+
+
+
+
+
+
+    .mobile-DeliverCharge td:nth-of-type(1):before {
+        content: "Image:";
+        font-weight: 600
+    }
+
+    .mobile-DeliverCharge td:nth-of-type(2):before {
+        content: "Category Name:";
+        font-weight: 600
+    }
+
+    .mobile-DeliverCharge td:nth-of-type(3):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-DeliverCharge td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+    .mobile-DeliverCharge tbody td {
+        display: block
+    }
+
+    .mobile-DeliverCharge thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-DeliverCharge {
+        font-weight: 800
+    }
+
+    .mobile-DeliverCharge {
+        font-weight: 600
+    }
+
+        .mobile-DeliverCharge td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+    .container-fluid {
+        padding-right: 15px
+    }
+
+    .dataTable tr:hover {
+        background-color: #fff !important
+    }
+
+    .record-option-panel {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        background-color: #add8e6
+    }
+
+    .dataTables_wrapper .bottom {
+        padding-top: 22px
+    }
+
+    .mobile-datatablesx td:nth-of-type(1):before {
+        content: "Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesx td:nth-of-type(2):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesx td:nth-of-type(3):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesx tbody td {
+        display: block
+    }
+
+    .mobile-datatablesx thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesx {
+        font-weight: 600
+    }
+
+    .mobile-datatablesx {
+        font-weight: 600
+    }
+
+        .mobile-datatablesx td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+    .mobile-datatablesstock tbody td {
+        display: block
+    }
+
+    .mobile-datatablesstock thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesstock {
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock {
+        font-weight: 600
+    }
+
+        .mobile-datatablesstock td:before {
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap
+        }
+
+        .mobile-datatablesstock thead {
+            position: absolute;
+            top: -9999px;
+            left: -9999px
+        }
+
+    .mobile-datatablesstock-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesstock td:nth-of-type(1):before {
+        content: "Categoy Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock td:nth-of-type(2):before {
+        content: "SubCategory Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock td:nth-of-type(3):before {
+        content: "Title:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock td:nth-of-type(4):before {
+        content: "Stock Count:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesstock td:nth-of-type(5):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesSal tbody td {
+        display: block
+    }
+
+    .mobile-datatablesSal thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesSal-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesSal-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesSal td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesSal tbody td {
+        display: block
+    }
+
+    .mobile-datatablesSal td:nth-of-type(1):before {
+        font-weight: 600
+    }
+
+    .mobile-datatablesSal td:nth-of-type(2):before {
+        font-weight: 600
+    }
+
+    .mobile-datatablesSal td:nth-of-type(3):before {
+        font-weight: 600
+    }
+
+    .mobile-datatablesSal td:nth-of-type(4):before {
+        font-weight: 600
+    }
+
+    .mobile-datatablessubcat thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablessubcat-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablessubcat-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablessubcat td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablessubcat td:nth-of-type(1):before {
+        content: "SubCategory:";
+        font-weight: 600
+    }
+
+    .mobile-datatablessubcat td:nth-of-type(2):before {
+        content: "Category:";
+        font-weight: 600
+    }
+
+    .mobile-datatablessubcat td:nth-of-type(3):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatablessubcat td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables-social tbody td {
+        display: block
+    }
+
+    .mobile-datatables-social thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables-social-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables-social-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables-social td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables-social td:nth-of-type(1):before {
+        content: "Type:";
+        font-weight: 600
+    }
+
+    .mobile-datatables-social td:nth-of-type(2):before {
+        content: "Link:";
+        font-weight: 600
+    }
+
+    .mobile-datatables-social td:nth-of-type(3):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables-social td:nth-of-type(4):before {
+        content: "Delete:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesCourior tbody td {
+        display: block
+    }
+
+    .mobile-datatablesCourior thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesCourior-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesCourior-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesCourior td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesCourior td:nth-of-type(1):before {
+        content: "Delivery Person Name :";
+        font-weight: 600
+    }
+
+    .mobile-datatablesCourior td:nth-of-type(2):before {
+        content: "Sales Order Number:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesCourior td:nth-of-type(3):before {
+        content: "OrderNo:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig tbody td {
+        display: block
+    }
+
+    .mobile-datatablesConfig thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesConfig-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesConfig td:nth-of-type(1):before {
+        content: "Category:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig td:nth-of-type(2):before {
+        content: "SubCategory Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig td:nth-of-type(3):before {
+        content: "Title:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig td:nth-of-type(4):before {
+        content: "Type:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesConfig td:nth-of-type(5):before {
+        content: "Percentage:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport tbody td {
+        display: block
+    }
+
+    .mobile-datatablesSalesReport thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesSalesReport-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesSalesReport td:nth-of-type(1):before {
+        content: " Order No:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport td:nth-of-type(2):before {
+        content: "Order Date:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport td:nth-of-type(3):before {
+        content: "Member Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport td:nth-of-type(4):before {
+        content: "Amount:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesSalesReport td:nth-of-type(5):before {
+        content: "Coupon Code:";
+        font-weight: 600
+    }
+
+
+
+    .mobile-datatablesSalesReport td:nth-of-type(6):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesHomeSlider tbody td {
+        display: block
+    }
+
+    .mobile-datatablesHomeSlider thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesHomeSlider-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesHomeSlider-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesHomeSlider td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesHomeSlider td:nth-of-type(1):before {
+        content: "Slider Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesHomeSlider td:nth-of-type(2):before {
+        content: "Cutt Off Date:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesHomeSlider td:nth-of-type(3):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesHomeSlider td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal tbody td {
+        display: block
+    }
+
+    .mobile-datatablesTodayDeal thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatablesTodayDeal-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesTodayDeal td:nth-of-type(1):before {
+        content: "Category:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal td:nth-of-type(2):before {
+        content: "SubCategory:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal td:nth-of-type(3):before {
+        content: "Product:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal td:nth-of-type(4):before {
+        content: "Discount Amount:";
+        font-weight: 600
+    }
+
+    .mobile-datatablesTodayDeal td:nth-of-type(5):before {
+        content: "Date:";
+        font-weight: 600
+    }
+}
+
+@media (min-width:751px) and (max-width:1000px) {
+    h4 {
+        padding-left: 15px
+    }
+
+    .form-horizontal {
+        width: 100%;
+        padding: 10px 0 10px 0
+    }
+
+    .mobile-hide {
+        display: none
+    }
+
+    .invoice_continue_1 {
+        text-align: center
+    }
+
+    .container {
+        padding-right: 15px;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    .col-lg-8 {
+        width: 72%
+    }
+
+    .mob-invoice-btn-center {
+        text-align: center
+    }
+
+    #step_4_sec pb0 {
+        padding-bottom: 0
+    }
+
+    .mob-invoice-btn-center .btn-primary {
+        width: 40%
+    }
+
+    .mob-invoice-btn-center .btn-secondary {
+        width: 40%
+    }
+
+    .first {
+        display: none !important
+    }
+
+    .last {
+        display: none !important
+    }
+
+    .dataTables_paginate {
+        background-color: beige;
+        text-align: center
+    }
+
+    .pagination {
+        margin: 0
+    }
+
+    .quick_next {
+        display: none !important
+    }
+
+    .quick_previous {
+        font-size: 12px !important;
+        color: #fff !important
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        background-color: #005478 !important;
+        border-radius: 5px;
+        color: #fff !important
+    }
+
+    .mobile_tkimg {
+        width: 30%
+    }
+
+    .mobile-container {
+        max-width: 480px;
+        margin: auto;
+        background-color: #555;
+        height: 500px;
+        color: #fff;
+        border-radius: 10px
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #fff;
+        border-bottom: 3px solid #cbcbcb;
+        position: relative
+    }
+
+        .topnav #myLinks {
+            display: none
+        }
+
+        .topnav a.icon {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+    .sb2 {
+        margin-top: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .row .desktop-hide {
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .sb2-2 {
+        padding: 0 15px
+    }
+
+    .sb2-2-CreateInvoice {
+        padding: 0 25px 0 10px
+    }
+
+    .mobil-mr {
+        margin-right: 0 !important
+    }
+
+    .form-title {
+        font-size: 25px
+    }
+
+    .mobile-center {
+        text-align: center
+    }
+
+    .card {
+        box-shadow: none
+    }
+
+    input {
+        text-align: right;
+        font-weight: 700
+    }
+
+    .card td {
+        padding: 4px
+    }
+
+    .mob-invoice-t-p td {
+        padding: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 10px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5)
+    }
+
+    ::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        border: 1px solid #d5d5d5
+    }
+
+    .mobile-card {
+        padding-right: 0
+    }
+
+    .panel-custom {
+        width: 80%;
+        float: right;
+        height: 11%;
+        background: #e6ebf1;
+        position: absolute;
+        z-index: 9999999;
+        right: 8%;
+        border-radius: 2px
+    }
+
+    .slider-arrow {
+        width: 35px;
+        font: 400 12px Arial,Helvetica,sans-serif;
+        color: #000
+    }
+
+    .modal {
+        left: 3%;
+        top: 23%
+    }
+
+    .modal-content {
+        width: 98% !important
+    }
+
+    .modal p {
+        font-size: 10px;
+        padding-bottom: 0
+    }
+
+    .modal h5 {
+        font-size: 11px
+    }
+
+    .modal .form-control {
+        width: 100%;
+        height: 25px;
+        margin-bottom: 8px
+    }
+
+    .modal-header {
+        padding-bottom: 0
+    }
+
+    .modal-body {
+        padding-top: 0
+    }
+
+    .mobile-datatables tbody td {
+        display: block
+    }
+
+    .mobile-datatables thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables td:nth-of-type(1):before {
+        content: "Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(2):before {
+        content: "Percentage:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(3):before {
+        content: "ValidFrom:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(4):before {
+        content: "ValidTo:";
+        font-weight: 600
+    }
+
+    .mobile-datatables td:nth-of-type(5):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 tbody td {
+        display: block
+    }
+
+    .mobile-datatables6 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables6-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables6-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables6 td:nth-of-type(1):before {
+        content: "Coupon Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(2):before {
+        content: "Coupon Code:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(3):before {
+        content: "Percentage:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(4):before {
+        content: "Valid From:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(5):before {
+        content: "Valid To:";
+        font-weight: 600
+    }
+
+    .mobile-datatables6 td:nth-of-type(6):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables-1 td:nth-of-type(1):before {
+        content: "AddName";
+        font-weight: 600
+    }
+
+    .mobile-datatables-1 td:nth-of-type(2):before {
+        content: "Link";
+        font-weight: 600
+    }
+
+    .mobile-datatables-1 td:nth-of-type(3):before {
+        content: "Edit";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 tbody td {
+        display: block
+    }
+
+    .mobile-datatables1 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables1-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables1-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables1 td:nth-of-type(1):before {
+        content: "Visit No:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(2):before {
+        content: "Dealer:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(3):before {
+        content: "Sales Executive:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(4):before {
+        content: "Check in Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(5):before {
+        content: "Check out Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables1 td:nth-of-type(6):before {
+        content: "Status:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 tbody td {
+        display: block
+    }
+
+    .mobile-datatables2 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables2-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables2-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables2 td:nth-of-type(1):before {
+        content: "Product Name:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(2):before {
+        content: "Product Type:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(3):before {
+        content: "Product Price:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(4):before {
+        content: "Edit:";
+        font-weight: 600
+    }
+
+    .mobile-datatables2 td:nth-of-type(5):before {
+        content: "Delete:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 tbody td {
+        display: block
+    }
+
+    .mobile-datatables3 thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+    .mobile-datatables3-color {
+        color: #024e84;
+        font-weight: 600
+    }
+
+    .mobile-datatables3-bold {
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatables3 td:nth-of-type(1):before {
+        content: "Visit No:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(2):before {
+        content: "Dealer:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(3):before {
+        content: "Sales Executive:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(4):before {
+        content: "Check in Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(5):before {
+        content: "Check Out Time:";
+        font-weight: 600
+    }
+
+    .mobile-datatables3 td:nth-of-type(6):before {
+        content: "Delete:";
+        font-weight: 600
+    }
+
+    .container-fluid {
+        padding-right: 15px
+    }
+
+    .dataTable tr:hover {
+        background-color: #fff !important
+    }
+
+    .record-option-panel {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        background-color: #add8e6
+    }
+
+    .dataTables_wrapper .bottom {
+        padding-top: 22px
+    }
+}
+
+.horizontal-scroll-wrapper {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 80px;
+    max-height: 500px;
+    margin: 0;
+    background: #abc;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: rotate(-90deg) translateY(-80px);
+    transform-origin: right top
+}
+
+    .horizontal-scroll-wrapper > .card {
+        display: block;
+        padding: 26px;
+        background: #cab;
+        transform: rotate(90deg);
+        transform-origin: right top
+    }
+
+.rectangles {
+    top: 100px;
+    padding: 100px 0 0 0
+}
+
+    .rectangles > div {
+        width: 140px;
+        height: 60px;
+        margin: 50px 10px;
+        padding: 5px;
+        background: #cab;
+        transform: rotate(90deg) translateY(80px);
+        transform-origin: right top
+    }
+
+.testimonial-group > .row {
+    overflow-x: auto;
+    white-space: nowrap
+}
+
+    .testimonial-group > .row > .col-xs-4 {
+        display: inline-block;
+        float: none
+    }
+
+.testimonial-group .col-xs-4 {
+    width: 25.333333%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 6px;
+    padding-bottom: 6px
+}
+
+.testimonial-group .col-xs-2 {
+    padding-top: 15px
+}
+
+.Mobile-Progressbar-CreateInv {
+    display: none
+}
+
+.Desktop-Progressbar-CreateInv {
+    display: inherit
+}
+
+.mobile-ProgressBar-Title {
+    color: #22498e;
+    font-size: 18px
+}
+
+@media only screen and (min-device-width :320px) and (max-device-width :800px) {
+    .Mobile-Progressbar-CreateInv {
+        display: inherit
+    }
+
+    .Desktop-Progressbar-CreateInv {
+        display: none
+    }
+}
+
+.mobile-datatables7 tbody td {
+    display: block
+}
+
+.mobile-datatables7 thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px
+}
+
+.mobile-datatables7 {
+    font-weight: 600
+}
+
+.mobile-datatables7 {
+    font-weight: 600
+}
+
+    .mobile-datatables7 td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+    .mobile-datatables7 td:nth-of-type(1):before {
+        content: "Image:";
+        font-weight: 600
+    }
+    .mobile-datatables7 td:nth-of-type(2):before {
+        content: "Title:";
+        font-weight: 600
+    }
+
+.hid:before {
+    content: unset !important;
+    font-weight: 600
+}
+
+.mobile-datatables7 td:nth-of-type(3):before {
+    content: "Price:";
+    font-weight: 600
+}
+.mobile-datatables7 td:nth-of-type(4):before {
+    content: "Stock Count:";
+    font-weight: 600
+}
+.mobile-datatables7 td:nth-of-type(5):before {
+    content: "Status:";
+    font-weight: 600
+}
+
+.mobile-datatables7 td:nth-of-type(6):before {
+    content: "Edit:";
+    font-weight: 600
+}
+
+.mobile-datatables5 thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px
+}
+
+.mobile-datatables5-color {
+    color: #024e84;
+    font-weight: 600
+}
+
+.mobile-datatables5-bold {
+    font-weight: 600
+}
+
+.mobile-datatables5 td:before {
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap
+}
+
+.mobile-datatables5 td:nth-of-type(1):before {
+    content: "AddName";
+    font-weight: 600
+}
+
+.mobile-datatables5 td:nth-of-type(2):before {
+    content: "Link";
+    font-weight: 600
+}
+
+.mobile-datatables5 td:nth-of-type(3):before {
+    content: "Edit";
+    font-weight: 600
+}
+
+@media (min-width:834px) and (max-width:1050px) {
+    h4 {
+        padding-left: 15px
+    }
+
+    .form-horizontal {
+        width: 100%;
+        padding: 10px 0 10px 0
+    }
+
+    .invoice_continue_1 {
+        text-align: center
+    }
+
+    .container {
+        padding-right: 15px;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    .col-lg-8 {
+        width: 72%
+    }
+
+    .mob-invoice-btn-center {
+        text-align: center
+    }
+
+    #step_4_sec pb0 {
+        padding-bottom: 0
+    }
+
+    .mob-invoice-btn-center .btn-primary {
+        width: 40%
+    }
+
+    .mob-invoice-btn-center .btn-secondary {
+        width: 40%
+    }
+
+    .first {
+        display: none !important
+    }
+
+    .last {
+        display: none !important
+    }
+
+    .dataTables_paginate {
+        background-color: beige;
+        text-align: center
+    }
+
+    .pagination {
+        margin: 0
+    }
+
+    .quick_next {
+        display: none !important
+    }
+
+    .quick_previous {
+        font-size: 12px !important;
+        color: #fff !important
+    }
+
+    .pagination > li > a, .pagination > li > span {
+        background-color: #005478 !important;
+        border-radius: 5px;
+        color: #fff !important
+    }
+
+    .mobile_tkimg {
+        width: 30%
+    }
+
+    .mobile-container {
+        max-width: 480px;
+        margin: auto;
+        background-color: #555;
+        height: 500px;
+        color: #fff;
+        border-radius: 10px
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #fff;
+        border-bottom: 3px solid #cbcbcb;
+        position: relative
+    }
+
+        .topnav #myLinks {
+            display: none
+        }
+
+        .topnav a.icon {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+    .sb2 {
+        margin-top: 0 !important;
+        padding-right: 0 !important
+    }
+
+    .row .desktop-hide {
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .sb2-2 {
+        padding: 0 15px
+    }
+
+    .sb2-2-CreateInvoice {
+        padding: 0 25px 0 10px
+    }
+
+    .mobil-mr {
+        margin-right: 0 !important
+    }
+
+    .form-title {
+        font-size: 25px
+    }
+
+    .mobile-center {
+        text-align: center
+    }
+
+    .card {
+        box-shadow: none
+    }
+
+    input {
+        text-align: right;
+        font-weight: 700
+    }
+
+    .card td {
+        padding: 4px
+    }
+
+    .mob-invoice-t-p td {
+        padding: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        border-radius: 10px
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5)
+    }
+
+    ::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        border: 1px solid #d5d5d5
+    }
+
+    .mobile-card {
+        padding-right: 0
+    }
+
+    .panel-custom {
+        width: 80%;
+        float: right;
+        height: 11%;
+        background: #e6ebf1;
+        position: absolute;
+        z-index: 9999999;
+        right: 8%;
+        border-radius: 2px
+    }
+
+    .slider-arrow {
+        width: 35px;
+        font: 400 12px Arial,Helvetica,sans-serif;
+        color: #000
+    }
+
+    .modal {
+        left: 3%;
+        top: 23%
+    }
+
+    .modal-content {
+        width: 98% !important
+    }
+
+    .modal p {
+        font-size: 10px;
+        padding-bottom: 0
+    }
+
+    .modal h5 {
+        font-size: 11px
+    }
+
+    .modal .form-control {
+        width: 100%;
+        height: 25px;
+        margin-bottom: 8px
+    }
+
+    .modal-header {
+        padding-bottom: 0
+    }
+
+    .modal-body {
+        padding-top: 0
+    }
+
+    .record-option-panel {
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        background-color: #add8e6
+    }
+
+    .dataTables_wrapper .bottom {
+        padding-top: 22px
+    }
+
+    .page-wrapper {
+        margin-bottom: 10px
+    }
+
+    .main-page {
+        margin-bottom: 5em
+    }
+}
+
+.checkboxd {
+    padding-bottom: 20px !important
+}
+
+@media only screen and (min-device-width :320px) and (max-device-width :800px) {
+    .checkboxd {
+        padding-bottom: 0 !important
+    }
+}
+
+@media only screen and (min-device-width :1024px) and (max-device-width :1050px) {
+    .test {
+        padding-left: 30px !important
+    }
+}
+
+@media only screen and (min-device-width :768px) and (max-device-width :1024px) {
+    .site {
+        padding-bottom: 20px !important
+    }
+}
+
+@media(min-width:300px) and (max-width:568px) {
+    .custom-file-input {
+        overflow: hidden;
+        font-size: 18px
+    }
+}
+
+.mobile-datatablesstock tbody td {
+    display: block
+}
+
+.mobile-datatablesstock thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px
+}
+
+.mobile-datatablesstock {
+    font-weight: 600
+}
+
+.mobile-datatablesstock {
+    font-weight: 600
+}
+
+    .mobile-datatablesstock td:before {
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap
+    }
+
+    .mobile-datatablesstock thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px
+    }
+
+.mobile-datatablesstock-color {
+    color: #024e84;
+    font-weight: 600
+}
+
+.mobile-datatablesstock-bold {
+    font-weight: 600
+}
+
+.mobile-datatablesstock td:before {
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap
+}
+
+.mobile-datatablesstock td:nth-of-type(1):before {
+    content: "Categoy Name:";
+    font-weight: 600
+}
+
+.mobile-datatablesstock td:nth-of-type(2):before {
+    content: "SubCategory Name:";
+    font-weight: 600
+}
+
+.mobile-datatablesstock td:nth-of-type(3):before {
+    content: "Title:";
+    font-weight: 600
+}
+
+.mobile-datatablesstock td:nth-of-type(4):before {
+    content: "Price:";
+    font-weight: 600
+}
+
+.mobile-datatablesstock td:nth-of-type(5):before {
+    content: "Stock Count:";
+    font-weight: 600
+}
+
+.mobile-datatablesstock td:nth-of-type(6):before {
+    content: "Edit:";
+    font-weight: 600
+}

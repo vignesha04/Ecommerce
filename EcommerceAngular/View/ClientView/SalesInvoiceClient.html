@@ -1,0 +1,336 @@
+﻿<div>
+    <!--<link href="../../Files/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="../../Files/bootstrap.min.css">
+    <link href="../../Files/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Files/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../../Files/owl.carousel.css" rel="stylesheet">
+    <link href="../../Files/lib.css" rel="stylesheet">
+    <link href="../../Files/jquery-ui.min.css" rel="stylesheet">
+    <link href="../../Files/miniColors.css" rel="stylesheet">
+    <link href="../../Files/so_searchpro.css" rel="stylesheet">
+    <link href="../../Files/so_megamenu.css" rel="stylesheet">
+    <link href="../../Files/so-categories.css" rel="stylesheet">
+    <link href="../../Files/so-listing-tabs.css" rel="stylesheet">
+    <link href="../../Files/so-newletter-popup.css" rel="stylesheet">
+    <link href="../../Files/footer1.css" rel="stylesheet">
+    <link href="../../Files/header1.css" rel="stylesheet">
+    <link id="color_scheme" href="../../Files/theme.css" rel="stylesheet">
+    <link href="../../Files/responsive.css" rel="stylesheet">
+    <script src="../../js/Scripts/angular.min.js"></script>
+    <script src="../../js/Scripts/angular-route.min.js"></script>
+    <script src="../../js/Scripts/angular-ui.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Files/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../Files/libs.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.dcjqaccordion.2.8.min.js"></script>
+    <script type="text/javascript" src="../../Files/moment.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../Files/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="../../Files/application.js"></script>
+    <script type="text/javascript" src="../../Files/homepage.js"></script>
+    <script type="text/javascript" src="../../Files/toppanel.js"></script>
+    <script type="text/javascript" src="../../Files/addtocart.js"></script>
+    <script type="text/javascript" src="../../Files/so_megamenu.js"></script>
+    <script src="../../js/jquery.min.js"></script>-->
+    <div class="row" id="page-wrapper" ng-show="loader">
+        <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+            <img src="../../images/New folder/loader.gif" class="center-block" />
+
+        </div>
+    </div>
+
+
+    <div class="main-container container" ng-show="!loader">
+        <ul class="breadcrumb">
+            <li><a href="" ng-click="aHomeClick()"><i class="fa fa-home"></i></a></li>
+            <li><a href="">Sales Invoice</a></li>
+        </ul>
+        <div class="mobile-hide">
+            <div class="pull-right"><a href="" class="btn btn-primary" ng-click="printPage1('divSalInv')">View Invoice</a></div>
+        </div>
+
+
+        <h3 style="color:green;"> {{Heading}}</h3>
+
+        <div>
+            <div class="row" style="text-align:center;padding-bottom:15px;">
+                <h3> SALES INVOICE</h3>
+            </div>
+
+            <header class="row">
+                <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                    <img src="{{InvoiceLogo}}" style="width:200px;">
+
+                </div>
+                <div class="col-lg-6 col-sm-6" style="text-align:right;">
+
+                    <div ng-show="ShowGST"> <b>GSTNo:</b> {{CompanyGSTNo}}</div>
+                    <div> <b>Order No: </b>{{SalOrderNo}}</div>
+                </div>
+            </header>
+
+            <main>
+                <div class="row" style="margin-bottom:1em;">
+                    <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                        <!--<div class="to"><b>Company Address: </b></div>-->
+                        <h3 class="name">{{CompanyName}}</h3>
+
+                        <div class="to"><b>Company Address: </b></div>
+                        <!--<div class="name">{{MemberName}}</div>-->
+                        <div>{{CompanyPhoneNo}}</div>
+                        <div>{{CompanyAddressLine1}},<br /> {{CompanyAddressLine2}},<br /> {{CompanyCity}},{{CompanyState}}-{{CompanyPinCode}}</div>
+                        <div><a href="mailto:{{CompanyEmailId}}">{{CompanyEmailId}}</a></div>
+
+                    </div>
+                    <div class="col-lg-6 col-sm-6" style="text-align:right;">
+                        <div class="to"><b>Billing Address: </b></div>
+                        <div class="name" style="text-transform:capitalize">{{MemberName}}</div>
+                        <div>{{BillingPhoneNo}}</div>
+                        <div>{{BillingAddressLine1}},<br /> {{BillingAddressLine2}},<br /> {{BillingCity}},{{BillingState}}-{{BillingPinCode}}</div>
+                        <div><a href="mailto:{{BillingEmailId}}">{{BillingEmailId}}</a></div>
+                    </div>
+                </div>
+                <div id="content" class="col-sm-12">
+                    <div class="table-responsive form-group">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td class="text-center">Image</td>
+                                    <td class="text-center">Product Name</td>
+                                    <td class="text-center">Quantity</td>
+                                    <td class="text-center">Selling Price (<span>&#8377;</span>)</td>
+                                    <td class="text-center">MRP Price(<span>&#8377;</span>)</td>
+                                    <!--<td class="text-center" ng-show="Couponshow">Copoun</td>-->
+                                    <td class="text-center" ng-show="SGSTshow">SGST</td>
+                                    <td class="text-center" ng-show="CGSTshow">CGST</td>
+                                    <td class="text-center" ng-show="IGSTshow">IGST</td>
+                                    <td class="text-center">Discount(<span>&#8377;</span>)</td>
+                                    <td class="text-center">Total(<span>&#8377;</span>)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ci in CartItems1">
+                                    <td class="text-center" style="vertical-align:middle;"><a href=""><img width="70px" src={{ci.ImageURL}} alt="ProductImage" title="" class="img-thumbnail" style="border:0;"></a></td>
+                                    <td class="text-center" style="vertical-align:middle;">
+                                        <a href="">{{ci.Title}} &nbsp;{{ci.VarienceType}}</a><br>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle;">
+                                        {{ci.Qty}}
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle;">{{ci.Price}}</td>
+                                    <td class="text-center" style="vertical-align:middle;">{{ci.MrpPrice}}</td>
+                                    <!--<td class="text-center" style="vertical-align:middle;">{{ci.Qty*ci.Price| number:2}}</td>-->
+
+                                    <!--<td class="text-center" style="vertical-align:middle;" ng-show="Couponshow">
+                                        {{ci.CopounAmount | number:2}}
+                                    </td>-->
+
+                                    <td class="text-center" style="vertical-align:middle;" ng-show="SGSTshowTD">{{((ci.Qty*ci.Tax)/ 2 )| number:2}}</td>
+                                    <td class="text-center" style="vertical-align:middle;" ng-show="CGSTshowTD">{{((ci.Qty*ci.Tax)/ 2)| number:2}}</td>
+                                    <td class="text-center" style="vertical-align:middle;" ng-show="IGSTshowTD">{{((ci.Qty*ci.Tax)/ 2) | number:2}}</td>
+                                    <td class="text-center" style="vertical-align:middle;">{{(ci.Qty) * (ci.MrpPrice - ci.Price)| number:2}}</td>
+                                    <!--<td class="text-center" style="vertical-align:middle;" ng-show="Taxshow">{{(ci.Qty*ci.Tax)| number:2}}</td>-->
+                                    <td class="text-center" style="vertical-align:middle;">{{(ci.Qty*ci.Price)-(ci.Discount*ci.Qty)-(ci.CopounAmount*ci.Qty)+(ci.Tax*ci.Qty) | number:2}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-8">
+                            <table class="table table-bordered">
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-right" >
+                                            <strong>Sub Total :</strong>
+                                        </td>
+                                        <td class="text-right"><span>&#8377;</span> {{SubtotalAmt | number:2}}</td>
+                                    </tr>
+
+
+                                    <tr >
+                                        <td class="text-right">
+                                            <strong>Copoun Discount Amount :</strong>
+                                        </td>
+                                        <td class="text-right" style="color:green;"><span>&#8377;</span> {{CoupounDiscountAmt | number:2}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-right">
+                                            <strong>Delivery Charges :</strong>
+                                        </td>
+                                        <td class="text-right"><span>&#8377;</span> {{DeliveryCharges | number:2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">
+                                            <strong>Total Amount :</strong>
+                                        </td>
+                                        <td class="text-right"><span>&#8377;</span> {{Totalordervalue| number:2}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--<div class="col-lg-4 col-sm-6 text-left" style="margin-bottom:1em;">
+                        <div class="pull-left"><a href="" class="btn btn-primary" ng-click="aHomeClick()">Home</a></div>
+                    </div>-->
+
+                </div>
+            </main>
+            <div style="padding-top:2em;">
+                <b> Terms & Conditions</b>
+                <ul style="font-size:12px;list-style-type:lower-roman ;">
+                    <li ng-repeat="sales in salesinvoice">
+                        {{sales.InvoiceTermsAndCondition}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="divSalInv" ng-show="showinvoice">
+            <div class="row" style="text-align:center;padding-bottom:15px;">
+                <h3> SALES INVOICE</h3>
+            </div>
+            <!--<h3 style="color:green;"> {{Heading}}</h3>-->
+            <header class="row">
+                <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                    <img src="{{InvoiceLogo}}" style="width:200px;">
+
+                </div>
+                <div class="col-lg-6 col-sm-6" style="text-align:right;">
+
+                    <div ng-show="ShowGST"> <b>GSTNo:</b> {{CompanyGSTNo}}</div>
+                    <div> <b>Order No: </b>{{SalOrderNo}}</div>
+                </div>
+            </header>
+
+            <main>
+                <div class="row" style="margin-bottom:1em;">
+                    <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                        <!--<div class="to"><b>Company Address: </b></div>-->
+                        <h3 class="name">{{CompanyName}}</h3>
+
+                        <div class="to"><b>Company Address: </b></div>
+                        <!--<div class="name">{{MemberName}}</div>-->
+                        <div>{{CompanyPhoneNo}}</div>
+                        <div>{{CompanyAddressLine1}},<br /> {{CompanyAddressLine2}},<br /> {{CompanyCity}},{{CompanyState}}-{{CompanyPinCode}}</div>
+                        <div><a href="mailto:{{CompanyEmailId}}">{{CompanyEmailId}}</a></div>
+
+                    </div>
+                    <div class="col-lg-6 col-sm-6" style="text-align:right;">
+                        <div class="to"><b>Billing Address: </b></div>
+                        <div class="name" style="text-transform:capitalize">{{MemberName}}</div>
+                        <div>{{BillingPhoneNo}}</div>
+                        <div>{{BillingAddressLine1}},<br /> {{BillingAddressLine2}},<br /> {{BillingCity}},{{BillingState}}-{{BillingPinCode}}</div>
+                        <div><a href="mailto:{{BillingEmailId}}">{{BillingEmailId}}</a></div>
+                    </div>
+                </div>
+                <div id="content" class="col-sm-12">
+                    <div class="table-responsive form-group">
+                        <table class="table table-bordered" border="1">
+                            <thead>
+                                <tr>
+                                    <td class="text-center">Image</td>
+                                    <td class="text-center">Product Name</td>
+                                    <td class="text-center">Quantity</td>
+                                    <td class="text-center">Selling Price (<span>&#8377;</span>)</td>
+                                    <td class="text-center">MRP Price(<span>&#8377;</span>)</td>
+
+                                    <!--<td class="text-center" ng-show="Couponshow">Copoun</td>-->
+                                    <td class="text-center" ng-show="SGSTshow1">SGST</td>
+                                    <td class="text-center" ng-show="CGSTshow1">CGST</td>
+                                    <td class="text-center" ng-show="IGSTshow1">IGST</td>
+                                    <td class="text-center">Discount(<span>&#8377;</span>)</td>
+                                    <td class="text-center">Total(<span>&#8377;</span>)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ci in CartItems1">
+                                    <td class="text-center" style="vertical-align:middle;"><a href=""><img width="70px" src={{ci.ImageURL}} alt="ProductImage" title="" class="img-thumbnail" style="border:0;"></a></td>
+                                    <td class="text-center" style="vertical-align:middle;">
+                                        <a href="">{{ci.Title}} &nbsp;{{ci.VarienceType}}</a><br>
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle;">
+                                        {{ci.Qty}}
+                                    </td>
+                                    <td class="text-center" style="vertical-align:middle;">{{ci.Price}}</td>
+                                    <td class="text-center" style="vertical-align:middle;">{{ci.MrpPrice}}</td>
+                                    <!--<td class="text-center" style="vertical-align:middle;">{{ci.Qty*ci.Price| number:2}}</td>-->
+                                    <!--<td class="text-center" style="vertical-align:middle;" ng-show="Couponshow">
+                                        {{ci.CopounAmount | number:2}}
+                                    </td>-->
+
+                                    <td class="text-center" style="vertical-align:middle;" ng-show="SGSTshowTD1">{{((ci.Qty*ci.Tax)/ 2 )| number:2}}</td>
+                                    <td class="text-center" style="vertical-align:middle;" ng-show="CGSTshowTD1">{{((ci.Qty*ci.Tax)/ 2)| number:2}}</td>
+                                    <td class="text-center" style="vertical-align:middle;" ng-show="IGSTshowTD1">{{((ci.Qty*ci.Tax)/ 2) | number:2}}</td>
+                                    <td class="text-center" style="vertical-align:middle;">{{(ci.Qty) * (ci.MrpPrice - ci.Price)| number:2}}</td>
+                                    <!--<td class="text-center" style="vertical-align:middle;" ng-show="Taxshow">{{(ci.Qty*ci.Tax)| number:2}}</td>-->
+                                    <td class="text-center" style="vertical-align:middle;">{{(ci.Qty*ci.Price)-(ci.Discount*ci.Qty)-(ci.CopounAmount*ci.Qty)+(ci.Tax*ci.Qty) | number:2}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-sm-offset-8">
+                            <table class="table table-bordered">
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-right" style="padding-left:450px">
+                                            <strong>Sub Total :</strong>
+                                        </td>
+                                        <td class="text-right"><span>&#8377;</span> {{SubtotalAmt | number:2}}</td>
+
+
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-right" style="padding-left:450px">
+                                            <strong>Copoun Discount Amount :</strong>
+                                        </td>
+                                        <td class="text-right" style="color:green;"><span>&#8377;</span> {{CoupounDiscountAmt | number:2}}</td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="text-right" style="padding-left:450px">
+                                            <strong>Delivery Charges :</strong>
+                                        </td>
+                                        <td class="text-right"><span>&#8377;</span> {{DeliveryCharges | number:2}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right" style="padding-left:450px">
+                                            <strong>Total Amount :</strong>
+                                        </td>
+                                        <td class="text-right"><span>&#8377;</span> {{Totalordervalue | number:2}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div style="padding-top:2em;">
+                <b> Terms & Conditions</b>
+                <ul style="font-size:12px;list-style-type:lower-roman ;">
+                    <li ng-repeat="sales in salesinvoice">
+                        {{sales.InvoiceTermsAndCondition}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<button id="rzp-button1" hidden>Pay</button>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
+    <script>
+
+    </script>
+</div>

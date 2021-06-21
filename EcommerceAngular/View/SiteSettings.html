@@ -1,0 +1,296 @@
+﻿<div>
+    <div>
+        <!-- Bootstrap Core CSS -->
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+
+        <!-- font-awesome icons CSS -->
+        <!--<link href="css/font-awesome.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <!-- //font-awesome icons CSS -->
+        <!-- side nav css file -->
+        <!--<link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <!-- side nav css file -->
+        <!-- js-->
+        <!--<script src="js/jquery-1.11.1.min.js"></script>-->
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <!--<script src="js/modernizr.custom.js"></script>-->
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+
+        <!--webfonts-->
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <!--//webfonts-->
+        <!-- Metis Menu -->
+        <!--<script src="js/metisMenu.min.js"></script>-->
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <!--<script src="js/custom.js"></script>-->
+        <script src="../js/AdminStyle/js/custom.js"></script>
+
+        <!--<link href="css/custom.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dataTables.bootstrap.css" rel="stylesheet" />
+        <!--//Metis Menu -->
+        <style>
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+
+            .col-lg-6 {
+                /*width: 50%;*/
+                padding-bottom: 10px;
+            }
+            /*---------------Font-Face---------------*/
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+
+            h2, h3, h4, h5, h6, th {
+                font-family: Nunito-Bold !important;
+            }
+
+            p, span, a, label {
+                font-family: Nunito-SemiBold !important;
+                font-size: 1rem;
+                color: black !important;
+            }
+
+            td {
+                font-family: Nunito-Regular !important;
+            }
+            /*---------------Font-Face---------------*/
+
+            input {
+                border-color: #B198CB !important;
+            }
+        </style>
+    </div>
+    <div class="cbp-spmenu-push">
+        <div class="main-content">
+            <div ng-controller="AdminMainMenu">
+                <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+            </div>
+            <div id="page-wrapper">
+                <div class="main-page">
+                    <div class="container">
+                        <div class="SiteSettings">
+                            <div class="form-two widget-shadow" style="border-radius:10px;">
+                                <div class="row" style="padding-top:35px;padding-left:25px;">
+                                    <a href="" data-toggle="tooltip" class="tool-tips" title="Manage Your Site Settings Details Here!">
+                                        <h4 style="font-size:20px;color:#663398;"> Site Settings</h4>
+                                    </a>
+                                </div>
+                                <div class="form-body" data-example-id="simple-form-inline" style="padding-bottom:20px;">
+                                    <form class="form-inline">                                       
+                                            <div class="row">
+                                                <div class="form-group checkboxd site">
+                                                    <div></div>
+                                                    <label for="Text1">DateFormat </label><br />
+                                                    <select id="SiteSettings" ng-model="Setting.DateFormat" class="form-control" placeholder="Numbers only" style="width:199px;" required>
+                                                        <option value="0" disabled selected>Select DateFormat</option>
+                                                        <option value="dd/MM/yyyy">dd/mm/yyyy</option>
+                                                        <option value="MM/dd/yyyy">MM/dd/yyyy</option>
+                                                        <option value="yyyy/MM/dd">yyyy/MM/dd</option>
+                                                        <option value="dd-MM-yyyy">dd-MM-yyyy</option>
+                                                        <option value="MM-dd-yyyy">MM-dd-yyyy</option>
+                                                        <option value="yyyy-MM-dd">yyyy-MM-dd</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group checkboxd site">
+                                                    <label for="Text1">Currency Type </label><br />
+                                                    <select id="SiteSettings" ng-model="Setting.CurrencyType" class="form-control" style="width:199px;" required>
+                                                        <option value="0" disabled selected>Select CurrencyType</option>
+                                                        <option value="INR">INDIAN</option>
+                                                        <option value="د.إ">UAE</option>
+                                                        <option value="£">UK</option>
+                                                        <option value="¥">CHINA</option>
+                                                        <option value="€">Portugal</option>
+                                                        <option value="$">USA</option>
+                                                        <option value="ج.م">Egypt</option>
+                                                        <option value="R"></option>South Africa
+                                                    </select>
+                                                </div>
+                                                <div class="form-group checkboxd site">
+                                                    <label>Grid Page Size Admin</label><br />
+                                                    <input class="form-control" id="SiteSettings" type="number" min="1" max="100" ng-model="Setting.GridSizeAdmin" placeholder="Numbers only" style="width:199px;" required />
+                                                </div>
+                                                <div class="form-group checkboxd site">
+                                                    <label>Grid Page Size Client</label><br />
+                                                    <input class="form-control" id="SiteSettings" type="number" min="1" max="100" ng-model="Setting.GridSizeClient" placeholder="Numbers only" style="width:199px;" required />
+                                                </div>
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-md-3 test">
+                                                <div class="form-group checkboxd site">
+                                                    <label>Button Color Admin</label><br />
+                                                    <input class="form-control" type="color" ng-model="Setting.ButtonColorAdmin" value="#F2B33F" style="width:199px;" required />
+                                                </div>
+                                                <div class="form-group checkboxd site">
+                                                    <label>Website Theme Colour</label><br />
+                                                    <input class="form-control" type="color" ng-model="Setting.ThemeColour" value="#F2B33F" style="width:199px;" required />
+                                                </div>
+                                                <div class="form-group checkboxd site" ng-show="Captcha">
+                                                    <label for="Captcha">Captcha Type</label><br />
+                                                    <select id="SiteSettings" ng-model="Setting.CaptchaId" class="form-control" style="width:199px;" required>
+                                                        <option value="0" disabled selected>Select Captcha Type</option>
+                                                        <option ng-selected="Setting.CaptchaId==cap.CaptchaId" ng-repeat="cap in CaptchaType" value="{{cap.CaptchaId}}">{{cap.CaptchaType1}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 test">
+                                                <div class="form-group checkboxd site">
+                                                    <label>Footer Image</label><br />
+                                                    <input type="file" class="form-control" ng-model="Setting.Filetexts" ng onchange="angular.element(this).scope().setFile(this)" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4 test" style="padding-top:25px;">
+                                                <div class="form-group col-md-12 checkboxd ">
+                                                    <input type="checkbox" ng-model="FacebookSignup" id="FacebookSignup" /> <span style="padding-left:5px;"> Tax Applicable.  </span>
+                                                </div>
+                                                <div class="form-group col-md-12 checkboxd">
+                                                    <input type="checkbox" ng-model="CouponApplicable" id="CouponApplicable"> <span style="padding-left:5px;"> Coupon Details Applicable. </span>
+                                                </div>
+                                                <div class="form-group col-md-12 checkboxd">
+                                                    <input type="checkbox" ng-model="DiscountApplicable" id="DiscountApplicable"><span style="padding-left:5px;"> Discount Details Applicable. </span>
+                                                </div>
+                                                <div class="form-group col-md-12 checkboxd">
+                                                    <input type="checkbox" ng-model="colorApplicable" id="colorApplicable"><span style="padding-left:5px;"> Color Applicable. </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group checkboxd site">
+                                                    <label>Meta Tag</label><br />
+                                                    <textarea class="form-control" id="SiteSettings" ng-model="Setting.MetaTag" cols="150" rows="5" disabled style="width:95%;"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group checkboxd site">
+                                                    <label>Invoice Prefix</label><br />
+                                                    <input class="form-control" type="text"  ng-model="Setting.InvoicePrefix"  style="width:199px;"  />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group checkboxd site">
+                                                    <label>Invoice Starting Number</label><br />
+                                                    <input class="form-control" type="text" ng-model="Setting.InvoiceNumber" placeholder="Numbers only" style="width:199px;"  />
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="row" style=" padding-left:50px;float:right;">
+                                            <button type="submit" class="btn btn-default" ng-click="Save()" ng-style="myObj" ng-show="ShowSave" style="background-color:#F2B33F"><img src="../AdminStyle/images/save.png" style="width:24px;" /> Save</button>
+                                            <button type="button" class="btn btn-default" ng-click="Update()" ng-style="myObj" ng-show="ShowUpdate" style="background-color:#F2B33F"><img src="../AdminStyle/images/update_tag_.png" style="width:24px;" /> Update</button>
+                                        </div>
+                                        <div class="row">
+                                        </div>
+                                        <div class="row">
+                                            <span style="color:red !important">{{msgError}}</span><span style="color:green !important;">{{msgStatus}}</span>
+                                            <span ng-show="Showhide"> </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="footer ">
+
+        <div class="col-lg-12 form-inline">
+            <span>
+                &copy; 20 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                    <img src="images/Powered by Cartyogi-1.png" height="25" />
+                </a>
+            </span>
+
+        </div>
+    </div>
+    <!--//footer-->
+    <!-- side nav js -->
+    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+    <script>
+        $('.sidebar-menu').SidebarNav()
+    </script>
+    <!-- //side nav js -->
+    <!-- Classie --><!-- for toggle left push menu script -->
+    <script src="js/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+    </script>
+    <!-- //Classie --><!-- //for toggle left push menu script -->
+    <!--scrolling js-->
+    <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+    <!--<script src="js/jquery.nicescroll.js"></script>-->
+    <!--<script src="js/scripts.js"></script>-->
+    <script src="../js/AdminStyle/js/scripts.js"></script>
+
+
+    <script src="../js/AdminStyle/js/chartinator.js"></script>
+    <script src="../js/AdminStyle/js/classie.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    <!--//scrolling js-->
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <!--<script type="text/javascript">
+      var app = angular.module('MyApp', [])
+      app.controller('CoupoCodeController', function ($scope) {
+          //This will hide the DIV by default.
+          $scope.IsVisible = false;
+          $scope.ShowHide = function () {
+              //If DIV is visible it will be hidden and vice versa.
+              $scope.IsVisible = $scope.IsVisible ? false : true;
+          }
+      });
+    </script>-->
+</div>

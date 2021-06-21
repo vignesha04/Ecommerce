@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f59bf71579814cce810f2226ce0fd6b4" Name="Diagram1">
+        <EntityTypeShape EntityType="FishermanmarketModel.AboutUsAdmin" Width="1.5" PointX="10" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.AboutUsFAQ" Width="1.5" PointX="12.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.AddDetail" Width="1.5" PointX="14.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.AdminLogin" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.BrandType" Width="1.5" PointX="16.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.CancelledComment" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.CaptchaType" Width="1.5" PointX="12.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.Category" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.CompanyDetail" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ContactUsAdmin" Width="1.5" PointX="10" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.CopyRight" Width="1.5" PointX="14.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.CouponDetail" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.CourierDetail" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.DeliveryCharge" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.DeliveryConfirmation" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.DiscountDetail" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.HomeBannerImage" Width="1.5" PointX="15" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.HomePageSetting" Width="1.5" PointX="12.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.HomeSlider" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.HomeSliderImage" Width="1.5" PointX="15" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.InvoiceNumber" Width="1.5" PointX="17.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.MemberCart" Width="1.5" PointX="10.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.MemberDetail" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.MemberOrder" Width="1.5" PointX="10.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.MessageAlert" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.PaymentOption" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.PrivacyPolicy" Width="1.5" PointX="18.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductDetail" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductFeature" Width="1.5" PointX="7.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductImage" Width="1.5" PointX="7.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductReview" Width="1.5" PointX="10.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductStock" Width="1.5" PointX="9.75" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductTecDetail" Width="1.5" PointX="7.5" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ProductVariance" Width="1.5" PointX="7.5" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.SalesOrder" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.SalesOrderItem" Width="1.5" PointX="7.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.Setting" Width="1.5" PointX="15" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.SocialMedia" Width="1.5" PointX="7.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.SocialMediaLink" Width="1.5" PointX="10" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.SubCategory" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.TaxDetail" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.TermsAndCondition" Width="1.5" PointX="19.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.TermsAndConditionInvoive" Width="1.5" PointX="19.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.ThemeDetail" Width="1.5" PointX="7.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.TodayDeal" Width="1.5" PointX="7.5" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.Variancecolorcode" Width="1.5" PointX="9.75" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.VisitorCount" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FishermanmarketModel.Wholesaleprice" Width="1.5" PointX="9.75" PointY="38.25" IsExpanded="true" />
+        <AssociationConnector Association="FishermanmarketModel.FK_AboutUsAdmin_ThemeDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_AboutUsFAQ_AboutUsAdmin" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_Setting_CaptchaType" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_SubCategory_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ContactUsAdmin_ThemeDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductDetail_CouponDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_CourierDetail_SalesOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_DeliveryConfirmation_SalesOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductDetail_DiscountDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_HomeBannerImage_HomePageSettings" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_HomeSliderImage_HomePageSettings" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_MemberCart_MemberDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_MemberCart_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_MemberOrders_MemberDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductReview_MemberDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_SalesOrder_MemberDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_MemberOrders_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductDetail_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductDetail_TaxDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductFeatures_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductImages_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductReview_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductStock_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductTecDetail_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_ProductVariance_ProductVariance" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_SalesOrderItem_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_TodayDeal_ProductDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__ProductSt__Produ__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__Variancec__Produ__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__Variancec__Produ__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__Variancec__Produ__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__Wholesale__produ__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__Wholesale__produ__08B54D69" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK__Wholesale__produ__09A971A2" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_SalesOrderItem_SalesOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="FishermanmarketModel.FK_SocialMediaLink_SocialMedia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

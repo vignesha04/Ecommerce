@@ -1,0 +1,172 @@
+﻿<div class="main-container container">
+    
+    <div ng-show="loader">
+        <div class="row">
+            <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+            </div>
+        </div>
+    </div>
+    <ul class="breadcrumb">
+        <li><a href="" ng-click="aHomeClick()"><i class="fa fa-home"></i></a></li>
+        <li><a href="">Search Result</a></li>
+    </ul>
+    <div class="row">
+        <div id="content" class="col-md-9 col-sm-8">
+            <div class="products-category">
+                <div class="products-list row nopadding-xs so-filter-gird grid">
+                    <div class="product-layout col-lg-15 col-md-4 col-sm-6 col-xs-12" ng-repeat="pl in ItemsByPage[currentPage]| unique:'ProductId'">
+                        <div class="product-item-container">
+                            <div class="left-block">
+                                <div class="product-image-container second_img" style="width:100%; height:130px;">
+                                    <a href="#!Product/{{pl.ProductId}}"  title="{{pl.Title}}">
+                                        <img ng-repeat="pim1 in pl.Image1" src="{{pim1.ImageURL}}" class="img-1 img-responsive" alt="{{pl.Title}}">
+                                        <img ng-repeat="pim2 in pl.Image2" src="{{pim2.ImageURL}}" class="img-2 img-responsive" alt="{{pl.Title}}">
+                                    </a>
+                                </div>
+                                <div class="button-group so-quickview cartinfo--left" ng-repeat="var in pl.ProdVariance | limitTo:1">
+                                    <span ng-show="DiscountDetailsId1">{{pl.DiscountDetailsId}}</span>
+                                    <span ng-show="CouponId1">{{pl.CouponId}}</span>
+                                    <span ng-show="TaxDetail1">{{pl.TaxDetail}}</span>
+                                    <span ng-show="ProductId123">{{pl.ProductId}}</span>
+                                    <!--<button type="button" class="addToCart btn-button" title="Add to carts" ng-click="AddToCart(pl.Title,var.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,TaxDetailsId,pl.CouponId,pl.Image1,var.ProductVarianceId,var.VariancePrice,var.Discountamt)">
+                                        <i class="fa fa-shopping-basket"></i>
+                                        <span>Add to cart </span>
+                                    </button>-->
+                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="#!Product/{{pl.ProductId}}" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span> view</span></a>
+                                </div>
+                            </div>
+                            <div class="right-block" style="padding:unset;">
+
+                                <div class="button-group" ng-repeat="var in pl.ProdVariance | limitTo:1">
+                                    <button type="button" class="addToCart btn-button "style="background-color:#102985;color:white;border-radius:13px;height:30px;line-height: 30px;cursor:pointer;padding-bottom:8px;" title="Add to carts" ng-click="AddToCart(pl.Title,var.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1,var.ProductVarianceId,var.VariancePrice,var.Discountamt)">
+                                        <i class="fa fa-shopping-basket"></i>
+                                        <span>Add to cart </span>
+                                    </button>
+                                </div>
+
+
+                                <div class="caption">
+                                    <div class="rating">
+                                    </div>
+                                    <h4><a href="" title="Cupim should " target="_self" style="text-transform: capitalize;font-size:20px">{{pl.Title}} </a></h4>
+                                    <!--<h4><a href="" title="Cupim should " target="_self" style="text-transform: capitalize">{{pl.Title}} </a></h4>-->
+                                    <div class="price" ng-repeat="vari in pl.ProdVariance | limitTo:1">
+                                        <span style="font-size:15px" class="price-new"><span>&#8377;</span> {{(vari.sellingPrice)}}</span>
+                                        <span style="font-size:15px" class="price-old"><span>&#8377;</span> {{(vari.VariancePrice)}}</span>
+                                    </div>
+                                    <div class="description item-desc hidden">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est . </p>
+                                    </div>
+                                    <div class="list-block hidden">
+                                        <button class="addToCart btn-button" type="button" title="Add to Cart" onclick="cart.add('101', '1');">
+                                            <i class="fa fa-shopping-basket"></i>
+                                        </button>
+                                        <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="pagination pagination-sm" style="float: right; position: absolute; margin-top: -40px;right: 22px;padding-top:45px;">
+                <!--<ul class="pagination pagination-sm" style="float: right; position: absolute; margin-top: -40px;right: 22px;">-->
+                <li ng-class="{active:0}">
+                    <a ng-click="firstPage()">First</a>
+                </li>
+                <li ng-repeat="n in range(ItemsByPage.length)">
+                    <a ng-click="setPage()" ng-bind="n+1">1</a>
+                </li>
+                <li>
+                    <a ng-click="lastPage()">Last</a>
+                </li>
+            </ul>
+        </div>
+        <aside class="col-sm-4 col-md-3 content-aside" id="column-left" style="padding-top:45px;">
+            <div class="module">
+                <h3 class="modtitle">Filter </h3>
+                <div class="modcontent ">
+                    <form class="type_2">
+                        <div class="table_layout filter-shopby">
+                            <div class="table_row">
+                                <div class="table_cell" style="z-index: 103;">
+                                    <legend>Search</legend>
+                                    <div class="row">
+                                        <div class="col-lg-7 col-sm-7 col-md-7 col-xs-7 ">
+                                            <input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Keyword here..." name="search" ng-model="FilterSearchTxt">
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-3">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="button-search btn btn-primary" name="submit_search" ng-click="SearchPriceList(FilterSearchTxt)"><i class="fa fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <legend>Price Min</legend>
+                                        <div class="col-sm-8">
+                                            <input type="text" placeholder="Price Min" ng-model="search.price_min" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <legend>Price Max</legend>
+                                        <div class="col-sm-8">
+                                            <input type="text" placeholder="Price Max" ng-model="search.price_max" />
+                                        </div>
+                                    </div>
+
+                                    <!--<div class="table_cell">
+                                        <p></p>
+                                        <p> </p>
+                                    </div>-->
+                                </div>
+                                <footer class="bottom_box">
+                                    <div class="buttons_row">
+                                        <button type="submit" ng-click="priceFiltering()" class="button_grey button_submit">Search</button>
+                                        <button type="reset" class="button_grey filter_reset" ng-click="Reset()">Reset</button>
+                                    </div>
+                                    <div class="back-to-top"><i class="fa fa-angle-up"></i></div>
+                                </footer>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="module product-simple">
+                <h3 class="modtitle">
+                    <span>Latest products</span>
+                </h3>
+                <div class="modcontent">
+                    <div id="so_extra_slider_1" class="extraslider">
+                        <div class="yt-content-slider extraslider-inner">
+                            <div class="item ">
+                                <div class="product-layout item-inner style1 " ng-repeat="np in NewItems">
+                                    <div class="item-image">
+                                        <div class="item-img-info">
+                                            <a href="#!Product/{{np.ProductId}}" title="{{np.Title}}">
+                                                <img ng-repeat="im1 in np.Image1" src={{im1.ImageURL}} alt=" Product Image">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <div class="item-title">
+                                            <a href="#!Product/{{np.ProductId}}"  title="{{np.Title}}" style="text-transform: capitalize">{{np.Title}} </a>
+                                        </div>
+                                        <div class="rating">
+                                        </div>
+                                        <div class="content_price price" style="display:{{np.showVariance}}">
+                                            <span class="price-new product-price"><span>&#8377;</span> {{(np.Price)+((np.Price*np.TaxPercentage)/100) | number:0.00}} </span>&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+   
+
+</div>

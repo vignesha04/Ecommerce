@@ -1,0 +1,96 @@
+﻿<div class="container-fluid" >
+    <!--<link href="../../Files/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="../../Files/bootstrap.min.css">
+    <link href="../../Files/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Files/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../../Files/owl.carousel.css" rel="stylesheet">
+    <link href="../../Files/lib.css" rel="stylesheet">
+    <link href="../../Files/jquery-ui.min.css" rel="stylesheet">
+    <link href="../../Files/miniColors.css" rel="stylesheet">
+    <link href="../../Files/so_searchpro.css" rel="stylesheet">
+    <link href="../../Files/so_megamenu.css" rel="stylesheet">
+    <link href="../../Files/so-categories.css" rel="stylesheet">
+    <link href="../../Files/so-listing-tabs.css" rel="stylesheet">
+    <link href="../../Files/so-newletter-popup.css" rel="stylesheet">
+    <link href="../../Files/footer1.css" rel="stylesheet">
+    <link href="../../Files/header1.css" rel="stylesheet">
+    <link id="color_scheme" href="../../Files/theme.css" rel="stylesheet">
+    <link href="../../Files/responsive.css" rel="stylesheet">
+    <script src="../../js/Scripts/angular.min.js"></script>
+    <script src="../../js/Scripts/angular-route.min.js"></script>
+    <script src="../../js/Scripts/angular-ui.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Files/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../Files/libs.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.dcjqaccordion.2.8.min.js"></script>
+    <script type="text/javascript" src="../../Files/moment.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../Files/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="../../Files/application.js"></script>
+    <script type="text/javascript" src="../../Files/homepage.js"></script>
+    <script type="text/javascript" src="../../Files/toppanel.js"></script>
+    <script type="text/javascript" src="../../Files/addtocart.js"></script>
+    <script type="text/javascript" src="../../Files/so_megamenu.js"></script>
+    <script src="../../js/jquery.min.js"></script>-->
+    <div><h4 style="font-size:24px;">Contact Us</h4></div>  
+    <div style="width: 100%">
+        <iframe style="width:100%;" height="400" src="{{embedUrl}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            <a href="https://www.maps.ie/map-my-route/">Map a route</a>
+        </iframe>
+    </div><br />
+
+    
+  
+   
+    <div class="col s12">  
+        <div class="col-lg-4">
+            <div><h4><b>{{CompanyName}}</b></h4></div>
+            <div ng-repeat="det in Details">
+                <div style="padding-bottom:10px;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;{{det.Address}} </div>
+                <div style="padding-bottom:10px;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;{{det.Address1}} </div>
+                <div style="padding-bottom:10px;"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;{{det.ContactNo}}</div>
+                <div style="padding-bottom:10px;"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;{{det.EmailId}}</div>
+                <div style="padding-bottom:10px;"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp;{{det.Description}}</div>
+            </div>
+        </div> 
+        <div class="col-lg-8">
+            <form>
+                <div><h4><b>Contact From</b></h4></div>
+                <div style="padding-bottom:10px;">
+                    <label for="name">YourName<i style="color:red;">*</i></label><input type="text" class="form-control" ng-model="Name" />
+                    <label for="Email">Email<i style="color:red;">*</i></label><input type="email" id="Email" class="form-control" ng-model="Email" required />
+                    <label for="Mobile Number">Contact No<i style="color:red;">*</i></label><input type="number" id="ContactNo" class="form-control" ng-model="ContactNo" required />
+                    <label for="Email">Enquiry<i style="color:red;">*</i></label><textarea rows="4" cols="50" class="form-control" ng-model="Message" required></textarea>
+                </div>
+                <div class="col-lg-4" style="padding-bottom:10px; float:left;">
+                    <div class="input-group" style="padding-right:10px;">
+                        <div class="input-group-addon" style="background-color:#d9534f;color:white;cursor:pointer;">
+                            <span class="fa fa-refresh" id="refresh" ng-click="Captchacontact()"></span>
+                        </div>
+                        <input type="text" class="form-control" style="margin-bottom: 0px; width: 200px; font-size: 24px; font-weight: bolder; text-decoration: line-through; display: inline-block;" id="mainCaptchacontact" disabled="">
+                        <div style="margin-top:10px; color: #D8000C; border-radius: 7px;" id="logcontact"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <input style="padding-left:10px;" type="text" class="form-control" placeholder="Enter captcha code" name="captcha" id="txtInputcontact" required="">
+                </div>
+                <div style="padding-bottom:10px; float:right;">
+                    <button type="submit" class="btn btn-danger" id="Contact" ng-click="Sendmail()">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div align="left" style="padding-right:700px; float:right;">
+            <span style="color:red">{{msg}}</span><span style="color:green">{{msgStatus}}</span><br />
+            <span ng-model="Data.hiddenCouponid" ng-show="Showhide"></span>
+        </div>
+    </div>
+   
+</div>

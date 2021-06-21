@@ -1,0 +1,298 @@
+﻿<div>
+    <div>
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <script src="../js/AdminStyle/js/custom.js"></script>
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dataTables.bootstrap.css" rel="stylesheet" />
+        <style>
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+
+            .col-lg-6 {
+                padding-bottom: 10px;
+            }
+
+            /*---------------Font-Face---------------*/
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+
+            h2, h3, h4, h5, h6, th {
+                font-family: Nunito-Bold !important;
+            }
+
+            p, span, a, label {
+                font-family: Nunito-SemiBold !important;
+                font-size: 1rem;
+                color: black !important;
+            }
+
+            td {
+                font-family: Nunito-Regular !important;
+            }
+            /*---------------Font-Face---------------*/
+
+            input {
+                border-color: #B198CB !important;
+            }
+        </style>
+    </div>
+    <div class="cbp-spmenu-push">
+        <div class="main-content">
+            <div ng-controller="AdminMainMenu">
+                <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+            </div>
+            <div id="page-wrapper">
+                <div class="main-page">
+                    <div class="container">
+                        <div class="forms">
+                            <div class="form-two widget-shadow" style="border-radius:10px;">
+                                <div class="row" style="padding-top:35px;padding-left:25px;">
+                                    <a href="" data-toggle="tooltip" class="tool-tips" title="Manage Your Product Stock Management Details Here!">
+                                    <h4 style="font-size:20px;color:#663398;"> Today Deal</h4></a>
+                                </div>
+                                <div class="form-body" data-example-id="simple-form-inline" style="padding-bottom:10px;">
+                                    <form class="form-inline">
+                                        <div class="row">
+                                            <div class="form-group" style="padding-bottom:10px;">
+                                                <label for="Text1">Select Category<i style="color:red;">*</i></label><br />
+                                                <select id="CategoryId" ng-model="TodayDeal.CategoryId" ng-change="ddlCatChange(TodayDeal.CategoryId)" class="form-control" required style="width:199px;">
+                                                    <option value="" disabled selected>Select Category</option>
+                                                    <option ng-selected="TodayDeal.CategoryId==cat.CategoryId" ng-repeat="cat in CategoryDetails" value="{{cat.CategoryId}}">{{cat.CategoyName}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group" style="padding-bottom:10px;">
+                                                <label for="Text1">Select SubCategory<i style="color:red;">*</i></label><br />
+                                                <select id="SubCategoryId" ng-model="TodayDeal.SubCategoryId" ng-change="ddlSubCatChange(TodayDeal.SubCategoryId)" class="form-control" style="width:199px;">
+                                                    <option value="" disabled selected>Select SubCategory</option>
+                                                    <option ng-selected="TodayDeal.SubCategoryId == subcat.SubCategoryId" ng-repeat="subcat in SubCategoryDetails" value="{{subcat.SubCategoryId}}">{{subcat.SubCategoryName}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group " style="padding-bottom:10px;">
+                                                <label for="Text1">Select Product<i style="color:red;">*</i></label><br />
+                                                <select id="ProductId" ng-model="TodayDeal.ProductId" class="form-control" style="width:199px;">
+                                                    <option value="" disabled selected>Select Product</option>
+                                                    <option ng-selected="TodayDeal.ProductId==Pro.ProductId" ng-repeat="Pro in ProductDetails" value="{{Pro.ProductId}}">{{Pro.Title}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group " style="padding-bottom:10px;">
+                                                <label for="Text1">Date<i style="color:red;">*</i></label><br />
+                                                <input class="form-control" id="Date" type="date" ng-model="TodayDeal.Date" placeholder="Date" style="width:199px;" required />
+                                            </div>
+                                            <div class="form-group" style="padding-bottom:10px;">
+                                                <label for="Text1">Discount<i style="color:red;">*</i></label><br />
+                                                <input type="number" placeholder="Discount Amount" min="0" max="100" class="form-control" ng-model="TodayDeal.TodayDiscountAmount" id="integer" style="width:199px;" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" parseFloat>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="float:right !important;padding-top:35px;padding-bottom:25px;">
+                                            <button type="submit" class="btn btn-default" ng-style="myObj" id="Todaydealsave" ng-click="Save()"><img src="../AdminStyle/images/save.png" style="width:24px;" /> Save</button>
+                                            <button type="button" class="btn btn-default" ng-style="myObj" ng-click="Clear()"><img src="../AdminStyle/images/erase.png" style="width:24px;" /> Clear</button>
+                                        </div>
+                                        <div class="row">
+                                        </div>
+                                        <div class="row" align="left" style="padding-left:10px; padding-top:10px;">
+                                            <span style="color:red !important">{{msg}}</span><span style="color:green !important;">{{msgStatus}}</span><br />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table mobile-hide">
+                            <div class="bs-example widget-shadow" data-example-id="hoverable-table" style="border-top-left-radius:10px;border-top-right-radius:10px;">                               
+                                    <div class="row" style="padding:30px 10px;">
+                                        <div class="col-lg-3" style="margin-right:7%;">
+                                            <h4 style="font-size:20px;color:#663398 ;"> Today Deal</h4>
+                                        </div>
+                                        <div class="col-lg-3" style="padding-right:10px;margin-right:13px;">
+                                            <input type="text" class="form-control" name="Searchtext" ng-model="TodayDeal.Search" placeholder="search" id="search">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f;" ng-style="myObj" ng-click="Search()"><img src="../AdminStyle/images/search.png" style="width:18px;" /> Search</button>
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f;" ng-style="myObj" ng-click="exportData()"><img src="../AdminStyle/images/ms_excel.png" style="width:18px;" /> Export</button>
+                                        </div>
+                                    </div>                               
+                            </div>
+                            <table class="table table-bordered table-responsive css-serial">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center;">S.No</th>
+                                        <th style="text-align:center;">Category</th>
+                                        <th style="text-align:center;">Sub Category</th>
+                                        <th style="text-align:center;">Product</th>
+                                        <th style="text-align:center;">Discount Amount</th>
+                                        <th style="text-align:center;">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="prod in ItemsByPage [currentPage]">
+                                        <td style="text-align:center;">{{prod.sno}}</td>
+                                        <td style="text-align:center;">{{prod.CategoyName}}</td>
+                                        <td style="text-align:center;">{{prod.SubCategoryName}}</td>
+                                        <td style="text-align:center;">{{prod.Title}}</td>
+                                        <td style="text-align:center;">{{prod.TodayDiscountAmount}}</td>
+                                        <td style="text-align:center;">{{prod.Date}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class=" table desktop-hide ">
+                            <div class="sb2-2-3 desktop-hide">
+                                <div class="sb2-2-3 desktop-hide">
+                                    <div class="col-md-12" style="padding-left: 0px;padding-right: 0px !important;">
+                                        <div class="bs-example widget-shadow" data-example-id="hoverable-table" style="border-top-left-radius:10px;border-top-right-radius:10px;">                                           
+                                                <div class="row" style="padding:30px 10px !important;">
+                                                    <h4 style="padding-left:7px;color:#663398;">Today's Deal</h4>
+                                                </div>
+                                                <div class="row" style="padding-right:20px;">
+                                                    <div class="input-group" style="padding-right:10px;padding-left:10PX;">
+                                                        <input type="text" class="form-control" name="Searchtext" ng-model="TodayDeal.Search" placeholder="search" id="search">
+                                                        <div class="input-group-addon" ng-style="myObj" style="background-color:#f2b33f;">
+                                                            <span class="fa fa-search" ng-click="Search()" style="color:white;"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="padding-left:10px;">
+                                                    <button type="button" class="btn btn-default" style="background-color:#f2b33f;" ng-style="myObj" ng-click="exportData()"><img src="../AdminStyle/images/ms_excel.png" style="width:18px;" /> Export</button>
+                                                </div>                                           
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped mobile-datatablesTodayDeal" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-weight:bold;">Category</th>
+                                                <th style="font-weight:bold;">Sub Category</th>
+                                                <th style="font-weight:bold;">Product</th>
+                                                <th style="font-weight:bold;">Discount Amount</th>
+                                                <th style="font-weight:bold;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="prod in ItemsByPage [currentPage]">
+                                                <td style="font-weight:400;">{{prod.CategoyName}}</td>
+                                                <td style="font-weight:400;">{{prod.SubCategoryName}}</td>
+                                                <td style="font-weight:400;">{{prod.Title}}</td>
+                                                <td style="font-weight:400;">{{prod.TodayDiscountAmount}}</td>
+                                                <td style="font-weight:400;">{{prod.Date}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="example1" class="table table-bordered table-responsive css-serial" style="display:none;">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Sub Category</th>
+                                <th>Product</th>
+                                <th>Discount Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="prod in allItems">
+                                <td>{{prod.CategoyName}}</td>
+                                <td>{{prod.SubCategoryName}}</td>
+                                <td>{{prod.Title}}</td>
+                                <td>{{prod.TodayDiscountAmount}}</td>
+                                <td>{{prod.Date}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="pagination pagination-sm">
+                        <li ng-class="{active:0}">
+                            <a ng-click="firstPage()">First</a>
+                        </li>
+                        <li ng-repeat="n in range(ItemsByPage.length)">
+                            <a ng-click="setPage()" ng-bind="n+1">1</a>
+                        </li>
+                        <li>
+                            <a ng-click="lastPage()">Last</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer ">
+
+            <div class="col-lg-12 form-inline">
+                <span>
+                    &copy; 2020. All Rights Reserved  Powered by<a href="https://cartyogi.com/#!/">
+                        <img src="../images/Powered by Cartyogi-1.png" height="25px" />
+                    </a>
+
+                </span>
+
+            </div>
+        </div>
+    </div>
+    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+    <script>
+        $('.sidebar-menu').SidebarNav()
+    </script>
+    <script src="js/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+    </script>
+    <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+    <script src="../js/AdminStyle/js/scripts.js"></script>
+    <script src="../js/AdminStyle/js/chartinator.js"></script>
+    <script src="../js/AdminStyle/js/classie.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+</div>
+

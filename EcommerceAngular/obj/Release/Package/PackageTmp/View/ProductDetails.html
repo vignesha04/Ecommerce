@@ -1,0 +1,1360 @@
+﻿<div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+    <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+    <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+    <script src="../js/AdminStyle/js/custom.js"></script>
+    <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/Scripts/dirPagination.js"></script>
+    <script src="../dirPagination.js"></script>
+    <script src="../customDirPagination.js"></script>
+    <style>
+        input[type=text] input[type=file] {
+            background-color: transparent;
+            border-radius: 0;
+            outline: none;
+            width: 100%;
+            box-shadow: none;
+            transition: all 0.3s;
+            height: 3rem;
+            padding: 10px 10px 10px 10px;
+        }
+
+        @media (min-width:320px) and (max-width:360px) {
+            .btnpad {
+                padding-left: 0px !important;
+            }
+
+            input {
+                text-align: right;
+                font-weight: bold;
+                font-size: 15px
+            }
+        }
+
+        @media (min-width:361px) and (max-width:760px) {
+            .btnpad {
+                padding-left: 15px !important;
+            }
+
+            .input {
+                text-align: right;
+                font-weight: 600;
+            }
+
+            .col s12 {
+                padding-left: 0px;
+            }
+        }
+
+        @media (min-width:320px) and (max-width:640px) {
+            .prodinfo {
+                width: 100% !important
+            }
+
+            .tblbutton {
+                padding-bottom: 8px !important;
+                padding-left: 10px !important;
+            }
+
+            .col s12 {
+                padding-left: 0px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .col-sm-4 {
+                width: 50%;
+                margin: 0 0 0 20px !important;
+            }
+
+            .col s12 {
+                padding-left: 20px !important;
+            }
+        }
+
+        @media (min-width:850px) and (max-width:1025px) {
+            .selectitm {
+                width: 148px !important
+            }
+        }
+
+        @font-face {
+            font-family: 'Nunito-Bold';
+            src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito-Regular';
+            src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito-SemiBold';
+            src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Nunito-Light';
+            src: url('../fonts/Nunito-Light.ttf') format('truetype');
+        }
+
+        h2, h3, h4, h5, h6, th {
+            font-family: Nunito-Bold !important;
+        }
+
+        p, span, a, label {
+            font-family: Nunito-SemiBold !important;
+            font-size: 1rem;
+            color: black !important;
+        }
+
+        td {
+            font-family: Nunito-Regular !important;
+        }
+
+        input {
+            border-color: #B198CB !important;
+        }
+
+        @media (min-width:768px) and (max-width:1023px) {
+
+            .form-inline .form-control {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .select1 {
+                padding-bottom: 20px !important;
+            }
+
+            .pricetitle {
+                padding-left: 20px !important
+            }
+
+            .titletext {
+                width: 210px !important;
+            }
+
+            .des {
+                width: 430px !important
+            }
+
+            .mbprod {
+                width: 185px !important
+            }
+
+            .prodfeature1 {
+                width: 175px !important;
+            }
+        }
+
+        @media(min-width:300px) and (max-width:359px) {
+            .catbtn {
+                width: 160Px !important
+            }
+
+            .catexport {
+                width: 110px !important;
+            }
+        }
+
+        #myLinks {
+            display: none;
+            background-color: #222D32;
+            color: white !important;
+            padding-top: 3.8em;
+            padding-left: 15px;
+        }
+
+            #myLinks a {
+                color: white !important;
+            }
+
+        .arrow-down1:after, .arrow-up1:after {
+            content: ' ';
+            position: relative;
+            left: 2px;
+            border: 8px solid transparent;
+        }
+
+        .arrow-down1:after {
+            top: 12px;
+            border-top-color: blue;
+        }
+
+        .arrow-up1:after {
+            bottom: 13px;
+            border-bottom-color: blue;
+        }
+
+        .arrow-down1, .arrow-up1 {
+            padding-right: 10px;
+        }
+
+        .accordion11 {
+            cursor: pointer;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+            .accordion11:hover {
+            }
+
+        .panel11 {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .cropArea {
+            background: #E4E4E4;
+            overflow: hidden;
+            width: 500px;
+            height: 350px;
+        }
+
+    </style>
+    <div class="cbp-spmenu-push">
+        <div class="main-content">
+            <div ng-controller="AdminMainMenu">
+                <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+            </div>
+            <div class="row" id="page-wrapper" ng-show="loader">
+                <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                    <img src="../images/New folder/loader.gif" class="center-block" />
+                </div>
+            </div>
+            <div id="page-wrapper" ng-show="!loader">
+                <div class="main-page">
+                    <div class="container" style="width:100%;">
+                        <div class="forms desktop-hide">
+                            <div class="form-two widget-shadow" style="border-radius:10px;">
+                                <div class="row" style="padding-left:13px;">
+                                    <a href="" data-toggle="tooltip" class="tool-tips" title="Manage Your Product Details Here!"><h4 style="color:#663398;">Product</h4></a>
+                                </div>
+                                <div class="form-body" data-example-id="simple-form-inline" style="padding-bottom:20px;">
+                                    <form class="form-inline">
+                                        <div>
+                                            <label for="Title" style="font-size:17px;padding-bottom:20px; color:#22498E"><b>Select items <i class="fa fa-check" aria-hidden="true"></i></b></label>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col s12">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 select1">
+                                                    <label>Category</label><br />
+                                                    <div class="form-group">
+                                                        <input id="CategoryId" type="text" ng-model="ProductDetail.CategoryId" list="category" placeholder="Select Category" ng-change="ddlCatChange(ProductDetail.CategoryId)" class="form-control prodinfo" style="text-transform:uppercase;" />
+                                                        <datalist id="category">
+                                                            <option value="" disabled selected style="text-transform:uppercase;">Select Category</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.CategoryId==cat.CategoryId" ng-repeat="cat in CategoryDetails" data-value="{{cat.CategoryId}}"> {{cat.CategoyName}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 select1">
+                                                    <label>Sub Category</label><br />
+                                                    <div class="form-group">
+                                                        <input id="" type="text" ng-model="ProductDetail.SubCategoryId" list="SubCategoryId" placeholder="Select SubCategory" class="form-control prodinfo" style="width:199px;text-transform:uppercase;" />
+                                                        <datalist id="SubCategoryId">
+                                                            <option value="" disabled selected style="text-transform:uppercase;">Select SubCategory</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.SubCategoryId == subcat.SubCategoryId" ng-repeat="subcat in SubCategoryDetails" data-value="{{subcat.SubCategoryId}}">{{subcat.SubCategoryName}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 " style="padding-bottom:10px!important">
+                                                    <label>Brand Type</label><br />
+                                                    <div class="form-group" style="padding-bottom:10px!important">
+                                                        <input id="" type="text" ng-model="ProductDetail.BrandTypeId" list="BrandType" placeholder="Select Brand Type" class="form-control prodinfo" style="width:199px;text-transform:uppercase;" />
+                                                        <datalist id="BrandType">
+                                                            <option value="" disabled selected style="text-transform:uppercase;">Select Brand Type</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.BrandTypeId==bt.BrandTypeId" ng-repeat="bt in BrandType" data-value="{{bt.BrandTypeId}}"> {{bt.BrandName}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="col-lg-4 col-md-4 col-sm-4 select1" ng-show="ShowDiscountDetailsId">
+                                                    <label>Discount Details</label><br />
+                                                    <div class="form-group">
+                                                        <input id="" type="text" ng-model="ProductDetail.DiscountDetailsid" list="DiscountDetails" placeholder="Select DiscountDetails" class="form-control prodinfo" style="width:199px;text-transform:uppercase;" />
+                                                        <datalist id="DiscountDetails">
+                                                            <option value="" disabled selected>Select DiscountDetails</option>
+                                                            <option ng-selected="ProductDetail.DiscountDetailsId==discount.DiscountDetailsId" ng-repeat="discount in DiscountDetails" data-value="{{discount.DiscountDetailsId}}">{{discount.Description}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                </div>-->
+                                            </div>
+                                            <div class="col s12">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 select1" ng-show="ShowCouponDetailsId">
+                                                    <label>Coupon Details</label><br />
+                                                    <div class="form-group">
+                                                        <select id="CouponDetailsId" ng-model="ProductDetail.CouponId" class="form-control prodinfo" style="width:199px;">
+                                                            <option value="" disabled selected>Select CouponDetails</option>
+                                                            <option ng-selected="ProductDetail.CouponId==coupon.CouponId" ng-repeat="coupon in CouponDetails"> {{coupon.Code}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                                    <label>Product Type</label><br />
+                                                    <div class="form-group">
+                                                        <input id="" type="text" ng-model="ProductDetail.ProductType" list="ProductDetailsType" placeholder="Select Product Type" class="form-control prodinfo" style="width:199px;text-transform:uppercase;" />
+                                                        <datalist id="ProductDetailsType">
+                                                            <option>Food</option>
+                                                            <option>Non Food</option>
+                                                            <option>Frozen</option>
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<div class="col s12">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 select1">
+                                                    <div class="form-group">
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                            </div>
+                                            <div class="form-group select1 pricetitle ">
+                                                <div style="padding-top:25px!important;">
+                                                    <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Product Info <i class="fa fa-info-circle" aria-hidden="true"></i></b></label>
+                                                </div>
+                                                <div>
+                                                    <label for="Title" style="font-size:15px;padding-bottom:5px;"><b>Product Image </b></label>
+                                                    <div class="form-group ">
+                                                        <input type="file" name="FileUpload1" id="FileUpload1" ng-model="ProductDetail.Filetexts" multiple ng onchange="angular.element(this).scope().setFile(this)" />
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-8">
+                                                            <h6><i>Picture Upload (image size upto 1 MB) (PNG,JPEG,GIF Formats)</i></h6>
+                                                            <br />
+                                                            <h6> Product image Size:240px x 150px  </h6><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" ng-show="imgEditTime">
+                                                        <div class="row">
+                                                            <div class="col-lg-3 col-sm-4 col-md-4 col-xs-6" ng-repeat="opi in resultOPImage">
+                                                                <img width="150" src="{{opi.ImageURL}}" alt="Product image" />
+                                                                <div style="text-align:center;">
+                                                                    <span>
+                                                                        <a ng-click="Delete(opi.ProductImageId)">
+                                                                            <img src="../AdminStyle/images/delete image.png" style=" width:20px;height:20px;" alt="" />
+                                                                        </a>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-sm-8 col-md-8" ng-show="showadd" style="padding-bottom:10px;">
+                                                    <button type="button" class="btn btn-primary" ng-style="myObj" placeholder="Add New Variance" ng-click="Addcount()">Add New Variance</button>
+                                                </div>
+                                                <div class="col s12 ">
+                                                    <div class="col-lg-4 col-sm-6 col-md-4">
+                                                        <div class="form-group">
+                                                            <input class="form-control prodinfo titletext" id="Title" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Title" placeholder="Title" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-6 col-md-3">
+                                                        <div class="form-group ">
+                                                            Wholesale?
+                                                            <div class="form-check form-check-inline  checkbox-inline">
+                                                                <input type="radio" name="wholsale" class="filled-in mobwholesale" ng-change="selecttype()" id="filled-in-box-2 wholesale" ng-model="ProductDetail.wholesaleVariance" style="margin:-8px 0 0;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-6 col-md-3">
+                                                        <div class="form-group ">
+                                                            Retail?
+                                                            <div class="form-check form-check-inline  checkbox-inline">
+                                                                <input type="radio" class="filled-in mobRetails" name="wholsale" id="filled-in-box-2 retails" ng-change="selecttype()" ng-model="ProductDetail.RetailVariance" style="margin:-8px 0 0;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-6 col-md-3" ng-show="havecolor">
+                                                        <div class="form-group ">
+                                                            Have Color?
+                                                            <label>Yes</label>
+                                                            <div class="form-check form-check-inline  checkbox-inline">
+                                                                <input type="radio" ng-init="ProductDetail.colorcode=false" class="filled-in mobcolorcode" id="filled-in-box-2" name="mobcolor" ng-change="rdoYesChangebox()" ng-model="ProductDetail.colorcode" style="margin:-4px 0 0;">
+
+                                                            </div>
+                                                            <label style="padding-left:20px">No</label>
+                                                            <div class="form-check form-check-inline  checkbox-inline">
+                                                                <input type="radio" ng-init="ProductDetail.colorcode1=false" class="filled-in mobcolorcodeno" id="filled-in-box-2" name="mobcolor" ng-change="rdoYesChangebox()" ng-model="ProductDetail.colorcode1" style="margin:-4px 0 0;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group pricetitle select1">
+                                                <div class="col-lg-12">
+                                                    <div class="col-lg-6 col-sm-6 col-md-6">
+                                                        <label ng-show="ShowVarianseCount">Variance Count</label>
+                                                        <input type="number" min="0" max="100" class="form-control prodinfo titletext" id="integer" style="width:295px;padding: 10px;" placeholder="Variance Count" ng-show="ShowVarianseCount" ng-model="ProductDetail.VarianceCount" ng-blur="ShowVariants(ProductDetail.VarianceCount)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div style="padding-bottom:30px; " id="mobvariant1" ng-bind-html="mobVariant"></div>
+                                                <div style="padding-bottom:30px;" id="variant1" ng-bind-html="Variant"></div>
+                                                <div style="padding-bottom:30px;display:none;">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding:10px">
+                                                        <div class="form-group">
+                                                            <input class="form-control new2" id="Description" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Description" placeholder="Description 1" style="width:637px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div style="padding-bottom:30px;display:none;">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding:10px">
+                                                        <div class="form-group">
+                                                            <input class="form-control new2" id="Description2" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Description2" placeholder="Description 2" style="width:637px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div style="padding-bottom:30px;display:none;">
+                                                    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding:10px">
+                                                        <div class="form-group">
+                                                            <input class="form-control new2" id="Description3" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Description3" placeholder="Description 3" style="width:637px;" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Product Description <i class="fa fa-newspaper-o" aria-hidden="true"></i></b></label>
+                                                </div>
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                                        <input class="form-control mbprod" id="Text1" placeholder="Description 1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails1" />
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                                        <input class="form-control mbprod" id="Text1" placeholder="Description 2" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails2" />
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 3" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails3" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 4" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails4" />
+
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 5" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails5" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 6" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails6" />
+
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 7" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails7" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 8" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails8" />
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 9" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails9" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control mbprod" placeholder="Description 10" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails10" />
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Product Specification <i class="fa fa-cog" aria-hidden="true"></i> </b></label>
+                                                </div>
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 1" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures1" />
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 2" id="Text2" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures2" />
+
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 3" id="Text3" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures3" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 4" id="Text4" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures4" />
+
+
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 5" id="Text5" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures5" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 6" id="Text6" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures6" />
+
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 7" id="Text7" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures7" />
+
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 8" id="Text8" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures8" />
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12" style="padding-left:20px;">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 9" id="Text9" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures9" />
+
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                        <input class="form-control prodfeature1" placeholder="Specification 10" id="Text10" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures10" />
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div ng-show="Show">
+                                            <input type="checkbox" ng-init="ProductDetail.IsActive=true" class="filled-in" id="filled-in-box-1" ng-model="ProductDetail.IsActive">
+                                            <label for="filled-in-box-1">IsActive</label>
+                                        </div>
+                                        <div class="row ">
+                                            <div class="btnpad" style="padding-bottom:5px;">
+                                                <button type="submit" class="btn btn-default" ng-show="ShowSave" id="productsave" ng-style="myObj" ng-click="Save()" ng-disabled="IsDisabled"><img src="../AdminStyle/images/save.png" height="18" width="18" />&nbsp; Save </button>
+                                                <button type="button" class="btn btn-default mobile-hide" ng-show="ShowUpdate" ng-style="myObj" id="productupdate" ng-click="Update()"><img src="../AdminStyle/images/update_tag_.png" height="18" width="18" /> &nbsp;Update</button>
+                                                <button type="button" class="btn btn-default desktop-hide" ng-show="ShowUpdate" ng-style="myObj" id="productupdate" ng-click="Updateformobile()"><img src="../AdminStyle/images/update_tag_.png" height="18" width="18" /> &nbsp;Update</button>
+                                                <button type="button" class="btn btn-default" ng-style="myObj" ng-click="Clear()"><img src="../AdminStyle/images/erase.png" height="18" width="18" /> &nbsp;Clear </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <br />
+                                        <div align="left" style="padding-left:10px">
+
+                                            <span style="color:red !important;">{{msg}}</span><span style="color:green !important;">{{msgStatus}}</span><br />
+                                            <span ng-model="ProductDetail.HiddenProductId" ng-show="Showhide"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="forms mobile-hide">
+                            <div class="form-two widget-shadow" style="border-radius:10px;">
+                                <div class="row" style="padding-top:35px;padding-left:25px;">
+                                    <a href="" data-toggle="tooltip" class="tool-tips" title="Manage Your Product Details Here!"><h4 style="font-size:20px;color:#663398 ;"> Product</h4></a>
+                                </div>
+                                <div class="form-body" data-example-id="simple-form-inline" style="padding-bottom:20px;">
+                                    <form class="form-inline">
+                                        <div class="form-group" style="width:100%;padding-bottom:20px;padding-left:10px;">
+                                            <div>
+                                                <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Select Items <i class="fa fa-check" aria-hidden="true"></i></b></label>
+                                            </div>
+                                            <div class="col s12">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Category</label><br />
+                                                        <input id="CategoryId" type="text" ng-model="ProductDetail.CategoryId" list="category" placeholder="Select Category" ng-change="ddlCatChange(ProductDetail.CategoryId)" class="form-control prodinfo" style="width:199px;" />
+                                                        <datalist id="category">
+                                                            <option value="" disabled selected>Select Category</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.CategoryId==cat.CategoryId" ng-repeat="cat in CategoryDetails" data-value="{{cat.CategoryId}}">{{cat.CategoyName}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Sub Category</label><br />
+                                                        <input id="" type="text" ng-model="ProductDetail.SubCategoryId" list="SubCategoryId" placeholder="Select SubCategory" class="form-control prodinfo" style="width:199px;" />
+                                                        <datalist id="SubCategoryId">
+                                                            <option value="" disabled selected>Select SubCategory</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.SubCategoryId == subcat.SubCategoryId" ng-repeat="subcat in SubCategoryDetails" data-value="{{subcat.SubCategoryId}}">{{subcat.SubCategoryName}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Brand Type</label><br />
+                                                        <input id="" type="text" ng-model="ProductDetail.BrandTypeId" list="BrandType" placeholder="Select Brand Type" class="form-control prodinfo" style="width:199px;" />
+                                                        <datalist id="BrandType">
+                                                            <option value="" disabled selected>Select Brand</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.BrandTypeId==bt.BrandTypeId" ng-repeat="bt in BrandType" data-value="{{bt.BrandTypeId}}"> {{bt.BrandName}}</option>
+                                                        </datalist>
+                                                    </div>
+
+                                                   
+
+                                                    <!--<div class="col-lg-4 col-md-4 col-sm-4 select1" ng-show="ShowCouponDetailsId">
+                                                        <label>Coupon Details</label><br />
+                                                        <div class="form-group">
+                                                            <select id="CouponDetailsId" ng-model="ProductDetail.CouponId" class="form-control prodinfo" style="width:199px;">
+                                                                <option value="" disabled selected>Select CouponDetails</option>
+                                                                <option ng-selected="ProductDetail.CouponId==coupon.CouponId" ng-repeat="coupon in CouponDetails" value="{{coupon.CouponId}}"> {{coupon.Code}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>-->
+
+
+                                                    <!--<div class="form-group" ng-show="ShowDiscountDetailsId">
+                                                        <label>Discount</label><br />
+                                                        <input id="" type="text" ng-model="ProductDetail.DiscountDetailsid" list="DiscountDetails" placeholder="Select Discount" class="form-control prodinfo" style="width:199px;" />
+                                                        <datalist id="DiscountDetails">
+                                                            <option value="" disabled selected>Select Discount</option>
+                                                            <option ng-selected="ProductDetail.DiscountDetailsId==discount.DiscountDetailsId" ng-repeat="discount in DiscountDetails" data-value="{{discount.DiscountDetailsId}}">{{discount.Description}}</option>
+                                                        </datalist>
+                                                    </div>-->
+                                                    <div class="form-group">
+                                                        <label>Product Type</label><br />
+                                                        <input id="" type="text" ng-model="ProductDetail.ProductType" list="ProductDetailsType" placeholder="Select Product" class="form-control prodinfo" style="width:199px;" />
+                                                        <datalist id="ProductDetailsType">
+                                                            <option>Food</option>
+                                                            <option>Non Food</option>
+                                                            <option>Frozen</option>
+                                                        </datalist>
+                                                    </div>
+
+                                                    <div class="form-group" ng-show="ShowCouponDetailsId">
+                                                        <label>Coupon</label><br />
+                                                        <input type="text" id="CouponDetailsId" ng-model="ProductDetail.CouponId" list="CouponId" placeholder="Select Coupon" class="form-control prodinfo" style="width:199px;" />
+                                                        <datalist id="CouponId">
+                                                            <option value="" disabled selected>Select Coupon</option>
+                                                            <option style="text-transform:uppercase;" ng-selected="ProductDetail.CouponId==coupon.CouponId" ng-repeat="coupon in CouponDetails" data-value="{{coupon.CouponId}}"> {{coupon.Code}}</option>
+                                                        </datalist>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div style="padding-top:25px!important;">
+                                                <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Product Info <i class="fa fa-info-circle" aria-hidden="true"></i></b></label>
+                                            </div>
+                                            <div style="padding-bottom:30px; ">
+                                                <div class="form-group">
+                                                    <div style="padding-top:25px!important;">
+                                                        <label for="Title" style="font-size:15px;padding-bottom:5px;"><b>Product Image </b></label>
+                                                    </div>
+                                                    <div class="row tz-file-upload" style="padding-bottom:20px;">
+                                                        <div class="file-field input-field">
+                                                            <div class="tz-up-btn" style="height:35px;line-height:25px;">
+                                                                <input type="file" name="FileUpload1" id="FileUpload1" multiple ng-model="ProductDetail.Filetexts" ng onchange="angular.element(this).scope().setFile(this)" style="position: unset;   opacity: unset;font-size:16px;" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row" style="padding-top:10px;">
+                                                            <div class="col-lg-8">
+                                                                <h6 style="color:#663398; "><i>Picture Upload | image size upto 1 MB | PNG,JPEG,GIF Formats | Product Image Size : 240px x 150px</i></h6><br />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                   
+                                                </div>
+                                                <div class="form-group" ng-show="imgEditTime">
+                                                    <div class="row" style="padding-left:20px;">
+                                                        <div class="col-lg-3 col-sm-4 col-md-4 col-xs-6" ng-repeat="opi in resultOPImage">
+                                                            <img width="150" src="{{opi.ImageURL}}" alt="Product image" />
+                                                            <div style="text-align:center;">
+                                                                <span>
+                                                                    <a ng-click="Delete(opi.ProductImageId)">
+                                                                        <img src="../AdminStyle/images/delete image.png" style=" width:20px;height:20px;" alt="" />
+                                                                    </a>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12" ng-show="showadd" style="padding-bottom:10px;">
+                                                <button type="button" class="btn btn-primary" ng-style="myObj" placeholder="Add New Variance" ng-click="Addcount()">Add New Variance</button>
+                                            </div>
+                                            <div class="s12">
+                                                <div class="col-lg-3 form-group">
+                                                    <input class="form-control new1" id="Title" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Title" placeholder="Title" style="width:70%;" />
+                                                </div>
+                                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                                    <div class="form-group ">
+                                                        Wholesale?
+                                                        <div class="form-check form-check-inline  checkbox-inline">
+                                                            <input type="radio" name="wholsale" class="filled-in wholesale" ng-change="selecttype()" id="filled-in-box-2 wholesale" ng-model="ProductDetail.wholesaleVariance" style="margin:-8px 0 0;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                                    <div class="form-group ">
+                                                        Retail?
+                                                        <div class="form-check form-check-inline  checkbox-inline">
+                                                            <input type="radio" class="filled-in retails" name="wholsale" id="filled-in-box-2 retails" ng-change="selecttype()" ng-model="ProductDetail.RetailVariance" style="margin:-8px 0 0;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 col-sm-6 col-md-3" ng-show="havecolor">
+                                                    <div class="form-group ">
+                                                        Have Color?
+
+                                                        <div class="form-check checkbox-inline">
+                                                            <label>Yes</label>
+                                                            <input type="radio" ng-init="ProductDetail.colorcode=false" name="color" class="filled-in colorcode" id="filled-in-box-2" ng-change="rdoYesChangebox()" ng-model="ProductDetail.colorcode" style="margin:-4px 0 0;">
+
+                                                            <label style="padding-left:20px">No</label>
+                                                            <input type="radio" ng-init="ProductDetail.colorcode1=false" name="color" class="filled-in colorcodeno" id="filled-in-box-2" ng-change="rdoYesChangebox()" ng-model="ProductDetail.colorcode1" style="margin:-4px 0 0;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3 form-group" style="padding:10px">
+                                                    <label ng-show="ShowVarianseCount">Variance Count</label>
+                                                    <input type="number" min="0" max="100" class="form-control prodinfo titletext" id="integer" style="width:200px;padding: 10px;" placeholder="Variance Count" ng-show="ShowVarianseCount" ng-model="ProductDetail.VarianceCount" ng-blur="ShowVariants(ProductDetail.VarianceCount)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div style="padding-bottom:30px;" id="variant1" ng-bind-html="Variant"></div>
+                                        <div style="padding-bottom:30px;display:none;">
+                                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding:10px">
+                                                <div class="form-group">
+                                                    <input class="form-control new2" id="Description" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Description" placeholder="Description 1" style="width:637px;" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="padding-bottom:30px;display:none;">
+                                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding:10px">
+                                                <div class="form-group">
+                                                    <input class="form-control new2" id="Description2" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Description2" placeholder="Description 2" style="width:637px;" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div style="padding-bottom:30px;display:none;">
+                                            <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" style="padding:10px">
+                                                <div class="form-group">
+                                                    <input class="form-control new2" id="Description3" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProductDetail.Description3" placeholder="Description 3" style="width:637px;" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Product Description <i class="fa fa-newspaper-o" aria-hidden="true"></i></b></label>
+                                        </div>
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <input class="form-control mbprod" id="Text1" placeholder="Description 1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails1" />
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <input class="form-control mbprod" id="Text1" placeholder="Description 2" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails2" />
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 3" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails3" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 4" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails4" />
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 5" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails5" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 6" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails6" />
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 7" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails7" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 8" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails8" />
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 9" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails9" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control mbprod" placeholder="Description 10" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdTecDetails.ProductTecDetails10" />
+
+
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="Title" style="font-size:17px;padding-bottom:20px;"><b>Product Specification <i class="fa fa-cog" aria-hidden="true"></i> </b></label>
+                                        </div>
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 1" id="Text1" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures1" />
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 2" id="Text2" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures2" />
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 3" id="Text3" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures3" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 4" id="Text4" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures4" />
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 5" id="Text5" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures5" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 6" id="Text6" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures6" />
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 7" id="Text7" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures7" />
+
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 8" id="Text8" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures8" />
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-lg-12" style="padding-left:20px;">
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 9" id="Text9" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures9" />
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+
+                                                <input class="form-control prodfeature1" placeholder="Specification 10" id="Text10" type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="ProdFeatures.ProductFeatures10" />
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div style="padding-bottom:20px; " ng-show="Show">
+                                            <div class="form-group">
+                                                <span>Inserted By : {{InsertedBy}}</span>
+                                                <span>Inserted Date : {{InsertedDate}}</span>
+                                            </div>
+                                            <div class="form-group" ng-show="Modified">
+                                                <span>Modified By : {{ModifiedName}}</span>
+                                                <span>Modified Date : {{UpdatedDate}}</span>
+                                            </div>
+                                        </div>
+
+                                        <div ng-show="Show" style="text-align:right; padding-right:20%;">
+                                            <input type="checkbox" ng-init="ProductDetail.IsActive=true" class="filled-in" id="filled-in-box-1" ng-model="ProductDetail.IsActive">
+                                            <label for="filled-in-box-1">Active</label>
+                                        </div>
+                                        <div ng-show="saveloade">
+                                            <div class="row">
+                                                <div class=" col-lg-4 col-sm-4 col-md-4 col-sm-4">
+                                                    <img src="../images/New folder/loader.gif" class="center-block" alt="menu" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="accordion11" id="scrolltable11"><span id="showplus11">+ Product Import </span> <span id="showminus11"> - Product Import </span> </button>
+                                        <div class="panel11" id="empheight" style="padding-bottom:20px;">
+                                            <div class="col-md-12">
+                                                <div id="page_1">
+                                                    <div class="row">
+                                                    </div>
+                                                    <br />
+                                                    <div class="col-lg-4 col-xs-12" style="padding-top:30px;">
+                                                        <input type="file" id="ProductFile" ng-model="Data.Filetexts" name="file" class="form-control"
+                                                               onchange="angular.element(this).scope().loadFile(this.files)" />
+                                                    </div>
+                                                    <div class="col-lg-3 col-xs-12" style="padding-top:30px;">
+                                                        <button ng-click="handleFile()" class="btn btn-md btn-primary" style="background-color:#663398;">&nbsp; Import</button>
+                                                    </div>
+
+                                                    <div class="col-lg-3 col-xs-12" style="padding-top:30px;">
+                                                        <div class="form-group">
+                                                            <button ng-click="Import()" id="step_4" class="btn btn-md btn-primary" style="background-color:#663398;">&nbsp; Template</button>
+                                                        </div>
+                                                    </div>
+                                                    <table id="exampleimport" class="table table-bordered invoice-custom" style="display:none;">
+                                                        <thead class="thead-bold">
+                                                            <tr style="background-color: #BFD0D8 !important;">
+                                                                <th class="th-bold">
+                                                                    CategoryName
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    SubcategoryName
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    BrandType
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    ProductType
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    ProductTitle
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    Varianttype
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    MRPPrice
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    SellingPrice
+                                                                </th>
+                                                                <th class="th-bold">
+                                                                    Description
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div style="float:right;">
+                                                <button type="submit" class="btn btn-default" ng-show="ShowSave" id="productsavedes" ng-style="myObj" ng-click="Save()"> <img src="../AdminStyle/images/save.png" width="24" alt="menu" />&nbsp;&nbsp;Save</button>
+                                                <button type="button" class="btn btn-default" ng-show="ShowUpdate" id="productupdatedes" ng-style="myObj" ng-click="Update()"> <img src="../AdminStyle/images/update_tag_.png" width="24" alt="menu" />&nbsp;&nbsp;Update</button>
+                                                <button type="button" class="btn btn-default" ng-style="myObj" ng-click="Clear()"> <img src="../AdminStyle/images/erase.png" width="24" alt="menu" />&nbsp;&nbsp;Clear</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <br />
+                                                <div align="left" style="padding-left:10px">
+                                                    <span style="color:red !important;">{{msg}}</span><span style="color:green !important;">{{msgStatus}}</span><br />
+                                                    <span ng-model="ProductDetail.HiddenProductId" ng-show="Showhide"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table mobile-hide">
+                        <div class="bs-example widget-shadow" data-example-id="hoverable-table" style="border-top-left-radius:10px;border-top-right-radius:10px;">
+                            <div class="row" style="padding:30px 5px;">
+                                <div class="col s12">
+                                    <div class="col-lg-1">
+                                        <h4 style="font-size:20px;color:#663398 ;">Product</h4>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-horizontal">
+                                            <input type="text" class="form-control" name="Search" ng-model="ProductDetail.Search" placeholder="Search" id="Search" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="form-horizontal">
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="Search()"><img src="../AdminStyle/images/search.png" style="width:15px;" />&nbsp;Search</button>
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="exportData()"><img src="../AdminStyle/images/ms_excel.png" style="width:15px;" />&nbsp;Export</button>
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="InActiveclick()" ng-show="Inactive"><img src="../AdminStyle/images/Close2.png" style="width:15px;" />&nbsp; Show InActive</button>
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="Activeclick()" ng-show="Active"><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Active</button>
+                                            <!--<button type="button" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="Activeclick()" ><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Product With Image</button>
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="Activeclick()" ><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Non Image Product</button>-->
+                                            <button type="button" ng-show="ShowZeroPrice" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="GetProductDetailsForZeroPrice()"><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Zero Product Price</button>
+                                            <button type="button" ng-show="ShowNonZeroPrice" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="ShowNonZeroPriceBtn()"><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Non Zero Product Price</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center">S.No</th>
+                                        <th style="text-align:center">Image</th>
+                                        <th style="text-align:center;font-weight:bold;" ng-click='sortColumn("Title")' ng-class='sortClass("Title")'>Title</th>
+                                        <!--<th style="text-align:center;font-weight:bold;" ng-click='sortColumn("Description")' ng-class='sortClass("Description")'>Description</th>-->
+                                        <th style="text-align:center">Price</th>
+                                        <th style="text-align:center">Stock Count</th>
+                                        <th style="text-align:center">Variance Active</th>
+                                        <th style="text-align:center">Status</th>
+                                        <th style="text-align:center">Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr dir-paginate="prod in allItems |itemsPerPage:pageSize">
+                                        <td style="text-align:center">{{prod.sno}}</td>
+                                        <td style="text-align:center">
+                                            <img ng-repeat="ig in prod.Image" src={{ig.ImageURL}} width="50" height="50" alt="Product image" />
+                                        </td>
+                                        <td style="text-align:center;text-transform: capitalize">{{prod.Title}}</td>
+                                        <!--<td style="text-align:center">{{prod.Description}}</td>-->
+                                        <td style="text-align:center">
+                                            <table>
+                                                <tr style="text-align:center" ng-repeat="vari in prod.ProdVariance">
+                                                    <td>{{vari.VarianceType}}-</td>
+                                                    <td style="text-decoration:line-through;">&#x20B9; {{vari.VariancePrice}}-</td>
+                                                    <td>&#x20B9; {{vari.sellingPrice}}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <table>
+                                                <tr ng-repeat="Stock in prod.StockCount">
+                                                    <td>{{Stock.StockCount}}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <table>
+                                                <tr ng-repeat="vari in prod.ProdVariance">
+                                                    <td><input style="text-align:center" type="checkbox" id="VarianceA" ng-checked="vari.VarianceActive" ng-click="VarianceActive(vari.VarianceType,vari.VarianceActive,vari.ProductVarianceId)" /></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+
+
+
+                                        <td style="text-align:center"><img src='{{prod.IsActive}}' style=" width:23px;" alt="menu" /></td>
+                                        <td style="text-align:center"> <span><a ng-click="Edit(prod.ProductId)"><img src="../AdminStyle/images/Icons/edit24px.png" style="width:20px;height:20px;" alt="menu" /></a> </span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <table id="example1" class="table table-bordered invoice-custom example1" style="display:none;">
+                        <thead class="thead-bold">
+                            <tr style="background-color: #BFD0D8 !important;">
+                                <th class="th-bold">S.No</th>
+                                <th class="th-bold">title</th>
+                                <!--<th class="th-bold">Description</th>-->
+                                <th class="th-bold">Price</th>
+                                <th class="th-bold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="prod in allItems">
+                                <td>{{prod.sno}}</td>
+                                <td>{{prod.Title}}</td>
+                                <!--<td>{{prod.Description}}</td>-->
+                                <td>
+                                    <table>
+                                        <tr ng-repeat="vari in prod.ProdVariance">
+                                            <td>{{vari.VarianceType}}-</td>
+                                            <td style="text-decoration:line-through;"> {{vari.VariancePrice}}-</td>
+                                            <td> {{vari.sellingPrice}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>{{prod.IsActive1}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="table desktop-hide">
+                        <div class="bs-example widget-shadow" data-example-id="hoverable-table" style="border-top-left-radius:10px;border-top-right-radius:10px;">
+                            <div class="row" style="padding:30px 10px !important;">
+                                <h4 style="padding-left:0px;color:#663398;"> Product</h4>
+                                <div class="col-lg-5" style="padding-right:15px;">
+                                    <div class="form-horizontal tblbutton">
+                                        <div class="input-group" style="padding-right:10px;">
+                                            <input type="text" class="form-control" name="Search" ng-model="ProductDetail.Search" placeholder="Search" id="Search" />
+                                            <div class="input-group-addon" ng-style="myObj" style="background-color:#f2b33f;">
+                                                <span class="fa fa-search" ng-click="Search()" style="color:white;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-horizontal">
+                                        <div class="tblbutton">
+                                            <button type="button" class="btn btn-default catexport" style="background-color:#f2b33f" ng-style="myObj" ng-click="exportData()"><img src="../AdminStyle/images/ms_excel.png" style="width:15px;" alt="menu" />&nbsp;Export</button>
+                                            <button type="button" class="btn btn-default catbtn" style="background-color:#f2b33f" ng-style="myObj" ng-click="InActiveclick()" ng-show="Inactive"><img src="../AdminStyle/images/Close2.png" style="width:15px;" alt="menu" />&nbsp; Show InActive</button>
+                                            <button type="button" class="btn btn-default catbtn" style="background-color:#f2b33f" ng-style="myObj" ng-click="Activeclick()" ng-show="Active"><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" alt="menu" />&nbsp;Show Active</button>
+                                            <button type="button" ng-show="ShowZeroPriceMob" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="GetProductDetailsForZeroPrice()"><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Zero Product Price</button>
+                                            <button type="button" ng-show="ShowNonZeroPriceMob" class="btn btn-default" style="background-color:#f2b33f" ng-style="myObj" ng-click="ShowNonZeroPriceBtn()"><img src="../AdminStyle/images/active1 (1).png" style="width:15px;" />&nbsp;Show Non Zero Product Price</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-bordered mobile-datatables7" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th ng-click='sortColumn("Title")' ng-class='sortClass("Title")'>Title</th>
+                                        <th style="display:none"></th>
+                                        <th>Stock Count</th>
+                                        <th>Status</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr dir-paginate="prod in allItems |itemsPerPage:pageSize" style="border-bottom:2px solid red">
+                                        <td>
+                                            <img ng-repeat="ig in prod.Image" src={{ig.ImageURL}} width="40" height="40" alt="Product image" />
+                                        </td>
+                                        <td style="font-weight:400;text-transform: capitalize">{{prod.Title}}</td>
+                                        <td style="font-weight:400;">
+                                            <table>
+                                                <tr ng-repeat="vari in prod.ProdVariance">
+                                                    <td class="hid">{{vari.VarianceType}}-</td>
+                                                    <td class="hid"><span style="text-decoration:line-through;">  &#x20B9; {{vari.VariancePrice}}- </span>&#x20B9; {{vari.sellingPrice}}</td>
+                                                    <td class="hid"><input type="checkbox" id="VarianceA" ng-checked="vari.VarianceActive" ng-click="VarianceActive(vari.VarianceType,vari.VarianceActive,vari.ProductVarianceId)" /></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tr ng-repeat="Stock in prod.StockCount">
+                                                    <td class="hid">{{Stock.StockCount}}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td><img src="{{prod.IsActive}}" style="width:23px" alt="menu" /></td>
+                                        <td style="font-weight:400;"><span><a ng-click="Edit(prod.ProductId);"><img src="../AdminStyle/images/Icons/edit24px.png" style="width:20px;height:20px;" alt="menu" /></a></span> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="mobile-hide">
+                        <custom-dir-pagination-controls boundary-links="true"
+                                                        load-data-set="loadDataSet"
+                                                        is-page-loaded="isPageLoaded"
+                                                        on-page-change="pageChangeHandler(newPageNumber)"
+                                                        template-url="../dirPagination.tpl.html"></custom-dir-pagination-controls>
+
+                        <dir-pagination-controls style="position:absolute;right:7%" max-size="10"
+                                                 direction-links="true"
+                                                 on-page-change="pageChangeHandler(newPageNumber)"
+                                                 boundary-links="true">
+                        </dir-pagination-controls>
+
+                        <span style="">
+                            <!--<input type="text" ng-model="First" disabled style="border:none;width:6%;text-align:right" /> - <input type="text" ng-model="Last" disabled style="border:none;width:6%" />-->
+                            <input type="number" min="1" max="100" ng-model="pageSize">
+                            Total Count
+                            <!--{{searchtxt.length}}
+                            <input type="text" ng-model=" searchtxt.length" />-->
+                            <input type="text" ng-model="Totalcount" disabled style="border:none;width:6%" />
+                        </span>
+                    </div>
+                   
+                    <div class="desktop-hide">
+                        <div class="row">
+                            <custom-dir-pagination-controls boundary-links="true"
+                                                            load-data-set="loadDataSet"
+                                                            is-page-loaded="isPageLoaded"
+                                                            on-page-change="pageChangeHandler(newPageNumber)"
+                                                            template-url="../dirPagination.tpl.html"></custom-dir-pagination-controls>
+
+                            <dir-pagination-controls max-size="10"
+                                                     direction-links="true"
+                                                     on-page-change="pageChangeHandler(newPageNumber)"
+                                                     boundary-links="true">
+                            </dir-pagination-controls>
+                        </div>
+                        <span class="row">
+
+                            <input type="number" min="1" max="100" ng-model="pageSize">
+                            Total Count
+                            <input type="text" ng-model="Totalcount" disabled style="border:none;width:6%;" />
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer ">
+
+            <div class="col-lg-12 form-inline">
+                <span>
+                    &copy; 20 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                        <img src="images/Powered by Cartyogi-1.png" height="25" />
+                    </a>
+                </span>
+
+            </div>
+        </div>
+    </div>
+    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+    <script>
+        $('.sidebar-menu').SidebarNav()
+    </script>
+    <script src="js/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+
+
+    </script>
+    <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script src="../js/AdminStyle/js/Chart.bundle.js"></script>
+    <script src="../js/AdminStyle/js/utils.js"></script>
+    <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+    <script src="../js/AdminStyle/js/scripts.js"></script>
+    <script src="../js/AdminStyle/js/chartinator.js"></script>
+    <script src="../js/AdminStyle/js/classie.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+
+</div>
+
+
+
+
+

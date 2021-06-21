@@ -1,0 +1,639 @@
+﻿<div>
+    <!-- Bootstrap Core CSS -->
+    <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+    <!-- font-awesome icons CSS -->
+    <!--<link href="css/font-awesome.css" rel="stylesheet">-->
+    <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+    <!-- //font-awesome icons CSS -->
+    <!-- side nav css file -->
+    <!--<link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />-->
+    <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+    <!-- side nav css file -->
+    <!-- js-->
+    <!--<script src="js/jquery-1.11.1.min.js"></script>-->
+    <script src="../AdminStyle/js/jquery-1.11.1.min.js"></script>
+    <!--<script src="js/modernizr.custom.js"></script>-->
+    <script src="../AdminStyle/js/modernizr.custom.js"></script>
+    <!--webfonts-->
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <!--//webfonts-->
+    <!-- Metis Menu -->
+    <!--<script src="js/metisMenu.min.js"></script>-->
+    <script src="../AdminStyle/js/metisMenu.min.js"></script>
+    <!--<script src="js/custom.js"></script>-->
+    <script src="../AdminStyle/js/custom.js"></script>
+    <!--<link href="css/custom.css" rel="stylesheet">-->
+    <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+    <!--//Metis Menu -->
+    <style>
+
+
+
+
+        #myLinks {
+            display: none;
+            background-color: #222D32;
+            color: white !important;
+            padding-top: 3.8em;
+            padding-left: 15px;
+        }
+
+            #myLinks a {
+                color: white !important;
+            }
+
+
+        .col-lg-5, .col-lg-12 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 10px !important;
+            padding-left: 0px !important;
+        }
+
+        .forms button.btn.btn-default {
+            background-color: #F2B33F;
+            color: #fff;
+            padding: .5em 1.5em;
+            border: none;
+            outline: none;
+            border-radius: inherit;
+        }
+    </style>
+
+</div>
+<div class="cbp-spmenu-push">
+    <div class="main-content">
+        <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+            <aside class="sidebar-left">
+                <nav class="navbar navbar-inverse">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="">
+                            <img src="{{WebsiteLogo}}" width="190px" height="70px" />
+                        </a>
+                    </div>
+                    <div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="sidebar-menu">
+                                <li style="padding-top:30px;"></li>
+                                <li>
+                                    <a href="#!DashBoard" style="height:44px;">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/dashboard-icon.png" width="20px" height="20px" />
+                                        </i> <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!SalOrder" style="height:44px;">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/Icons/Sales_Order.png" style="width:20px;height:20px;" />
+                                        </i> <span>Sales Orders</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!DeliveryConfirmation" style="height:44px;">
+                                        <i class="fa">
+                                            <img src="../AdminStyle/images/Icons/courier-details icon.png" style="width:20px;height:20px;" />
+                                        </i> <span>Delivery Confirmation</span>
+                                    </a>
+                                </li>
+                                <li class="treeview" ng-click="ShowHideSubMenu('menuShow','SettingsmenuShow','SettingsmenuShow2')">
+                                    <a href="">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/page-icon.png" width="20px" height="20px" />
+                                        </i>
+                                        <span>Pages</span>
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </a>
+                                    <ul class="treeview-menu" id="menuShow">
+                                        <li><a href="#!ProductDetails"><i class="fa fa-angle-right"></i> Product Details</a></li>
+                                        <li><a href="#!Stock"><i class="fa fa-angle-right"></i> Product Stock</a></li>
+                                        <li><a href="#!PaymentType"><i class="fa fa-angle-right"></i>Payment Type</a></li>
+                                        <li><a href="#!Category"><i class="fa fa-angle-right"></i> Category</a></li>
+                                        <li><a href="#!Subcat"><i class="fa fa-angle-right"></i> SubCategory</a></li>
+                                        <li><a href="#!TaxDetails"><i class="fa fa-angle-right"></i> Tax Details</a></li>
+                                        <li id="Discount" ng-show="showDiscount"><a href="#!Discount"><i class="fa fa-angle-right"></i> Discount Details</a></li>
+                                        <li id="Coupon" ng-show="showCoupon"><a href="#!CouponDetails"><i class="fa fa-angle-right"></i> Coupon Code</a></li>
+                                        <li><a href="#!AddDetail"><i class="fa fa-angle-right"></i> Add Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="treeview" ng-click="ShowHideSubMenu('SettingsmenuShow','menuShow','SettingsmenuShow2')">
+                                    <a href="">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/settings.png" width="20px" height="20px" />
+                                        </i>
+                                        <span>Settings</span>
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </a>
+                                    <ul class="treeview-menu" id="SettingsmenuShow">
+                                        <li><a href="#!Company"><i class="fa fa-angle-right"></i> Company Details</a></li>
+                                        <li><a href="#!SliderAdmin"><i class="fa fa-angle-right"></i> Home Slider</a></li>
+                                        <li><a href="#!TodayDealAdmin"><i class="fa fa-angle-right"></i> Today Deal</a></li>
+                                        <li><a href="#!MessageAlertAdmin"><i class="fa fa-angle-right"></i> Message Alert</a></li>
+                                        <li><a href="#!Register"><i class="fa fa-angle-right"></i> App Register</a></li>
+                                        <li ng-show="AdminVariance"><a href="#!ProductVariance"><i class="fa fa-angle-right"></i>Product variance Count </a></li>
+                                        <li><a href="#!TermsAndConditionInvoive"><i class="fa fa-angle-right"></i> Terms & Condition Invoice</a></li>
+                                        <li><a href="#!TermsAndCondition"><i class="fa fa-angle-right"></i> Terms & Condition Config</a></li>
+                                        <li><a href="#!AboutUsAdmin"><i class="fa fa-angle-right"></i> About Us Config</a></li>
+                                        <li><a href="#!ContactUsAdmin"><i class="fa fa-angle-right"></i> Contact Us Config</a></li>
+                                        <li><a href="#!CopyRights"><i class="fa fa-angle-right"></i> Copy Rights Config</a></li>
+                                        <li><a href="#!Settings"><i class="fa fa-angle-right"></i> Site Settings Config</a></li>
+                                        <li><a href="#!SocliaMedia"><i class="fa fa-angle-right"></i> Social Media Config</a></li>
+                                        <li><a href="#!ProductConfiguration"><i class="fa fa-angle-right"></i> Product Configuration</a></li>
+                                    </ul>
+                                </li>
+                                <li class="treeview" ng-click="ShowHideSubMenu('SettingsmenuShow2','menuShow','SettingsmenuShow')">
+                                    <a href="">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/Icons/salesreport-icon.png" style="width:20px;height:20px;" />
+                                        </i>
+                                        <span>Sales</span>
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </a>
+                                    <ul class="treeview-menu" id="SettingsmenuShow2">
+                                        <li><a href="#!SalesReportDetail"><i class="fa fa-angle-right"></i> Sales Report</a></li>
+                                        <li><a href="#!SalesReport"><i class="fa fa-angle-right"></i> Order Slip</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#!Widgets">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/widget-icon.png" width="20px" height="20px" />
+                                        </i> <span>Analytics</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="LogoutClick()">
+                                        <i class="fa">
+                                            <img src="../AdminStyle/images/navbarIcon/logout.png" width="20px" height="20px" />
+                                        </i> <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Mobile View Side Bar-->
+                    <div class="desktop-hide" id="myLinks1">
+                        <div class="sb2-13 cus-bg-color1" id="bs-example-navbar-collapse-1">
+
+                            <ul class="mob-menu-icon  collapsible" data-collapsible="accordion">
+                                <li class="header">MAIN NAVIGATION</li>
+                                <li>
+                                    <a href="#!DashBoard" style="height:44px;">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/dashboard-icon.png" width="20px" height="20px" />
+                                        </i> <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!SalOrder" style="height:44px;">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/Icons/Sales_Order.png" style="width:20px;height:20px;" />
+                                        </i> <span>Sales Orders</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!DeliveryConfirmation" style="height:44px;">
+                                        <i class="fa">
+                                            <img src="../AdminStyle/images/Icons/courier-details icon.png" style="width:20px;height:20px;" />
+                                        </i> <span>Delivery Confirmation</span>
+                                    </a>
+                                </li>
+                                <li class="treeview" ng-click="ShowHideSubMenu('menuShow')">
+                                    <a href="">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/page-icon.png" width="20px" height="20px" />
+                                        </i>
+                                        <span>Pages</span>
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </a>
+                                    <ul class="treeview-menu" id="menuShow">
+                                        <li><a href="#!ProductDetails"><i class="fa fa-angle-right"></i> Product Details</a></li>
+                                        <li><a href="#!Stock"><i class="fa fa-angle-right"></i> Product Stock</a></li>
+                                        <li><a href="#!Category"><i class="fa fa-angle-right"></i> Category</a></li>
+                                        <li><a href="#!Subcat"><i class="fa fa-angle-right"></i> SubCategory</a></li>
+                                        <li><a href="#!TaxDetails"><i class="fa fa-angle-right"></i> Tax Details</a></li>
+                                        <li id="Discount" ng-show="showDiscount"><a href="#!Discount"><i class="fa fa-angle-right"></i> Discount Details</a></li>
+                                        <li id="Coupon" ng-show="showCoupon"><a href="#!CouponDetails"><i class="fa fa-angle-right"></i> Coupon Code</a></li>
+                                        <li><a href="#!AddDetail"><i class="fa fa-angle-right"></i> Add Details</a></li>
+                                    </ul>
+                                </li>
+                                <li class="treeview" ng-click="ShowHideSubMenu('SettingsmenuShow')">
+                                    <a href="">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/settings.png" width="20px" height="20px" />
+                                        </i>
+                                        <span>Settings</span>
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </a>
+                                    <ul class="treeview-menu" id="SettingsmenuShow">
+                                        <li><a href="#!Company"><i class="fa fa-angle-right"></i> Company Details</a></li>
+                                        <li><a href="#!SliderAdmin"><i class="fa fa-angle-right"></i> Home Slider</a></li>
+                                        <li><a href="#!TodayDealAdmin"><i class="fa fa-angle-right"></i> Today Deal</a></li>
+                                        <li><a href="#!MessageAlertAdmin"><i class="fa fa-angle-right"></i> Message Alert</a></li>
+                                        <li><a href="#!Register"><i class="fa fa-angle-right"></i> App Register</a></li>
+                                        <li ng-show="AdminVariance"><a href="#!ProductVariance"><i class="fa fa-angle-right"></i>Product variance Count </a></li>
+                                        <li><a href="#!TermsAndConditionInvoive"><i class="fa fa-angle-right"></i> Terms & Condition Invoice</a></li>
+                                        <li><a href="#!TermsAndCondition"><i class="fa fa-angle-right"></i> Terms & Condition Config</a></li>
+                                        <li><a href="#!AboutUsAdmin"><i class="fa fa-angle-right"></i> About Us Config</a></li>
+                                        <li><a href="#!ContactUsAdmin"><i class="fa fa-angle-right"></i> Contact Us Config</a></li>
+                                        <li><a href="#!CopyRights"><i class="fa fa-angle-right"></i> Copy Rights Config</a></li>
+                                        <li><a href="#!Settings"><i class="fa fa-angle-right"></i> Site Settings Config</a></li>
+                                        <li><a href="#!SocliaMedia"><i class="fa fa-angle-right"></i> Soclia Media Config</a></li>
+                                        <li><a href="#!ProductConfiguration"><i class="fa fa-angle-right"></i> Product Configuration</a></li>
+                                    </ul>
+                                </li>
+                                <li class="treeview" ng-click="ShowHideSubMenu('SettingsmenuShow2','menuShow','SettingsmenuShow')">
+                                    <a href="">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/Icons/salesreport-icon.png" style="width:20px;height:20px;" />
+                                        </i>
+                                        <span>Sales</span>
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </a>
+                                    <ul class="treeview-menu" id="SettingsmenuShow2">
+                                        <li><a href="#!SalesReportDetail"><i class="fa fa-angle-right"></i> Sales Report</a></li>
+                                        <li><a href="#!SalesReport"><i class="fa fa-angle-right"></i> Order Slip</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#!Widgets">
+                                        <i class="fa ">
+                                            <img src="../AdminStyle/images/navbarIcon/widget-icon.png" width="20px" height="20px" />
+                                        </i> <span>Analytics</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="LogoutClick()">
+                                        <i class="fa">
+                                            <img src="../AdminStyle/images/navbarIcon/logout.png" width="20px" height="20px" />
+                                        </i> <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
+        </div>
+
+        <div class="sticky-header header-section ">
+            <div class="header-left">
+                <div class="desktop-hide" ng-click="myFunction()">
+                    <button id="showLeftPush" ng-click="toggle_visibility('showLeftPush','showLeftPush1')"> <i class="fa fa-bars"></i> </button>
+                    <img style="width:40px; height:40px;" src="../AdminStyle/images/error (1).png" id="showLeftPush1" ng-click="toggle_visibility('showLeftPush1','showLeftPush')" />
+                </div>
+                <div class="profile_details_left">
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="header-right">
+                <div class="profile_details">
+                    <ul>
+                        <li class="dropdown profile_details_drop">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <div class="profile_img">
+                                    <span class="prfil-img"><img src="" alt=""> </span>
+                                    <div class="user-name">
+                                        <p>Admin Name</p>
+                                        <span>Administrator</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+
+        <div class="desktop-hide">
+            <div id="myLinks" class="desktop-hide" style="text-align:left;">
+                <div class="sb2-13" id="bs-example-navbar-collapse-1">
+                    <ul class="mob-menu-icon  collapsible" id="toggle-fullscreen" data-collapsible="accordion" style="text-align: left; padding-right: 25px; list-style-type:none;">
+                        <li style="height:44px;">
+                            <a href="#!DashBoard" style="height:44px;">
+                                <i class="fa ">
+                                    <img src="../AdminStyle/images/navbarIcon/dashboard-icon.png" width="20px" height="20px" />
+                                </i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li style="padding-bottom:18px;">
+                            <a href="#!SalOrder" style="height:44px;">
+                                <i class="fa ">
+                                    <img src="../AdminStyle/images/Icons/Sales_Order.png" style="width:20px;height:20px;" />
+                                </i> <span>Sales Orders</span>
+                            </a>
+                        </li>
+                        <li style="padding-bottom:18px;">
+                            <a href="#!DeliveryConfirmation" style="height:44px;">
+                                <i class="fa">
+                                    <img src="../AdminStyle/images/Icons/courier-details icon.png" style="width:20px;height:20px;" />
+                                </i> <span>Delivery Confirmation</span>
+                            </a>
+                        </li>
+                        <li class="treeview" ng-click="ShowHideSubMenu1('menuShow1','SettingsmenuShow1','MenuSalMobile')" style="height:44px;">
+                            <a href="">
+                                <i class="fa ">
+                                    <img src="../AdminStyle/images/navbarIcon/page-icon.png" width="20px" height="20px" />
+                                </i>
+                                <span>Pages</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu" id="menuShow1" style="background-color:white; position:relative; ">
+                                <li style=" padding-top:5px;"><a href="#!ProductDetails" style="color:black !important;"><i class="fa fa-angle-right"></i> Product Details</a></li>
+                                <li style=" padding-top:5px;"><a href="#!Stock" style="color:black !important;"><i class="fa fa-angle-right"></i> Product Stock</a></li>
+                                <li style=" padding-top:5px;"><a href="#!Category" style="color:black !important;"><i class="fa fa-angle-right"></i> Category</a></li>
+                                <li style=" padding-top:5px;"><a href="#!Subcat" style="color:black !important;"><i class="fa fa-angle-right"></i> SubCategory</a></li>
+                                <li style=" padding-top:5px;"><a href="#!TaxDetails" style="color:black !important;"><i class="fa fa-angle-right"></i> Tax Details</a></li>
+                                <li style=" padding-top:5px;" id="Discount" ng-show="showDiscount"><a href="#!Discount" style="color:black !important;"><i class="fa fa-angle-right"></i> Discount Details</a></li>
+                                <li style=" padding-top:5px;" id="Coupon" ng-show="showCoupon"><a href="#!CouponDetails" style="color:black !important;"><i class="fa fa-angle-right"></i> Coupon Code</a></li>
+                                <li style=" padding-top:5px;"><a href="#!AddDetail" style="color:black !important;"><i class="fa fa-angle-right"></i> Add Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" ng-click="ShowHideSubMenu1('SettingsmenuShow1','menuShow1','MenuSalMobile')" style="height:44px;">
+                            <a href="">
+                                <i class="fa ">
+                                    <img src="../AdminStyle/images/navbarIcon/settings.png" width="20px" height="20px" />
+                                </i>
+                                <span>Settings</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu" id="SettingsmenuShow1" style="background-color:white; position:relative; ">
+                                <li style=" padding-top:5px;"><a href="#!Company" style="color:black !important;"><i class="fa fa-angle-right"></i> Company Details</a></li>
+                                <li style=" padding-top:5px;"><a href="#!SliderAdmin" style="color:black !important;"><i class="fa fa-angle-right"></i> Home Slider</a></li>
+                                <li style=" padding-top:5px;"><a href="#!TodayDealAdmin" style="color:black !important;"><i class="fa fa-angle-right"></i> Today Deal</a></li>
+                                <li style=" padding-top:5px;"><a href="#!MessageAlertAdmin" style="color:black !important;"><i class="fa fa-angle-right"></i> Message Alert</a></li>
+
+                                <li style=" padding-top:5px;" ng-show="AdminVariance"><a href="#!ProductVariance" style="color:black !important;"><i class="fa fa-angle-right"></i>Product variance Count </a></li>
+                                <li style=" padding-top:5px;"><a href="#!TermsAndConditionInvoive" style="color:black !important;"><i class="fa fa-angle-right"></i> Terms & Condition Invoice</a></li>
+                                <li style=" padding-top:5px;"><a href="#!TermsAndCondition" style="color:black !important;"><i class="fa fa-angle-right"></i> Terms & Condition Config</a></li>
+                                <li style=" padding-top:5px;"><a href="#!AboutUsAdmin" style="color:black !important;"><i class="fa fa-angle-right"></i> About Us Config</a></li>
+                                <li style=" padding-top:5px;"><a href="#!ContactUsAdmin" style="color:black !important;"><i class="fa fa-angle-right"></i> Contact Us Config</a></li>
+                                <li style=" padding-top:5px;"><a href="#!CopyRights" style="color:black !important;"><i class="fa fa-angle-right"></i> Copy Rights Config</a></li>
+                                <li style=" padding-top:5px;"><a href="#!Settings" style="color:black !important;"><i class="fa fa-angle-right"></i> Site Settings Config</a></li>
+                                <li style=" padding-top:5px;"><a href="#!SocliaMedia" style="color:black !important; "><i class="fa fa-angle-right"></i> Soclia Media Config</a></li>
+                                <li style=" padding-top:5px;"><a href="#!ProductConfiguration" style="color:black !important; "><i class="fa fa-angle-right"></i> Product Configuration</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" ng-click="ShowHideSubMenu1('MenuSalMobile','SettingsmenuShow1','menuShow1')" style="height:44px;">
+                            <a href="">
+                                <i class="fa ">
+                                    <img src="../AdminStyle/images/Icons/salesreport-icon.png" style="width:20px;height:20px;" />
+                                </i>
+                                <span>Sales</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu" id="MenuSalMobile" style="background-color:white; position:relative; ">
+                                <li style=" padding-top:5px;"><a href="#!SalesReportDetail" style="color:black !important;"><i class="fa fa-angle-right"></i> Sales Report</a></li>
+                                <li style=" padding-top:5px;"><a href="#!SalesReport" style="color:black !important;"><i class="fa fa-angle-right"></i> Order Slip</a></li>
+                            </ul>
+                        </li>
+                        <li style="height:44px;">
+                            <a href="#!Widgets">
+                                <i class="fa ">
+                                    <img src="../AdminStyle/images/navbarIcon/widget-icon.png" width="20px" height="20px" />
+                                </i> <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li style="height:44px;">
+                            <a href="" ng-click="LogoutClick()">
+                                <i class="fa">
+                                    <img src="../AdminStyle/images/navbarIcon/logout.png" width="20px" height="20px" />
+                                </i> <span>Logout</span>
+                            </a>
+                        </li>
+                        <li style="height:75px;"></li>
+                        <li>
+                            <p><span style="opacity:0.5">&copy; 2019. All Rights Reserved | Designed by </span><a href="https://sysmedac.com/" target="_blank"><img src="../images/Logo-V3.png" height="25px" /> </a></p>
+                            <br />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-wrapper">
+            <div class="main-page">
+                <div class="container" style="width:100%;">
+                    <!--Form-->
+                    <div class="forms">
+                        <div class="form-two widget-shadow">
+                            <div class="form-title" style="padding:15px 20px;">
+                                <a href="" data-toggle="tooltip" class="large-tooltip" title="Manage Your Advertisement Detail Here!">
+                                    <h4 style="font-size:20px;color:#6F6F6F;">
+                                        <img src="../AdminStyle/images/Icons/online-payment.png" style="width:32px;" /> Payment Type
+                                    </h4>
+                                </a>
+                            </div>
+                            <div class="form-body" data-example-id="simple-form-inline" style="width:100%;">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="form-group" style="width:100%;padding-bottom:10px;display:inline-block;">
+                                            <div class="row">
+                                                <div class="col-lg-1">
+                                                    <label for="exampleInputName2"> Payment Type</label>
+                                                </div>
+                                                <div class="col-lg-10" style="padding-bottom:10px;">
+                                                    <select id="paymentid" class="form-control" name="type" ng-change="getPaymentDetails(paytype.PaymentTypeId)" ng-model="paytype.PaymentTypeId">
+                                                        <option disabled selected>--Select Type--</option>
+                                                        <option ng-selected="paytype.PaymentTypeId == pay.PaymentTypeId" ng-repeat="pay in paymenttype" value="{{pay.PaymentTypeId}}">{{pay.PayType}}</option>
+
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="row desktop-hide">
+
+                                                <div ng-show="Showtxt1">
+                                                    <div class="col-lg-1">
+                                                        <label>{{Field1}}</label>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input type="text" ng-model="paytype.Value1" class="form-control">
+                                                    </div>
+                                                </div>
+
+
+                                                <div ng-show="Showtxt2">
+                                                    <div class="col-lg-1">
+                                                        <label>{{Field2}}</label>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input type="text" value="{{Value1}}" ng-model="paytype.Value2" class="form-control">
+                                                    </div>
+                                                </div>
+
+
+                                                <div ng-show="Showtxt3">
+                                                    <div class="col-lg-1">
+                                                        <label>{{Field3}}</label>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input type="text" value="{{Value1}}" ng-model="paytype.Value3" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div ng-show="Showtxt4">
+                                                    <div class="col-lg-1">
+                                                        <label>{{Field4}}</label>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input type="text" value="{{Value1}}" ng-model="paytype.Value4" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div ng-show="Showtxt5">
+                                                    <div class="col-lg-1">
+                                                        <label>{{Field5}}</label>
+                                                    </div>
+                                                    <div class="col-lg-5">
+                                                        <input type="text" value="{{Value1}}" ng-model="paytype.Value5" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="row mobile-hide">
+
+                                                <div class="col-lg-12">
+                                                    <div class="row">
+                                                        <div ng-show="Showtxt1">
+                                                            <div class="col-lg-1">
+                                                                <label>{{Field1}}</label>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" value="{{Value1}}" ng-model="paytype.Value1" class="form-control">
+                                                            </div>
+                                                        </div>
+
+                                                        <div ng-show="Showtxt2">
+                                                            <div class="col-lg-1">
+                                                                <label>{{Field2}}</label>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" value="{{Value2}}" ng-model="paytype.Value2" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-top:10px;">
+                                                        <div ng-show="Showtxt3">
+                                                            <div class="col-lg-1">
+                                                                <label>{{Field3}}</label>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" value="{{Value3}}" ng-model="paytype.Value3" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div ng-show="Showtxt4">
+                                                            <div class="col-lg-1">
+                                                                <label>{{Field4}}</label>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" value="{{Value4}}" ng-model="paytype.Value4" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" style="padding-top:10px;">
+                                                        <div ng-show="Showtxt5">
+                                                            <div class="col-lg-1">
+                                                                <label>{{Field5}}</label>
+                                                            </div>
+                                                            <div class="col-lg-5">
+                                                                <input type="text" value="{{Value5}}" ng-model="paytype.Value5" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6" style="padding-right:10px;">
+                                            <button type="submit" ng-show="ShowSave" class="btn btn-default" ng-style="myObj" ng-click="Save()">
+                                                <img src="../AdminStyle/images/save.png" style="width:20px;" /> &nbsp; Save
+                                            </button>
+                                            <button type="button" ng-show="ShowUpdate" class="btn btn-default" ng-style="myObj" ng-click="UpdatePaymentType()">
+                                                <img src="../AdminStyle/images/update_tag_.png" style="width:20px;" /> &nbsp; Update
+                                            </button>
+                                            <button type="button" class="btn btn-default" ng-show="Showclear" ng-style="myObj" ng-click="Clear()">
+                                                <img src="../AdminStyle/images/erase.png" style="width:20px;" />&nbsp; Clear
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span style="color:red" ng-show="Showmsg">{{msg}}</span><span style="color:green" ng-show="showmsgStatus">{{msgStatus}}</span><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+            </div>
+        
+        <!--footer-->
+        <div class="footer">
+
+            <p>&copy; 2019. All Rights Reserved | Designed by <a href="https://sysmedac.com/" target="_blank"><img src="../images/Logo-V3.png" height="25px" /> </a></p>
+        </div>
+   
+    <!--//footer-->
+    <!-- side nav js -->
+    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+    <script>
+        $('.sidebar-menu').SidebarNav()
+    </script>
+    <!-- //side nav js -->
+    <!-- Classie --><!-- for toggle left push menu script -->
+    <script src="js/classie.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+
+
+    </script>
+
+
+
+<!-- //Classie --><!-- //for toggle left push menu script -->
+<!--scrolling js-->
+<script src="../AdminStyle/js/jquery.nicescroll.js"></script>
+<script src="../AdminStyle/js/scripts.js"></script>
+<script src="../AdminStyle/js/chartinator.js"></script>
+<script src="../AdminStyle/js/classie.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="../AdminStyle/js/bootstrap.js"></script>
+<!--//scrolling js-->
+<!-- Bootstrap Core JavaScript -->
+<link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+<link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+
+

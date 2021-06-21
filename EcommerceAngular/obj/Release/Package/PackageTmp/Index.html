@@ -1,0 +1,891 @@
+﻿<!DOCTYPE html>
+<html ng-app="Ecom" lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="favicon.png" />
+    <!--<meta name="google-site-verification" content="3cDDVO6y3FH_mEcPMi2aGzohSpEbViw9n7aJq86GVks" />
+      <script async src="http://www.googletagmanager.com/gtag/js?id=G-C8199L3H5J"></script>
+      <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C8199L3H5J');
+      </script>-->
+    <!--<title>{{CompanyName}}</title>
+    <meta name="description" content="{{CompanyName}}">-->
+    <meta name="author" content="Magentech">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="./Files/bootstrap.min.css">
+    <link href="Files/font-awesome.min.css" rel="stylesheet">
+    <link href="Files/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="Files/owl.carousel.css" rel="stylesheet">
+    <link href="Files/lib.css" rel="stylesheet">
+    <link href="Files/jquery-ui.min.css" rel="stylesheet">
+    <link href="Files/miniColors.css" rel="stylesheet">
+    <link href="Files/so_searchpro.css" rel="stylesheet">
+    <link href="Files/so_megamenu.css" rel="stylesheet">
+    <link href="Files/so-categories.css" rel="stylesheet">
+    <link href="Files/so-listing-tabs.css" rel="stylesheet">
+    <link href="Files/so-newletter-popup.css" rel="stylesheet">
+    <link href="Files/footer1.css" rel="stylesheet">
+    <link href="Files/header1.css" rel="stylesheet">
+    <link id="color_scheme" href="Files/theme.css" rel="stylesheet">
+    <link href="Files/responsive.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif
+        }
+
+        .typefooter-1 .footer-links .icon li:before {
+            background: unset;
+        }
+
+        .sbuttons {
+            bottom: 15%;
+            position: fixed;
+            margin: 1em;
+            right: 0;
+            z-index: 5;
+        }
+
+        .sbutton {
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            margin: 20px auto 0;
+            box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+           
+            position: relative;
+        }
+
+            .sbutton > i {
+                font-size: 38px;
+                line-height: 60px;
+                /*transition: all .2s ease-in-out;
+                      transition-delay: 2s;*/
+            }
+
+            .sbutton:active,
+            .sbutton:focus {
+                box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+            }
+
+            .sbutton:not(:last-child) {
+                width: 60px;
+                height: 60px;
+                margin: 20px auto 0;
+                opacity: 0;
+            }
+
+                .sbutton:not(:last-child) > i {
+                    font-size: 25px;
+                    line-height: 60px;
+                    /*transition: all .3s ease-in-out;*/
+                }
+
+            .sbutton:not(:last-child) {
+                opacity: 1;
+                width: 60px;
+                height: 60px;
+                margin: 15px auto 0;
+            }
+
+      
+        [tooltip]:before {
+            font-family: 'Roboto';
+            font-weight: 600;
+            border-radius: 2px;
+            background-color: #585858;
+            color: #fff;
+            content: attr(tooltip);
+            font-size: 12px;
+            visibility: hidden;
+            opacity: 0;
+            padding: 5px 7px;
+            margin-left: 10px;
+            position: absolute;
+            left: 100%;
+            bottom: 20%;
+            white-space: nowrap;
+        }
+
+        .sbutton.mainsbutton {
+            background: #2ab1ce;
+        }
+
+        
+        .sbutton.whatsapp {
+            background: #00e676;
+        }
+
+    </style>
+    <meta charset="utf-8">
+    <base href="#/" />
+    <script src="js/Scripts/angular.min.js"></script>
+
+    <script src="js/Scripts/angular-route.min.js"></script>
+    <script src="js/Scripts/angular-ui.js"></script>
+    <script src="js/Scripts/angular-sanitize.js"></script>
+    <script src="js/Scripts/angular-sanitize.min.js"></script>
+    <script src="appIndex.js"></script>
+    <script src="Controller/Client/HomePageController.js"></script>
+    <script src="Controller/Client/checkout.js"></script>
+    <script src="Controller/Client/IndexController.js"></script>
+    <script src="Controller/Client/AboutUsController.js"></script>
+    <script src="Controller/Client/ContactUsController.js"></script>
+    <script src="Controller/Client/LoginController.js"></script>
+    <script src="Controller/Client/RegisterController.js"></script>
+    <script src="Controller/Client/ShoppingCartController.js"></script>
+    <script src="Controller/ViewProductController.js"></script>
+    <script src="Controller/Client/ClientOrdesnoController.js"></script>
+    <script src="Controller/Client/ViewSingleProductController.js"></script>
+    <script src="Controller/Client/ViewProductSearchController.js"></script>
+    <script src="Controller/Client/SalesInvoiceController.js"></script>
+    <script src="Controller/InstamojoTest.js"></script>
+    <script src="Controller/Client/ClientOrdesController.js"></script>
+    <script src="Controller/Client/Simple_BotController.js"></script>
+    <script src="Controller/Client/Reorder.js"></script>
+    <script src="Controller/Client/TermsAndConditionsController.js"></script>
+    <script src="Controller/Client/PrivacyPolicyController.js"></script>
+</head>
+<body class="common-home res layout-1 loaded hidden-scorll" ondragstart="return false;" ondrop="return false;">
+    <div id="wrapper" class="wrapper-fluid banners-effect-5">
+        <header id="header" class=" typeheader-1" ng-controller="IndexController" style="background-color:{{Themecolour}};border-color:{{Themecolour}}">
+            <div class="">
+                <div class="container">
+                    <div class="row">
+                        <!--<div class="header-top-left col-lg-2 col-md-6 col-sm-6 col-xs-4">
+
+                        </div>-->
+                        <div class="header-top-right col-lg-7 col-md-6 col-sm-6 col-xs-12" style="background-color:{{Themecolour}};">
+                            <ul class="top-link list-inline hidden-lg hidden-md" ng-repeat="det in ClientDetails" style="margin-left:.2em;margin-right:.3em;">
+                                <li><a style="color:black;" href="tel:{{det.PhoneNo}}">{{det.PhoneNo}} </a> &nbsp; |</li>
+                            </ul>
+                            <ul class="top-link list-inline hidden-lg hidden-md">
+                                <li id="MemberName" runat="server" ng-show="ShowMemberName" style="cursor:pointer;color:black;">
+                                    {{MemberName}} &nbsp;|
+                                </li>
+
+                                <li id="MemberName" runat="server" ng-show="ShowMemberProfile">
+                                    <a data-toggle="modal" data-target="#myModalmobMemberProfile" ng-click="ProfileEdit()" style="width:0px;color:black;">
+                                        &nbsp; Edit Profile  |
+                                    </a>
+                                    <div id="myModalmobMemberProfile" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="container" style="width:100%;">
+                                                <div class="modal-content">
+                                                    <div class="login-form-grids" style="width:80%; margin:auto;">
+                                                        <form class="form-horizontal" role="form">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h3 style="text-align:center;color:black;"><b>Edit Profile</b></h3>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-user"></span>
+                                                                        </div>
+                                                                        <input type="text" id="MemberName3" placeholder="Member Name" ng-keypress="onTextBoxKeyPress($event)" value="{{MemberName}}" ng-model="Profile.MemberName" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-lock"></span>
+                                                                        </div>
+                                                                        <input type="tel" id="ContactNo3" placeholder="Contact No" ng-keypress="onTextBoxKeyPress($event)" disabled value="{{ContactNo}}" ng-model="Profile.ContactNo" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-envelope"></span>
+                                                                        </div>
+                                                                        <input type="Email" id="EmailId3" placeholder="Email Id" ng-keypress="onTextBoxKeyPress($event)" value="{{EmailId}}" ng-model="Profile.EmailId" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-home"></span>
+                                                                        </div>
+                                                                        <input type="text" id="AddressLine1" placeholder="Address Line1" ng-keypress="onTextBoxKeyPress($event)" value="{{AddressLine1}}" ng-model="Profile.AddressLine1" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-home"></span>
+                                                                        </div>
+                                                                        <input type="text" id="AddressLine2" placeholder="Address Line2" ng-keypress="onTextBoxKeyPress($event)" value="{{AddressLine2}}" ng-model="Profile.AddressLine2" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-home"></span>
+                                                                        </div>
+                                                                        <input type="text" id="City" placeholder="City" ng-keypress="onTextBoxKeyPress($event)" ng-model="Profile.City" value="{{City}}" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-home"></span>
+                                                                        </div>
+                                                                        <input type="text" id="State" placeholder="State" ng-keypress="onTextBoxKeyPress($event)" ng-model="Profile.State" value="{{State}}" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-file-zip-o"></span>
+                                                                        </div>
+                                                                        <input type="tel" id="PinCode" placeholder="PinCode" ng-keypress="onTextBoxKeyPress($event)" ng-model="Profile.PinCode" value="{{PinCode}}" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary" ng-click="UpdateProfile()" style="color:white;">Update Profile</button>
+                                                            <div class="row" style="padding-left:10px;">
+                                                                <span style="color:red" ng-show="showmsgErrorUpdate">{{msgUpdate}}</span><span style="color:green" ng-show="showmsgUpdate">{{msgStatusUpdate}}</span><br />
+                                                                <span ng-model="MemberId" ng-show="Showhide"></span>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li ng-show="ShowSignIn">
+                                    <a data-toggle="modal" id="SignIn" runat="server" data-target="#myModalmobSignIn" style="width:0px;color:black;"> <i class="fa fa-lock"></i>&nbsp; SignIn &nbsp; |</a>
+                                    <div id="myModalmobSignIn" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="container" style="width:100%;">
+                                                <div class="modal-content">
+                                                    <div class="login-form-grids" style="width:90%; margin:auto;">
+                                                        <form class="form-horizontal" role="form">
+                                                            <h3 style="text-align:center;color:black;">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <b id="SignInHeader" ng-show="ShowSignInHeader">Sign In</b>
+                                                            </h3>
+                                                            <div class="form-group" id="SignInEmailId" ng-show="ShowSignInEmailId">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-mobile"></span>
+                                                                        </div>
+                                                                        <input type="tel" id="mobile" placeholder="Mobile No" style="border:none;border-bottom:1px solid" ng-keypress="onTextBoxKeyPress($event)" ng-model="MobileNo" required class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group" id="Password1" ng-show="Otp">
+                                                                <div class="col-sm-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon">
+                                                                            <span class="fa fa-lock"></span>
+                                                                        </div>
+                                                                        <input type="number" id="otp" ng-keypress="onTextBoxKeyPress($event)" style="border:none;border-bottom:1px solid" placeholder="Otp" ng-model="Mobileotp" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group" ng-show="OtpMobile">
+                                                                <div class="col-sm-12">
+                                                                    <input type="text" id="HiddenOtpMobile" ng-model="HiddenOtpMobile" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-xs-3 col-sm-3 form-group"></div>
+                                                                <div class="col-xs-5  col-sm-5 form-group">
+                                                                    <button type="submit" id="signin" class="btn btn-primary" style="color:white" ng-show="getotp" ng-click="GetOtp()">GET OTP</button>
+                                                                    <button type="submit" id="signin" class="btn btn-primary" style="color:white" ng-show="Verified" ng-click="Verifed()">Verify</button>
+                                                                </div>
+                                                                <div class="col-xs-5 col-sm-5">
+                                                                    <a ng-show="Verified" style="color:blue;cursor:pointer;text-align:right" ng-click="GetOtp()"> Re-send</a>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="row" id="reset" ng-show="Showreset" style="padding-left:10px;">
+                                                                    <span style="color:red" ng-show="showmsgreseterror">{{msgreseterror}}</span><span style="color:green" ng-show="showmsgresetsuccess">{{msgStatussuccess}}</span><br />
+                                                                    <span ng-model="hiddenConfirmationCode" ng-show="Showhide"></span>
+                                                                </div>
+                                                                <div class="row" ng-show="Showsignin" id="signin" style="padding-left:10px;">
+                                                                    <span style="color:red" ng-show="showmsgErrorIn">{{msgSignIn}}</span><span style="color:green" ng-show="showmsgSignIn">{{msgStatusSignIn}}</span><br />
+                                                                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li id="SignOut" runat="server" ng-show="ShowSignOut" style="cursor:pointer;color:black;">
+                                    <a ng-click="SignOut()" style="color:black;"> SignOut</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle" ng-style="Themecolor">
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-logo col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding-top:2px;">
+                            <div class="logo" ng-repeat="det in ClientDetails"><a href="#!HomePage"><img ng-src="{{det.WebsiteLogo}}" alt="website logo" width="190px" height="70px" style="height:70px !important" /></a></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 mobile-hide" style="padding-top:20px;">
+                            <div class="search-header-w">
+                                <div id="sosearchpro" class="sosearchpro-wrapper so-search ">
+                                    <form method="GET">
+                                        <div id="search0" class="search input-group form-group">
+                                            <input class="autosearch-input form-control" type="text" list="Product" ng-keyup='fetchUsers()' value="" size="50" autocomplete="off" placeholder="Keyword here..." name="search" ng-model="HeaderSearchTxt">
+                                            <datalist id="Product" class="autosearch-input ">
+                                                <option class="autosearch-input form-control" ng-repeat="Product in Productlist"> {{Product.Title}}</option>
+                                            </datalist>
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="button-search btn btn-primary" name="submit_search" ng-click="HeaderSearch(HeaderSearchTxt)"><i class="fa fa-search"> </i> Search</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 desktop-hide" style="padding-top:20px;">
+                            <div class="row" style="padding-right:20px;">
+                                <div class="input-group" style="padding-left:20px;">
+                                    <input class="autosearch-input form-control" type="text" list="Product" ng-keyup='fetchUsers()' value="" size="50" autocomplete="off" placeholder="Keyword here..." name="search" ng-model="HeaderSearchTxt">
+                                    <datalist id="Product" class="autosearch-input ">
+                                        <option class="autosearch-input form-control" ng-repeat="Product in Productlist"> {{Product.Title}}</option>
+                                    </datalist>
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="button-search btn btn-primary" style="background:#102985;" name="submit_search" ng-click="HeaderSearch(HeaderSearchTxt)"><i class="fa fa-search"> </i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle-right col-lg-4 col-md-3 col-sm-6 col-xs-8" style="padding-left:5px; padding-right:5px;">
+                            <div class="signin-w hidden-sm hidden-xs">
+                                <ul class="signin-link blank">
+                                    <li id="MemberName" runat="server" ng-show="ShowMemberName" style="cursor:pointer;padding-right:15px;color:black;">
+                                        <i class="fa fa-user" style="margin-right:8px;"></i>{{MemberName}}
+                                    </li>
+                                    <li>
+                                        <a data-toggle="modal" id="SignIn" runat="server" ng-show="ShowSignIn" data-target="#myModal" style="width:0px;color:black;">
+                                            <i class="fa fa-lock"></i> SignIn &nbsp;&nbsp;
+                                        </a>
+                                        <div id="myModal" ng-show="ShowmyModal" class="modal fade" role="dialog" style="margin-left:50em;">
+                                            <div class="modal-dialog">
+                                                <div class="container" style="width:60%;">
+                                                    <div class="modal-content">
+                                                        <div class="login-form-grids" style="width:80%; margin:auto;">
+                                                            <form class="form-horizontal" role="form">
+                                                                <h3 style="text-align:center;color:black;">
+                                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <b id="SignInHeader" ng-show="ShowSignInHeader">Sign In</b>
+                                                                </h3>
+                                                                <div class="form-group" id="SignInEmailId" ng-show="ShowSignInEmailId">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-envelope"></span>
+                                                                            </div>
+                                                                            <input type="tel" id="mobile" placeholder="Mobile No" ng-keypress="onTextBoxKeyPress($event)" ng-model="MobileNo" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group" id="Password1" ng-show="Otp">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-lock"></span>
+                                                                            </div>
+                                                                            <input type="number" id="otp" ng-keypress="onTextBoxKeyPress($event)" placeholder="Otp" ng-model="Mobileotp" class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group" ng-show="OtpDesktop">
+                                                                    <div class="col-sm-12">
+                                                                        <input type="Text" value="{{HiddenOtpDesktop}}" id="HiddenOtpDesktop" ng-model="HiddenOtpDesktop" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-lg-3 form-group"></div>
+                                                                    <div class="col-lg-5 form-group">
+                                                                        <button type="submit" id="signin" class="btn btn-primary" ng-show="getotp" ng-click="GetOtp()">GET OTP</button>
+                                                                        <button type="submit" id="signin" class="btn btn-primary" ng-show="Verified" ng-click="Verifed()">Verify</button>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <a ng-show="Verified" style="color:blue;cursor:pointer;text-align:right" ng-click="GetOtp()"> Re-send</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <div class="row" id="reset" ng-show="Showreset" style="padding-left:10px;">
+                                                                        <span style="color:red" ng-show="showmsgreseterror">{{msgreseterror}}</span><span style="color:green" ng-show="showmsgresetsuccess">{{msgStatussuccess}}</span><br />
+                                                                        <span ng-model="hiddenConfirmationCode" ng-show="Showhide"></span>
+                                                                    </div>
+                                                                    <div class="row" ng-show="Showsignin" id="signin" style="padding-left:10px;">
+                                                                        <span style="color:red" ng-show="showmsgErrorIn">{{msgSignIn}}</span><span style="color:green" ng-show="showmsgSignIn">{{msgStatusSignIn}}</span><br />
+                                                                        <span ng-model="MemberId" ng-show="Showhide"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="SignUp" runat="server" ng-show="ShowSignUp">
+                                        <div id="myModal1" class="modal fade" role="dialog" style="margin-left:50em;">
+                                            <div class="modal-dialog">
+                                                <div class="container" style="width:60%;">
+                                                    <div class="modal-content">
+                                                        <div class="login-form-grids" style="width:80%; margin:auto;">
+                                                            <form class="form-horizontal" role="form" style="width:100%;">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h3 style="text-align:center;color:black;"><b>Sign Up</b></h3>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-user"></span>
+                                                                            </div> <input type="text" id="firstName" ng-keypress="onTextBoxKeyPress($event)" placeholder="Member Name" ng-model="member.MemberName" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-phone"></span>
+                                                                            </div>
+                                                                            <input type="tel" id="ContactNo" placeholder="Contact No" ng-keypress="onTextBoxKeyPress($event)" ng-model="member.ContactNo" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-envelope"></span>
+                                                                            </div>
+                                                                            <input type="Email" id="EmailId" placeholder="Email Id" ng-keypress="onTextBoxKeyPress($event)" ng-model="member.EmailId" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-lock"></span>
+                                                                            </div>
+                                                                            <input type="password" id="Password" placeholder="Password" ng-keypress="onTextBoxKeyPress($event)" ng-model="member.Password" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-lock"></span>
+                                                                            </div>
+                                                                            <input type="password" id="ConfirmPassword" ng-model="member.ConfirmPassword" ng-keypress="onTextBoxKeyPress($event)" placeholder="Confirm Password" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-9">
+                                                                        <span style="color:red;">All Fields Required </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-addon" style="background-color:#337ab7;color:white;cursor:pointer;">
+                                                                            <span class="fa fa-refresh" id="refresh" ng-click="CaptchaSignUp()"></span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control" style="margin-bottom: 0px; width: 200px; height: 40px; font-size: 24px; font-weight: bolder; text-decoration: line-through; display: inline-block;" id="mainCaptchaSignUp" disabled="">
+                                                                        <div style="margin-top:10px; color: #D8000C; border-radius: 7px;" id="logSignUp"></div>
+                                                                    </div>
+                                                                    <input style="margin-top:10px;" type="text" class="form-control" placeholder="Enter captcha code" name="captcha" id="txtInputSignUp" required="">
+                                                                </div>
+                                                                <div style="padding-top:10px;">
+                                                                    <button type="submit" class="btn btn-primary" ng-click="Save('desktop')">Sign Up</button>
+                                                                </div>
+                                                                <div class="row" style="padding-left:10px;">
+                                                                    <span style="color:red" ng-show="showmsgErrorUp">{{msg}}</span><span style="color:green" ng-show="showmsgSignUp">{{msgStatus}}</span><br />
+                                                                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="MemberName" runat="server" ng-show="ShowMemberProfile" style="padding-right:10px;color:black;">
+                                        <a data-toggle="modal" data-target="#myModal3" style="width:0px;padding-left:10px;color:black;">
+                                            <i class="fa fa-pencil"
+                                               ng-click="ProfileEdit()" style="padding-right:8px;color:black">&nbsp;Edit Profile</i>
+                                        </a>
+                                        <div id="myModal3" class="modal fade" role="dialog" style="margin-left:50em;">
+                                            <div class="modal-dialog">
+                                                <div class="container" style="width:60%;">
+                                                    <div class="modal-content">
+                                                        <div class="login-form-grids" style="width:80%; margin:auto;">
+                                                            <form class="form-horizontal" role="form">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h3 style="text-align:center;color:black;"><b>Edit Profile</b></h3>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-user"></span>
+                                                                            </div>
+                                                                            <input type="text" id="MemberName3" placeholder="Member Name" ng-keypress="onTextBoxKeyPress($event)" value="{{MemberName}}" ng-model="Profile.MemberName" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-lock"></span>
+                                                                            </div>
+                                                                            <input type="tel" id="ContactNo3" placeholder="Contact No" disabled ng-keypress="onTextBoxKeyPress($event)" value="{{ContactNo}}" ng-model="Profile.ContactNo" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-envelope"></span>
+                                                                            </div>
+                                                                            <input type="Email" id="EmailId3" placeholder="Email Id" ng-keypress="onTextBoxKeyPress($event)" value="{{EmailId}}" ng-model="Profile.EmailId" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-home"></span>
+                                                                            </div>
+                                                                            <input type="text" id="AddressLine1" placeholder="Address Line1" ng-keypress="onTextBoxKeyPress($event)" value="{{AddressLine1}}" ng-model="Profile.AddressLine1" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-home"></span>
+                                                                            </div>
+                                                                            <input type="text" id="AddressLine2" placeholder="Address Line2" ng-keypress="onTextBoxKeyPress($event)" value="{{AddressLine2}}" ng-model="Profile.AddressLine2" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-home"></span>
+                                                                            </div>
+                                                                            <input type="text" id="City" placeholder="City" ng-model="Profile.City" ng-keypress="onTextBoxKeyPress($event)" value="{{City}}" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-home"></span>
+                                                                            </div>
+                                                                            <input type="text" id="State" placeholder="State" ng-model="Profile.State" ng-keypress="onTextBoxKeyPress($event)" value="{{State}}" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <span class="fa fa-file-zip-o"></span>
+                                                                            </div>
+                                                                            <input type="tel" id="PinCode" placeholder="PinCode" ng-model="Profile.PinCode" ng-keypress="onTextBoxKeyPress($event)" value="{{PinCode}}" required class="form-control">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary" ng-click="UpdateProfile()">Update Profile</button>
+                                                                <div class="row" style="padding-left:10px;">
+                                                                    <span style="color:red" ng-show="showmsgErrorUpdate">{{msgUpdate}}</span><span style="color:green" ng-show="showmsgUpdate">{{msgStatusUpdate}}</span><br />
+                                                                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li id="SignOut" runat="server" ng-show="ShowSignOut" style="cursor:pointer;color:black">
+                                        <i class="fa fa-sign-out"></i> <a ng-click="SignOut()" style="color:black;"> SignOut&nbsp;&nbsp;&nbsp;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="telephone hidden-xs hidden-sm hidden-md" ng-repeat="det in ClientDetails">
+                                <ul class="blank"> <li></li> <li><a href="" style="color:black;"><i class="fa fa-phone-square"></i> {{det.PhoneNo}}</a></li> </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bottom hidden-compact">
+                <div class="container-fluid" style="padding-left:unset">
+                    <div class="row">
+                        <div class="main-menu bottom2 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                            <div class="responsive so-megamenu megamenu-style-dev">
+                                <nav class="navbar-default">
+                                    <div class=" container-megamenu  horizontal open ">
+                                        <div class="navbar-header">
+                                            <button type="button" id="show-megamenu" data-toggle="collapse" class="navbar-toggle">
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                        </div>
+                                        <div class="megamenu-wrapper">
+                                            <span id="remove-megamenu" class="fa fa-times"></span>
+                                            <div class="megamenu-pattern">
+                                                <div class="container-mega">
+                                                    <ul class="megamenu" data-transition="slide" data-animationtime="250">
+                                                        <li class="">
+                                                            <p class="close-menu"></p>
+                                                            <a href="" ng-click="aHomeMobileClick()">Home </a>
+                                                        </li>
+                                                        <li class="with-sub-menu hover">
+                                                            <p class="close-menu"></p>
+                                                            <a href="" class="clearfix">
+                                                                <strong>Categories</strong>
+                                                                <b class="caret"></b>
+                                                            </a>
+                                                            <div class="sub-menu" style="width: 100%; display: none; right: 0px;">
+                                                                <div class="content" style="display: none;">
+                                                                    <div class="row">
+                                                                        <div class="col-md-2" ng-repeat="cat in Category">
+                                                                            <a href="" class="title-submenu" style="text-transform:uppercase">{{cat.SubCategoryName}}</a>
+                                                                            <div class="row">
+                                                                                <div class="col-md-12 hover-menu">
+                                                                                    <div class="menu">
+                                                                                        <ul>
+                                                                                            <li ng-repeat="subcat in cat.SubMenu" style="text-transform:uppercase"><a style="font-size:13px;line-height:24px" href="#!Product/{{subcat.ProductId}}" class="main-menu">{{subcat.Title}}</a></li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="">
+                                                            <p class="close-menu"></p>
+                                                            <a href="#!AboutUs" ng-click="MenuClick()" class="clearfix">
+                                                                <strong>About </strong>
+                                                            </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <p class="close-menu"></p>
+                                                            <a href="#!ContactUs" ng-click="MenuClick()" class="clearfix">
+                                                                <strong>Contact </strong>
+                                                                <span class="label"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="" ng-show="ShowClientOrder">
+                                                            <p class="close-menu"></p>
+                                                            <a href="#!ClientOrder" ng-click="MenuClick()">My Orders </a>
+                                                        </li>
+                                                        <!--<li class="">
+                                                            <p class="close-menu"></p>
+                                                            <a href="Simple_Bot" ng-click="MenuClick()">Chatbot </a>
+                                                        </li>-->
+                                                        <!--<li class="">
+                                                            <p class="close-menu"></p>
+                                                            <a href="AdminIndex.html" target="_blank" ng-click="MenuClick()" class="clearfix">
+                                                                <strong>Admin </strong>
+                                                                <span class="label"></span>
+                                                            </a>
+                                                            </li>-->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="bottom3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <div class="shopping_cart">
+                                <div id="cart" class="btn-shopping-cart">
+                                    <a style="cursor:pointer" data-loading-text="Loading... " class="btn-group top_cart dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                        <div class="shopcart">
+                                            <span class="icon-c">
+                                                <i class="fa fa-shopping-bag"></i>
+                                            </span>
+                                            <div class="shopcart-inner">
+                                                <p class="text-shopping-cart">
+                                                    My cart
+                                                </p>
+                                                <span class="total-shopping-cart cart-total-full">
+                                                    <span class="items_cart">{{Count}}</span><span class="items_cart2"> item(s)</span><span class="items_carts"> - <span>&#8377;</span> {{TotalAmount| number:2}} </span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right shoppingcart-box" id="shopcart" role="menu" style="overflow:scroll;max-height:900%;">
+                                        <li>
+                                            <table class="table table-striped" id="tblCart">
+                                                <tbody>
+                                                    <tr ng-repeat="ci in CartItems">
+                                                        <td class="text-center" style="width:70px">
+                                                            <a href="">
+                                                                <img ng-src={{ci.ImageURL}} style="width:70px;max-width:unset;" alt="cart products" title="Yutculpa ullamco" class="preview">
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-left">
+                                                            <a class="cart_product_name" href="">{{ci.Title}} {{ci.VarienceType}}</a>
+                                                        </td>
+                                                        <td class="text-center">x{{ci.Qty}}</td>
+                                                        <td class="text-center"><span>&#8377;</span> {{ci.Price| number:2}}</td>
+                                                        <td class="text-right">
+                                                            <a href="" class="fa fa-edit"></a>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <a class="fa fa-times fa-delete" ng-click="RemoveFromCart(ci.VarianceId)"></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-left">
+                                                                <strong>Total</strong>
+                                                            </td>
+                                                            <td class="text-right"><span>&#8377;</span> {{TotalAmount | number:2}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p class="text-right">
+                                                    <a class="btn view-cart" href="" ng-click="CheckOutClick()"><i class="fa fa-shopping-cart"></i>View Cart</a>&nbsp;&nbsp;&nbsp;
+                                                    <a class="btn btn-mega checkout-cart" href="" ng-click="CheckOutClick()" style="display:none;"><i class="fa fa-share"></i>Checkout</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div ng-view></div>
+        <footer class="footer-container typefooter-1" ng-controller="IndexController">
+
+            <div class="footer-top" style="background-image: url({{FooterImaeg}}) !important;">
+            </div>
+            <div class="footer-middle ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-style" style="margin-bottom:1em;">
+                            <ul class="footer-links font-title">
+                                <li><a href="#!ContactUs">Contact Us</a></li>
+                                <li><a href="#!AboutUs">About Us</a></li>
+                                <li><a href="#!HomePage">Online Shopping</a></li>
+                                <li><a href="" ng-click="CheckOutClick()">Checkout</a></li>
+                                <li><a href="#!PrivacyPolicy">Privacy & Policy</a></li>
+                                <li><a href="#!TermsAndConditions">Terms & Conditions</a></li>
+                            </ul>
+                            <ul class="footer-links font-title icon">
+                                <li class="facebook" ng-show="ShowFacebook"><a class="" target="_blank" href="https://www.youtube.com/watch?v=ra0Qals0N2M"><i class="fa fa-facebook fa-2x"></i></a></li>
+                                <li class="twitter" ng-show="ShowTwitter"><a class="" target="_blank" href="https://www.youtube.com/watch?v=ra0Qals0N2M"><i class="fa fa-twitter fa-2x"></i></a></li>
+                                <li class="google_plus" ng-show="ShowGoogleplus"><a class="" target="_blank" href="https://www.youtube.com/watch?v=ra0Qals0N2M"><i class="fa fa-youtube fa-2x"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom ">
+                <div class="container">
+                    <div class="copyright">
+                        <span>
+                            &copy;2019 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                                <img src="../images/Powered by Cartyogi.png" alt="footer img" height="25px" />
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mobile-hide" style="width: 150px;">
+                <a href="https://web.whatsapp.com/send?phone=918610579391" target="_blank" style=" cursor: pointer;position: relative;"> <img src="images/icon/whatsapp.png" width="80" style="bottom:2%;position:fixed;margin:1em;left: 0;z-index: 5;"/></a>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 desktop-hide" style="width: 150px;">
+                <a href="https://wa.me/918610579391?" target="_blank" style=" cursor: pointer;position: relative;">
+                    <img src="images/icon/whatsapp.png" width="80" style="bottom:2%;position:fixed;margin:1em;left:0;z-index:5;"/>
+                </a>
+            </div>
+          
+            <div class="back-to-top hidden-top"><i class="fa fa-angle-up"></i></div>
+            <div class="back-to-top hidden-top"><i class="fa fa-angle-up"></i></div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="./Files/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./Files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./Files/owl.carousel.js"></script>
+    <script type="text/javascript" src="./Files/libs.js"></script>
+    <script type="text/javascript" src="./Files/jquery.unveil.js"></script>
+    <script type="text/javascript" src="./Files/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="./Files/jquery.dcjqaccordion.2.8.min.js"></script>
+    <script type="text/javascript" src="./Files/moment.js"></script>
+    <script type="text/javascript" src="./Files/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="./Files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./Files/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="./Files/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="./Files/application.js"></script>
+    <script type="text/javascript" src="./Files/homepage.js"></script>
+    <script type="text/javascript" src="./Files/toppanel.js"></script>
+    <script type="text/javascript" src="./Files/addtocart.js"></script>
+    <script type="text/javascript" src="./Files/so_megamenu.js"></script>
+    <script src="js/jquery.session.js"></script>
+    <script src="js/jquery.backDetect.js"></script>
+    <script src="js/jquery.backDetect.min.js"></script>
+</body>
+</html>
+

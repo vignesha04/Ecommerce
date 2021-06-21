@@ -1,0 +1,165 @@
+﻿<div style="background-image: url('../../ClientView/images/background3.png');">
+
+
+    <!--style-->
+    <style>
+
+        *[role="form"] {
+            width: 35%;
+            padding: 40px;
+            margin: 0 auto;
+            border-radius: 2em;
+            border: double green;
+            float: right;
+        }
+
+            *[role="form"] h2 {
+                font-size: 25px;
+                font-weight: 600;
+                color: #000000;
+                margin-top: 8%;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+        msg-error {
+            color: #c65848;
+        }
+
+        .g-recaptcha.error {
+            border: solid 2px #c64848;
+            padding: .2em;
+            width: 19em;
+        }
+    </style>
+
+    <!--/.style-->
+    <!--mobile hide-->
+    <div class="mobile-hide">
+        <div class="container" style="padding:10px 10px 10px 10px;">
+            <!--form-group-->
+            <form class="form-horizontal" role="form" style="width:35%;">
+                <h2 style="text-align:center;padding-bottom:10px;"><b>Login</b></h2>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="Email" id="EmailId" placeholder="EmailId" ng-model="member.EmailId" required class="form-control" name="EmailId">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="Password" id="Password" placeholder="Password" ng-model="member.Password" required class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- START CAPTCHA -->
+                <div class="form-group">
+                    <div class="col-sm-6">
+
+                        <input type="text" id="captcha" class="g-reCAPTCHA" data-sitekey="6LffdqgUAAAAAFGmU_Ihq0fdBYkXKBVXCabuL4Sg" disabled /><br /><br />
+                        <input type="text" id="inputText" /><br /><br />
+                        <button onclick="generateCaptcha()" class="btn-primary">Refresh</button>
+                        <button onclick="check()" class="btn-primary">Submit</button>
+                    </div>
+                </div>
+
+                <!-- END CAPTCHA -->
+
+
+                <button type="submit" class="btn btn-primary btn-block" onload="generateCaptcha()" ng-click="Get()">Login</button>
+                <div class="row">
+
+                    <span style="color:red" ng-show="showmsgError">{{msg}}</span><span style="color:green" ng-show="showmsg">{{msgStatus}}</span><br />
+                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                </div>
+            </form>
+            <!-- /form-group -->
+        </div>
+
+    </div>
+    <!--/.mobile hide-->
+    <!--desktop hide-->
+    <div class="desktop-hide">
+
+        <div class="container" style="padding:10px 10px 10px 10px;">
+            <!--form-group-->
+            <form class="form-horizontal" role="form" style="width:100%;">
+                <h4 style="text-align:center;padding-bottom:10px;">Login</h4>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="Email" id="EmailId" placeholder="EmailId" ng-model="member.EmailId" required class="form-control" name="EmailId">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="Password" id="Password" placeholder="Password" ng-model="member.Password" required class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!-- START CAPTCHA -->
+                <div class="form-group">
+                    <div class="col-sm-6">
+
+                        <input type="text" id="captcha" class="g-reCAPTCHA" data-sitekey="6LffdqgUAAAAAFGmU_Ihq0fdBYkXKBVXCabuL4Sg" disabled /><br /><br />
+                        <input type="text" id="inputText" /><br /><br />
+                        <button onclick="generateCaptcha()" class="btn-primary">Refresh</button>
+                        <button onclick="check()" class="btn-primary">Submit</button>
+                    </div>
+                </div>
+
+                <!-- END CAPTCHA -->
+
+
+                <button type="submit" class="btn btn-primary btn-block" onload="verifyCaptcha()" ng-click="Get()">Login</button>
+                <div class="row">
+
+                    <span style="color:red" ng-show="showmsg">{{msg}}</span><span style="color:green" ng-show="showmsg">{{msgStatus}}</span><br />
+                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                </div>
+            </form>
+            <!-- /form-group -->
+        </div>
+
+    </div>
+    <!--/.desktop hide-->
+    <!--stylesheets-->
+    <link href="../../AdminStyle/css/style.css" rel="stylesheet" />
+    <link href="../../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+   
+    <!--/.stylesheets-->
+    <!--javascripts for chaptcha-->
+    <script>
+        function submitUserForm() {
+            var response = grecaptcha.getResponse();
+            if (response.length == 0) {
+                document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+                return false;
+            }
+            return true;
+        }
+
+        function verifyCaptcha() {
+            document.getElementById('g-recaptcha-error').innerHTML = '';
+        }
+    </script>
+   
+    <!--/.javascript -->
+</div>

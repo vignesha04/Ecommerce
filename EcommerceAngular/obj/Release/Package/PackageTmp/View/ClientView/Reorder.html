@@ -1,0 +1,120 @@
+﻿<div>
+    <!--<link href="../../Files/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="../../Files/bootstrap.min.css">
+    <link href="../../Files/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Files/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../../Files/owl.carousel.css" rel="stylesheet">
+    <link href="../../Files/lib.css" rel="stylesheet">
+    <link href="../../Files/jquery-ui.min.css" rel="stylesheet">
+    <link href="../../Files/miniColors.css" rel="stylesheet">
+    <link href="../../Files/so_searchpro.css" rel="stylesheet">
+    <link href="../../Files/so_megamenu.css" rel="stylesheet">
+    <link href="../../Files/so-categories.css" rel="stylesheet">
+    <link href="../../Files/so-listing-tabs.css" rel="stylesheet">
+    <link href="../../Files/so-newletter-popup.css" rel="stylesheet">
+    <link href="../../Files/footer1.css" rel="stylesheet">
+    <link href="../../Files/header1.css" rel="stylesheet">
+    <link id="color_scheme" href="../../Files/theme.css" rel="stylesheet">
+    <link href="../../Files/responsive.css" rel="stylesheet">
+    <script src="../../js/Scripts/angular.min.js"></script>
+    <script src="../../js/Scripts/angular-route.min.js"></script>
+    <script src="../../js/Scripts/angular-ui.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Files/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../Files/libs.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.dcjqaccordion.2.8.min.js"></script>
+    <script type="text/javascript" src="../../Files/moment.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../Files/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="../../Files/application.js"></script>
+    <script type="text/javascript" src="../../Files/homepage.js"></script>
+    <script type="text/javascript" src="../../Files/toppanel.js"></script>
+    <script type="text/javascript" src="../../Files/addtocart.js"></script>
+    <script type="text/javascript" src="../../Files/so_megamenu.js"></script>
+    <script src="../../js/jquery.min.js"></script>-->
+    <div ng-show="loader">
+        <div class="row">
+            <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+            </div>
+        </div>
+    </div>
+    <div class="main-container container">
+        <ul class="breadcrumb">
+            <li><a href="#!HomePage"><i class="fa fa-home"></i></a></li>
+            <li><a ng-click="ViewOrderPage()">{{MemberName}} Orders</a></li>
+            <li><a>ReOrder</a></li>
+        </ul>
+        <div class="row">
+            <div id="content" class="col-lg-8 col-sm-10 col-md-8">
+                <h3><span>Order Id:{{OrderNumber.Orderno}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Order Date: {{OrderNumber.orderdate}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   No.of.Items:{{productcount}}</span></h3>
+                <div class="table-responsive form-group">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                               <!--<td class="text-center">S.No</td>-->                                                             
+                                <td colspan="2" class="text-center">Product</td>
+                                <td class="text-center">Quantity</td>
+                                <td class="text-center">Unit Price</td>
+                                <td class="text-center">Add to Cart</td>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="od in OrderDetails| orderBy:column:reverse">
+                            <tr class="text-center" ng-repeat="odi in od.Productdetails">
+                                <td class="text-center" style="vertical-align:middle;">
+                                    <a href=""><img width="50px" src={{od.Image1}} alt=" Product Image" title="" class="img-thumbnail"></a>
+                                   
+                                </td>
+                                <td >{{odi.Title}}- {{od.VarianceType}}</td>
+                                <td class="option quantity text-center" style="vertical-align:middle;">
+                                    <span class="input-group quantity-control" type="number" style="-webkit-user-select: none;float:unset">
+                                        <!--<label>Qty</label>-->
+                                        <input class="form-control" type="number" name="quantity" ng-change="Qty(odi.ProductId)" min="1" ng-keypress="onTextBoxKeyPress($event)" ng-model="odi.Quantity" />
+                                    </span>
+                                </td>
+                                <td class="text-center" style="vertical-align:middle;">{{od.Price}}</td>
+                                <td style="text-align:center">
+                                            
+                              <img src="../../images/supermarket.png" ng-click="AddToCart(odi.Title,od.Price,odi.ProductId,'',odi.Quantity,odi.DiscountDetailsId,od.TaxDetailsId,odi.CouponId,od.Image1,od.ProductVarianceId,od.MRpPrice,od.VarianceType)" style="width:25px;height:25px;cursor:pointer" alt="" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="buttons">
+                        <div class="pull-left"><a href="#!HomePage" class="btn btn-primary">Continue Shopping</a></div>
+                        <div class="pull-right"><a href="" class="btn btn-primary"  ng-click="CheckOutClick()">Place Order</a></div>
+                    </div>
+                </div>
+                <!--Pagination-->
+                <ul class="pagination pagination-sm" style="float: right; margin: 0 0 20px 0;">
+                    <li ng-class="{active:0}">
+                        <a ng-show="Pagination" ng-click="firstPage()">First</a>
+                    </li>
+                    <li ng-repeat="n in range(ItemsByPage.length)">
+                        <a ng-show="Pagination" ng-click="setPage()" ng-bind="n+1">1</a>
+                    </li>
+                    <li>
+                        <a ng-show="Pagination" ng-click="lastPage()">Last</a>
+                    </li>
+                </ul>
+                <!--/.Pagination-->
+
+            </div>
+            <!--Middle Part End -->
+
+        </div>
+    </div>
+
+    <script src="../../Slider/example.js"></script>
+    <link href="../../Slider/ImageViewer.scss" rel="stylesheet" type="text/css" />
+
+</div>
+

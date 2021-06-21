@@ -1,0 +1,355 @@
+﻿<div>
+    <div>
+        <!-- Bootstrap Core CSS -->
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+        <!-- font-awesome icons CSS -->
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <!-- //font-awesome icons CSS -->
+        <!-- side nav css file -->
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <!-- side nav css file -->
+        <!-- js-->
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+
+        <!--webfonts-->
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <!--//webfonts-->
+        <!-- Metis Menu -->
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <script src="../js/AdminStyle/js/custom.js"></script>
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+        <script src="../js/jquery.min.js"></script>
+
+        <script src="../js/Scripts/dirPagination.js"></script>
+        <style>
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+            /*---------------Font-Face---------------*/
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+
+            h2, h3, h4, h5, h6, th {
+                font-family: Nunito-Bold !important;
+            }
+
+            p, span, a, label {
+                font-family: Nunito-SemiBold !important;
+                font-size: 1rem;
+                color: black !important;
+            }
+
+            td {
+                font-family: Nunito-Regular !important;
+            }
+            /*---------------Font-Face---------------*/
+
+            input {
+                border-color: #B198CB !important;
+            }
+        </style>
+    </div>
+    <div class="cbp-spmenu-push">
+        <div class="main-content">
+            <div ng-controller="AdminMainMenu">
+                <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+            </div>
+            <div id="page-wrapper">
+                <div class="main-page">
+                    <div class="container">
+                        <div class="forms">
+                            <div class="form-two widget-shadow" style="border-radius:10px;">
+                                <div class="row" style="padding-top:35px;padding-left:25px;">
+                                    <a href="" data-toggle="tooltip" class="tool-tips" title="Manage Your Company Details Here!">
+                                        <h4 style="font-size:20px;color:#663398;"> Company</></h4>
+                                    </a>
+                                </div>
+
+                                <div class="form-body" data-example-id="simple-form-inline" style="width:100%;padding-bottom:10px; padding-left:20%;">
+                                    <form class="form-inline">
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="exampleInputUsername" ng-show="comp" form="">Company Name</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.CompanyName" class="form-control" id="" placeholder=" Enter" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="exampleInputUsername" ng-show="comp" form="">Address Line1</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.AddressLine1" class="form-control" id="" placeholder=" Enter Address1" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="AddressLine2" ng-show="comp" form="">Address Line2</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.AddressLine2" class="form-control" id="" placeholder=" Enter Address1" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="City" ng-show="comp" form="">City</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.City" class="form-control" id="" placeholder="Enter the city" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="State" ng-show="comp" form="">State</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.State" class="form-control" id="" placeholder="Enter the city" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="Country" ng-show="comp" form="">Country</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.Country" class="form-control" id="" placeholder="Enter the city" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="PinCode" ng-show="comp" form="">PinCode</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="filterValue($event)" ng-model="company.PinCode" class="form-control" id="PinCode" placeholder="Enter the pincode" required readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="GSTNo" ng-show="comp" form="">GST No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.GSTNo" class="form-control" id="GSTNo" placeholder="Enter the GstNo" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="CINno" ng-show="comp" form="">CIN No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.CINno" class="form-control" id="CINno" placeholder="Enter the CINno" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="PhoneNo" ng-show="comp" form="">Phone No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="tel" ng-keypress="filterValue($event)" ng-model="company.PhoneNo" class="form-control" id="PhoneNo" placeholder="Enter the phonenumber" required disabled />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="Emailid" ng-show="comp" form="">Email Id</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-keypress="onTextBoxKeyPress($event)" ng-model="company.EmailId" class="form-control" id="EmailId" placeholder="Enter the EmailId" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-2">
+                                                    <label for="Website" ng-show="comp" form="">Website</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-bottom:10px;">
+                                            <div class="form-horizontal">
+                                                <div class="col-lg-10">
+                                                    <input type="text" ng-model="company.WebsiteLink" class="form-control" id="WebsiteLink" placeholder="Enter the company website" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-top:16px;">
+                                            <div class="form-group ">
+                                                <h3 style="font-size:16px;color:#663398;"> Company Logo</h3><br />
+                                                <input type="file" name="FileUpload1" id="FileUpload1" ng-model="company.theFile" ng onchange="angular.element(this).scope().setFile(this)" />
+                                                <small style="color:#663398;"> Size:  Logo 184px x 70px  </small><br />
+
+                                            </div>
+                                            <div class="form-group ">
+                                                <h3 style="font-size:16px;color:#663398;"> Invoice Logo</h3><br />
+                                                <input type="file" name="FileUpload1" id="FileUpload2" ng-model="company.theFile1" ng onchange="angular.element(this).scope().setFile1(this)" />
+                                                <small style="color:#663398;"> Size:  Invoice Logo 200px x 76px  </small><br />
+
+                                            </div>
+
+                                            
+                                        </div>
+                                        <div class="row" style="padding-top:5px;">
+                                            <div class="col-lg-5">
+                                                <!--<img src="../AdminStyle/images/Aboutus.png" />-->
+                                                <img src="{{ImageUrl}}" style="width:70%!important;padding-bottom:10px;" alt="Company logo" />
+                                            </div>
+                                            <div class="col-lg-1">
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div><img src="{{ImageUrl1}}" style="width:70%!important;" alt="Invoice logo" /></div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-top:16px;">                                                                                    
+                                            <div class="form-group " style="margin-top:8px;">
+                                                <h3 style="font-size:16px;color:#663398;"> Site Favicon</h3><br />
+                                                <input type="file" name="FileUpload1" id="FileUpload3" ng-model="company.theFile2" ng onchange="angular.element(this).scope().setFile2(this)" />
+                                                
+                                            </div>
+                                        </div>
+                                       
+                                        
+
+
+                                        <div class="row" style="float:right;">
+                                            <button type="submit" class="btn btn-default" ng-show="ShowSave" ng-style="myObj" ng-click="Save()"><img src="../AdminStyle/images/save.png" />&nbsp;&nbsp;Save</button>
+                                            <button type="button" class="btn btn-default" ng-show="ShowUpdate" ng-style="myObj" ng-click="Update()"><img src="../AdminStyle/images/update_tag_.png" />&nbsp;&nbsp;Update</button>
+                                        </div>
+                                        <div class="row"></div>
+                                        <div class="row">
+                                            <span style="color:red !important;" ng-show="ShowError">{{msg}}</span><span style="color:green !important;">{{msgStatus}}</span><br />
+                                            <span ng-model="company.hiddenCompanyDetailId" ng-show="Showhide"></span>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer ">
+
+            <div class="col-lg-12 form-inline">
+                <span>
+                    &copy; 20 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                        <img src="images/Powered by Cartyogi-1.png" height="25" />
+                    </a>
+                </span>
+
+            </div>
+        </div>
+        <!--//footer-->
+    </div>
+    <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+    <script src="../js/AdminStyle/js/scripts.js"></script>
+    <script src="../js/AdminStyle/js/chartinator.js"></script>
+    <script src="../js/AdminStyle/js/classie.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+
+
+
+</div>

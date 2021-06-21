@@ -1,0 +1,16 @@
+﻿@media (min-width:768px) and (max-width:1050px) {
+
+    /*.tab-hide {
+        display: block !important;
+    }*/
+
+    /*.mobile-hide {
+        display: block !important;
+    }*/
+    .container {
+        width: 100%;
+    }
+
+    
+}
+

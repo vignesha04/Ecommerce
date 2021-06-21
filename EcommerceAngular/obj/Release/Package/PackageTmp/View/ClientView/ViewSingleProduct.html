@@ -1,0 +1,837 @@
+﻿
+
+<div ng-show="loader">
+    <div class="row">
+        <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+            <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+        </div>
+    </div>
+</div>
+<div class="main-container container" ng-show="ShowMainDiv">
+    <!--<link href="../../Files/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="../../Files/bootstrap.min.css">
+    <link href="../../Files/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Files/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../../Files/owl.carousel.css" rel="stylesheet">
+    <link href="../../Files/lib.css" rel="stylesheet">
+    <link href="../../Files/jquery-ui.min.css" rel="stylesheet">
+    <link href="../../Files/miniColors.css" rel="stylesheet">
+    <link href="../../Files/so_searchpro.css" rel="stylesheet">
+    <link href="../../Files/so_megamenu.css" rel="stylesheet">
+    <link href="../../Files/so-categories.css" rel="stylesheet">
+    <link href="../../Files/so-listing-tabs.css" rel="stylesheet">
+    <link href="../../Files/so-newletter-popup.css" rel="stylesheet">
+    <link href="../../Files/footer1.css" rel="stylesheet">
+    <link href="../../Files/header1.css" rel="stylesheet">
+    <link id="color_scheme" href="../../Files/theme.css" rel="stylesheet">
+    <link href="../../Files/responsive.css" rel="stylesheet">
+    <script src="../../js/Scripts/angular.min.js"></script>
+    <script src="../../js/Scripts/angular-route.min.js"></script>
+    <script src="../../js/Scripts/angular-ui.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Files/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../Files/libs.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.dcjqaccordion.2.8.min.js"></script>
+    <script type="text/javascript" src="../../Files/moment.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../Files/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="../../Files/application.js"></script>
+    <script type="text/javascript" src="../../Files/homepage.js"></script>
+    <script type="text/javascript" src="../../Files/toppanel.js"></script>
+    <script type="text/javascript" src="../../Files/addtocart.js"></script>
+    <script type="text/javascript" src="../../Files/so_megamenu.js"></script>
+    <script src="../../js/jquery.min.js"></script>-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        .product-simple .extraslider .extraslider-inner .item .item-inner .item-image {
+            width: 170px;
+            float: left;
+            position: relative;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .image-gallery1 {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #big img {
+            height: 250px;
+            padding: 5px 5px 5px 5px;
+        }
+
+        #sub img {
+            padding: 5px 5px 5px 5px;
+            height: 60px;
+            border: 1px solid black;
+            float: left;
+            opacity: .7;
+        }
+
+        .sbuttons {
+            bottom: 15%;
+            position: fixed;
+            margin: 1em;
+            right: 0;
+            z-index: 5;
+        }
+
+        .sbutton {
+            display: block;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            margin: 20px auto 0;
+            box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            /*-webkit-transition: all .1s ease-out;
+                  transition: all .1s ease-out;*/
+            position: relative;
+        }
+
+            .sbutton > i {
+                font-size: 38px;
+                line-height: 60px;
+                /*transition: all .2s ease-in-out;
+                      transition-delay: 2s;*/
+            }
+
+            .sbutton:active,
+            .sbutton:focus {
+                box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+            }
+
+            .sbutton:not(:last-child) {
+                width: 60px;
+                height: 60px;
+                margin: 20px auto 0;
+                opacity: 0;
+            }
+
+                .sbutton:not(:last-child) > i {
+                    font-size: 25px;
+                    line-height: 60px;
+                    /*transition: all .3s ease-in-out;*/
+                }
+
+            .sbutton:not(:last-child) {
+                opacity: 1;
+                width: 60px;
+                height: 60px;
+                margin: 15px auto 0;
+            }
+
+            .sbutton:nth-last-child(1) {
+                /*-webkit-transition-delay: 25ms;
+                  transition-delay: 25ms;*/
+            }
+
+            .sbutton:not(:last-child):nth-last-child(2) {
+                /*-webkit-transition-delay: 20ms;
+                  transition-delay: 20ms;*/
+            }
+
+            .sbutton:not(:last-child):nth-last-child(3) {
+                /*-webkit-transition-delay: 40ms;
+                  transition-delay: 40ms;*/
+            }
+
+            .sbutton:not(:last-child):nth-last-child(4) {
+                /*-webkit-transition-delay: 60ms;
+                  transition-delay: 60ms;*/
+            }
+
+            .sbutton:not(:last-child):nth-last-child(5) {
+                /*-webkit-transition-delay: 80ms;
+                  transition-delay: 80ms;*/
+            }
+
+            .sbutton:not(:last-child):nth-last-child(6) {
+                /*-webkit-transition-delay: 100ms;
+                  transition-delay: 100ms;*/
+            }
+
+        [tooltip]:before {
+            font-family: 'Roboto';
+            font-weight: 600;
+            border-radius: 2px;
+            background-color: #585858;
+            color: #fff;
+            content: attr(tooltip);
+            font-size: 12px;
+            visibility: hidden;
+            opacity: 0;
+            padding: 5px 7px;
+            margin-left: 10px;
+            position: absolute;
+            left: 100%;
+            bottom: 20%;
+            white-space: nowrap;
+        }
+
+        /*[tooltip]:hover:before,
+              [tooltip]:hover:after {
+                  visibility: visible;
+                  opacity: 1;
+              }*/
+
+        .sbutton.mainsbutton {
+            background: #2ab1ce;
+        }
+
+        .sbutton.gplus {
+            background: #F44336;
+        }
+
+        .sbutton.pinteres {
+            background: #e60023;
+        }
+
+        .sbutton.twitt {
+            background: #03A9F4;
+        }
+
+        .sbutton.fb {
+            background: #3F51B5;
+        }
+
+        .sbutton.whatsapp {
+            background: #00e676;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .img-zoom-container {
+            position: relative;
+            margin: 0px 150px 10px 10px;
+        }
+
+        .img-zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            /*set the size of the lens:*/
+            width: 50px;
+            height: 50px;
+        }
+
+        .img-zoom-result {
+            position: absolute;
+            left: 350px;
+            top: 1px;
+            border: 1px solid #f4f4f4;
+            /*set the size of the result div:*/
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $(document).on('click', '#variancecolor', function () {
+
+                $(this).css("border", "13px solid black")
+            });
+        });
+    </script>
+    <div ng-show="loader">
+        <div class="row">
+            <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+            </div>
+        </div>
+    </div>
+    <ul class="breadcrumb">
+        <li><a href="" ng-click="aHomeClick()"><i class="fa fa-home"></i></a></li>
+        <li><a href="#!ViewProduct">{{CategoyName}}-{{SubCategoryName}}</a></li>
+        <li><a href="">{{ProdTitle}}</</a></li>
+    </ul>
+
+    <div class="row">
+        <aside class="col-sm-4 col-md-3 content-aside mobile-hide" id="column-left">
+            <div class="mobile-hide">
+
+                <!--<div class="module category-style">
+                    <h3 class="modtitle">Categories</h3>
+                    <div class="modcontent">
+                        <div class="box-category">
+                            <ul id="cat_accordion" class="list-group">
+                                <li class="hadchild cutom-parent-li" ng-repeat="cat in Category">
+                                    <a href="" class="cutom-parent">{{cat.CategoyName}}<span class="dcjq-icon"></span></a>
+                                    <ul>
+                                        <li ng-repeat="subcat in cat.SubMenu"><a href="ViewProduct/{{subcat.SubCategoryId}}/{{cat.CategoryId}}">{{subcat.SubCategoryName}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="module product-simple mobile-hide">
+                    <h3 class="modtitle">
+                        <span>Latest products</span>
+                    </h3>
+                    <div class="modcontent">
+                        <div class="extraslider">
+                            <div class=" extraslider-inner">
+                                <div class="item ">
+                                    <div class="product-layout item-inner style1 " ng-repeat="NI in NewItems">
+                                        <div class="item-image">
+                                            <div class="item-img-info" style="text-align: center">
+                                                <a href="#!Product/{{NI.ProductId}}" title="Mandouille short">
+
+                                                    <!--<img ng-repeat="pim1 in NI.Image1" src="{{pim1.ImageURL}}" alt="{{new.Title}}">-->
+                                                </a>
+
+                                                <a href="#!Product/{{NI.ProductId}}" title="Mandouille short" style="text-transform: capitalize;">
+                                                    <img ng-repeat="pim1 in NI.Image1" src="{{pim1.ImageURL}}" alt="{{new.Title}}">
+                                                    {{NI.Title}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="item-info">
+                                            <div class="item-title">
+                                                <!--<a href="#!Product/{{NI.ProductId}}" title="Mandouille short" style="text-transform: capitalize;">
+                                                    <img ng-repeat="pim1 in NI.Image1" src="{{pim1.ImageURL}}" alt="{{new.Title}}">
+                                                    {{NI.Title}}
+                                                </a>-->
+                                            </div>
+                                            <div class="content_price price" style="display:{{NI.showVariance}}">
+                                                <span class="price-new product-price"><span>&#8377;</span> {{(NI.Price)-(NI.Discount)}} </span>&nbsp;&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div id="content" class="col-md-9 col-sm-8">
+            <div class="product-view row">
+                <div class="left-content-product">
+                    <div class="content-product-left class-honizol col-md-5 col-sm-12 col-xs-12">
+                        <div id="image-gallery1">
+                            <div class="image-container" id="big">
+                                <img src="{{BigImage}}" class="center-block" />
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div id="sub" ng-repeat="pim1 in Image1" style="padding-left:20px;">
+                                            <div class="col-lg-3">
+                                                <img src="{{pim1.ImageURL}}" alt="Product image" ng-click="ChangeImgInSlider(pim1.ImageURL)" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-info">
+                                <span class="current"></span>
+                                <span class="total"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-product-right col-md-7 col-sm-12 col-xs-12">
+                        <div class="title-product">
+                            <h1 style="text-transform: capitalize">{{ProdTitle}} <span ng-show="varianthide"> - </span> {{VarienceType}}{{colour}}</h1>
+                        </div>
+                        <div class="product-label form-group">
+                            <div class="product_page_price price" itemprop="offerDetails" itemscope="" itemtype="">
+                                <span class="price-new" itemprop="price"><span>&#8377;</span> {{(((PriceNew)-(DiscountPercen))-(TodayDealAmountt))}}</span></br>
+                                <span class="price-old" style="text-decoration:none;color:forestgreen;"><b>Discount {{Discoutamont}}</b> </span>
+                                <br />
+                                <span class="price-old" ng-show="ShowCouponCode" style="text-decoration:none;">Please use this copoun <b style="color:black;">"{{CouponCode}}"</b> For get <b style="color:black;">{{CouponPercentage}}%</b> Off</span>
+                            </div>
+                            <div class="sbuttons">
+                                <a ng-show="ShowWhattsappBtn" data-action="share/whatsapp/share" id='button' class="sbutton whatsapp" ng-click="Whattsappsharing()" tooltip="Share on whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <!--<a ng-show="ShowWhattsappBtn" id='button1' href="https://api.whatsapp.com/send?text={{link1}}" target="_blank" class="sbutton whatsapp" ng-click="Whattsappsharing()" tooltip="Share on whatsapp"><i class="fab fa-whatsapp"></i></a>-->
+                                <!--<a ng-show="ShowfacebookBtn" href="https://www.facebook.com/sharer/sharer.php?u=&t=" target="_blank" class="sbutton fb" ng-click="facebooksharing()" tooltip="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a ng-show="ShowGooglePlusBtn" href="https://plus.google.com/share?url=" target="_blank" class="sbutton gplus" ng-click="GooglePlussharing()" tooltip="Share on Google Plus"><i class="fab fa-google-plus-g"></i></a>
+                                <a ng-show="ShowTwitterBtn" href="https://twitter.com/intent/tweet?" target="_blank" class="sbutton twitt" ng-click="Twittersharing()" tooltip="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                                <a ng-show="ShowpInterestBtn" href="http://pinterest.com/pin/create/button/?url=&description=" target="_blank" class="sbutton pinteres" ng-click="Pinterestsharing()" tooltip="Share on Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                <a ng-show="ShowShareBtn1" ng-click="ShareBtnClick()" href="" target="_blank" class="sbutton mainsbutton" tooltip="Share"><i class="fas fa-share-alt"></i></a>
+                                <a ng-show="ShowShareBtn2" ng-click="ShareBtnClick1()" href="" target="_blank" class="sbutton mainsbutton" tooltip="Share"><i class="fas fa-share-alt"></i></a>-->
+                                <a ng-show="ShowfacebookBtn" class="sbutton fb" ng-click="facebooksharing()" tooltip="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <!--<a ng-show="ShowGooglePlusBtn" class="sbutton gplus" ng-click="GooglePlussharing()" tooltip="Share on Google Plus"><i class="fab fa-google-plus-g"></i></a>-->
+                                <a ng-show="ShowTwitterBtn" class="sbutton twitt" ng-click="Twittersharing()" tooltip="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                                <!--<a ng-show="ShowpInterestBtn" class="sbutton pinteres" ng-click="Pinterestsharing()" tooltip="Share on Pinterest"><i class="fab fa-pinterest-p"></i></a>-->
+                                <a ng-show="ShowShareBtn1" ng-click="ShareBtnClick()" class="sbutton mainsbutton" tooltip="Share"><i class="fas fa-share-alt"></i></a>
+                                <a ng-show="ShowShareBtn2" ng-click="ShareBtnClick1()" class="sbutton mainsbutton" tooltip="Share"><i class="fas fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                        <div id="product">
+                            <div class="form-group box-info-product">
+                                <div class="option quantity">
+                                    <div class="input-group quantity-control" type="number" unselectable="on" style="-webkit-user-select: none;">
+                                        <label>Qty</label>
+                                        <input class="form-control" type="tel" visibility=hidden name="quantity" ng-change="Quantityperproduct(Quantity,VarianceId)" value="1" ng-model="Quantity" min="1" ng-keypress="isNumber($event)" required>
+                                        <input type="hidden" name="product_id" value={{ProductId}}>
+                                        <a ng-click="MinusQty(Quantity,VarianceId)">
+                                            <span class="input-group-addon product_quantity_down">
+
+                                            </span>
+                                        </a>
+                                        <a ng-click="AddQty(Quantity,VarianceId)">
+                                            <span class="input-group-addon product_quantity_up">+</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cart">
+                                    <span ng-show="DiscountDetailsId1">{{Discoutamont}}</span>
+                                    <span ng-show="CouponId1">{{CouponId}}</span>
+                                    <span ng-show="TaxDetail1">{{TaxDetail}}</span>
+                                    <span ng-show="Image11">{{Image1}}</span>
+                                    <span ng-show="sVarianceId">{{VarianceId}}</span>
+                                    <span ng-show="sDiscountAmt">{{DiscountAmt}}</span>
+                                    <span ng-show="sTodayDealAmountt">{{TodayDealAmountt}}</span>
+                                    <input type="button" data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg" ng-click="AddToCart(ProdTitle,PriceNew,ProductId,'',Quantity,DiscountDetailsId,TaxPercentage,CouponId,Image1,VarianceId,MRPPriceNew,offeramount,VarienceType)" data-original-title="Add to Cart">
+                                </div>
+                            </div>
+                            <div class="form-group box-info-product" style="display{{vshowVariance}}">
+                                <div class=" add-to-links wish_comp">
+                                    <ul class="blank list-inline">
+                                        <li class="wishlist" ng-repeat="pv in ProductVarient">
+                                            <a class="icon" data-toggle="tooltip" title="" ng-click="ChangeProdVarience(pv.ProductVarianceId,pv.sellingPrice,pv.VarianceType,pv.wholesale,pv.VariancePrice)">
+                                                <span ng-show="ProductVarianceId">{{pv.ProductVarianceId}}</span>
+                                                <i class="fa"><b>{{pv.VarianceType}}</b><br /><br /><del><span>&#8377;</span> {{pv.VariancePrice}} </del> </i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="colorvaria">
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                    <ul>
+                        <li ng-repeat="var in ColorVariance" ng-click="heighlight(var.colorcode)" id="variancecolor" style="background-color:{{var.colorcode}};margin-right: 21px;display:inline;
+
+    width: 13px;
+    /* top: 20px; */
+    border: 1px solid blue;
+    height: 10px;
+    padding: 15px;">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6" ng-show="wholehide">
+                    <h2>Wholesale Price</h2>
+                    <table style="width:100%" class="table-bordered">
+                        <thead>
+                            <tr style="text-align:center">
+                                <td>
+                                    From Qty
+                                </td>
+                                <td>
+                                    To Qty
+                                </td>
+                                <td>
+                                    Product per Price
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="pv in wholesaleProductVarient">
+                            <tr style="text-align:center">
+                                <td>
+                                    {{pv.wholesaleFromQty}}
+                                </td>
+                                <td>
+                                    {{pv.wholesaleToQty}}
+                                </td>
+                                <td>
+                                    {{pv.wholesaleprize}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--<h4>
+
+                        Free Delivery for the Order Value above {{wholesaleQty}}{{wholesaleprizeqty}}.
+
+                    </h4>-->
+                </div>
+                <!--<div class="col-md-6" ng-show="deliveryhide">
+                    <h2>Delivery Charges</h2>
+                    <table style="width:100%" class="table-bordered">
+                        <thead>
+                            <tr style="text-align:center">
+                                <td>
+                                    Order Value From
+                                </td>
+                                <td>
+                                    Order Value To
+                                </td>
+                                <td>
+                                    Delivery Charge
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="pv in Deliverycharges">
+                            <tr style="text-align:center">
+                                <td>
+                                    {{pv.Fromprice}}
+                                </td>
+                                <td>
+                                    {{pv.Toprice}}
+                                </td>
+                                <td>
+                                    {{pv.Price}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>-->
+            </div>
+            <!-- Product Tabs -->
+            <div class="producttab ">
+
+                <div class="tabsslider  vertical-tabs col-xs-12">
+                    <ul class="nav nav-tabs col-lg-2 col-sm-3">
+                        <li class="active"><a data-toggle="tab" href="">Description</a></li>
+                    </ul>
+                    <div class="tab-content col-lg-10 col-sm-9 col-xs-12">
+                        <div id="tab-1" class="tab-pane fade active in" style="display:none;">
+                            <p>
+                                {{Description}}
+                            </p>
+                        </div>
+                        <div id="tab-2" class="tab-pane fade active in" style="display:none;">
+                            <p>
+                                {{Description2}}
+                            </p>
+                        </div>
+                        <div id="tab-3" class="tab-pane fade active in" style="display:none;">
+                            <p>
+                                {{Description3}}
+                            </p>
+                        </div>
+
+                        <div id="tab-3" class="tab-pane fade active in">
+                            <ul ng-repeat="Tec in ProductTecDetails">
+                                <li style="list-style:square;margin-left:20px;">
+
+                                    {{Tec.TecDetails}}
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <div id="tab-3" class="tab-pane fade active in">
+                            <h3 style="color:darkblue">
+                                <!--DIMENSIONS (Approx) :-->
+                            </h3>
+                            <ul ng-repeat="Feat in ProductFeatures">
+
+                                <li style="list-style:square;margin-left:20px;">
+                                    {{Feat.Features}}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!--<h3 style="color:darkblue">ESTIMATE DELIVERY : 5 – 7 Business days after Dispatch.</h3>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="producttab " ng-show="ShowReview" style="margin:unset;">
+
+                <div class="tabsslider  vertical-tabs col-xs-12">
+                    <div>
+                        <ul class="nav nav-tabs col-lg-2 col-sm-3">
+                            <li class="active"><a data-toggle="tab" href="">Customer Review</a></li>
+                        </ul>
+                    </div>
+                    <div  >
+                        <ul class="tab-content col-lg-4 col-sm-9 col-xs-12" ng-repeat="review in reviewRating" style="padding-bottom:15px;margin-left:2em;">
+
+
+                            <li style="list-style-image:url('../../images/man.png');">
+                              <small> {{InsertedDate}} </small> - {{review.MemberName}} , {{review.City}}
+                            </li>
+                            <li style="padding-top:2px;">
+                                <div class="rating">
+                                    {{review.Rating}}
+
+
+                                    <span class="list-inline" ng-show="Showstar1">
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                    </span>
+
+                                    <span class="list-inline" ng-show="Showstar2">
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                    </span>
+
+                                    <span class="list-inline" ng-show="Showstar3">
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                    </span>
+
+                                    <span class="list-inline" ng-show="Showstar4">
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                    </span>
+
+                                    <span class="list-inline" ng-show="Showstar5">
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                        <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                    </span>
+
+                                </div>
+                            </li>
+
+                            <li style="padding-top:2px;">
+                                {{review.ReviewComments}}
+                            </li>
+
+                        </ul>
+                        <hr />
+                        <span ng-show="ShowLoadMore" ng-click="ShowallReview()" style="color:cornflowerblue;text-decoration:underline;font-size:small;cursor:pointer"> Show All Review & Rating...  </span>
+                    </div>
+
+                </div>
+
+            </div>-->
+
+
+            <div class="producttab " ng-show="ShowReview" style="margin:unset;">
+
+                <div class="tabsslider  vertical-tabs col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-3">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a data-toggle="tab" href="">Customer Review</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-8">
+                                <ul class="tab-content col-lg-5 col-sm-9 col-xs-12" ng-repeat="review in reviewRating" style="padding-bottom:2px;border:none;min-height:65px;">
+
+
+                                    <li style="list-style-image:url('../../images/man.png');">
+                                        <small> {{InsertedDate}} </small> - {{review.MemberName}} , {{review.City}}
+                                    </li>
+                                    <li style="padding-top:2px;">
+                                        <div class="rating">
+                                            {{review.Rating}}
+
+
+                                            <span class="list-inline" ng-show="Showstar1">
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                            </span>
+
+                                            <span class="list-inline" ng-show="Showstar2">
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                            </span>
+
+                                            <span class="list-inline" ng-show="Showstar3">
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                            </span>
+
+                                            <span class="list-inline" ng-show="Showstar4">
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/star.png" style="width:20px;" />
+                                            </span>
+
+                                            <span class="list-inline" ng-show="Showstar5">
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                                <img src="../../AdminStyle/images/Icons/favorite.png" style="width:20px;" />
+                                            </span>
+
+                                        </div>
+                                    </li>
+
+                                    <li style="padding-top:2px;text-transform: capitalize">
+                                        {{review.ReviewComments}}
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            <hr />
+                            <span ng-show="ShowLoadMore" ng-click="ShowallReview()"
+                                  style="color:cornflowerblue;text-decoration:underline;font-size:small;cursor:pointer">
+
+                                Show All Review
+                                & Rating...
+
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="products-category">
+            <h3 class="title-category ">Related Products</h3>
+            <!--<a style="float:right" href="ViewProduct/{{itm.SubCategoryId}}/{{itm.CategoryId}}">View All</a>-->
+            <div class="products-list row nopadding-xs so-filter-gird grid">
+                <div class="product-layout col-lg-15 col-md-4 col-sm-6 col-xs-12" ng-repeat="pl in ProductList">
+                    <div class="product-item-container">
+                        <div class="col-lg-12 col-xs-6" style="padding:unset">
+                            <div class="left-block">
+                                <div class="product-image-container second_img" style="width:100%; height:117px !important;">
+                                    <a href="#!Product/{{pl.ProductId}}" title="{{pl.Title}}">
+                                        <img ng-repeat="pim1 in pl.Image1" src="{{pim1.ImageURL}}" class="img-1 img-responsive" alt="{{pl.Title}}">
+                                        <img ng-repeat="pim2 in pl.Image2" src="{{pim2.ImageURL}}" class="img-2 img-responsive" alt="{{pl.Title}}">
+                                    </a>
+                                </div>
+                                <div class="button-group so-quickview cartinfo--left" ng-repeat="var in pl.ProdVariance | limitTo:1">
+                                    <span ng-show="DiscountDetailsId1">{{pl.DiscountDetailsId}}</span>
+                                    <span ng-show="CouponId1">{{pl.CouponId}}</span>
+                                    <span ng-show="TaxDetail1">{{pl.TaxDetail}}</span>
+                                    <span ng-show="ProductId123">{{pl.ProductId}}</span>
+                                    <!--<button type="button" class="addToCart btn-button" title="Add to carts" ng-click="AddToCart(pl.Title,var.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1,var.ProductVarianceId,var.VariancePrice,var.Discountamt)">
+                                        <i class="fa fa-shopping-basket"></i>
+                                        <span>Add to cart </span>
+                                    </button>-->
+                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="#!Product/{{pl.ProductId}}" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span> view</span></a>
+                                </div>
+                                <div class="form-group box-info-product">
+                                    <div class=" add-to-links wish_comp">
+                                        <ul class="blank list-inline"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xs-6">
+                            <div class="right-block ">
+                                <div class="button-group mobile-hide">
+                                    <button type="button" class="addToCart btn-button " ng-repeat="var in pl.ProdVariance | limitTo:1" style="background-color:#102985;color:white;border-radius:13px;height:30px;line-height: 30px;cursor:pointer;padding-bottom:8px;" title="Add to carts" ng-click="AddToCart(pl.Title,var.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1,var.ProductVarianceId,var.VariancePrice,var.Discountamt)">
+                                        <i class="fa fa-shopping-basket"></i>
+                                        <span>Add to cart </span>
+                                    </button>
+                                </div>
+                                <div class="caption">
+                                    <h4><a href="" title="Cupim should " target="_self" ng-model="Title" style="text-transform: capitalize;font-size:20px">{{pl.Title}} </a></h4>
+                                    <!--<h4><a href="" title="Cupim should " target="_self" ng-model="Title" style="text-transform: capitalize">{{pl.Title}} </a></h4>-->
+                                    <!--<div class="price" ng-repeat="vari in pl.ProdVariance | limitTo:1">
+                                        <span class="price-new" id="price-new"><span>&#8377;</span>{{(vari.sellingPrice)}}</span>
+                                        <span class="price-old"><span>&#8377;</span>{{(vari.VariancePrice)}}</span>
+                                        <div class="form-group box-info-product desktop-hide">
+                                            <div class="option quantity">
+                                                <div class="input-group quantity-control" type="number" unselectable="on" style="-webkit-user-select: none;">
+                                                    <label>Qty</label>
+                                                    <input class="form-control" type="tel" visibility=hidden name="quantity" value="1" ng-model="Quantity" min="1" max="99" ng-keypress="isNumber($event)" required>
+                                                    <input type="hidden" name="product_id" value={{ProductId}}>
+                                                </div>
+                                            </div>
+                                            <div class="cart">
+                                                <input type="button" data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" class="btn btn-mega btn-lg"
+                                                       ng-click="AddToCart(pl.Title,vari.sellingPrice,pl.ProductId,pl.Picture,Quantity,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1)" data-original-title="Add to Cart">
+                                            </div>
+                                        </div>
+                                    </div>-->
+
+                                  
+                                    <div class="price" ng-repeat="vari in pl.ProdVariance | limitTo:1">
+                                        <span class="price-new" id="price-new">{{CurrencyType}}{{(vari.sellingPrice)}}</span>
+                                        <span class="price-old">{{CurrencyType}}{{(vari.VariancePrice)}}</span>
+                                        <div class="form-group box-info-product desktop-hide">
+                                            <div class="option quantity">
+                                                <div class="input-group quantity-control" type="number" unselectable="on" style="-webkit-user-select: none;">
+                                                    <label>Qty</label>
+                                                    <input class="form-control" type="tel" visibility=hidden name="quantity" value="1" ng-model="Quantity" min="1" max="99" ng-keypress="isNumber($event)" required>
+                                                    <input type="hidden" name="product_id" value={{ProductId}}>
+                                                </div>
+                                            </div>
+                                            <div class="cart" style="padding-top:10px;">
+                                                <input type="button" class="addToCart btn-button " data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" style="background-color:#102985;color:white;border-radius:13px;height:30px;line-height: 30px;cursor:pointer;padding-bottom:8px;"
+                                                       ng-click="AddToCart(pl.Title,vari.sellingPrice,pl.ProductId,pl.Picture,Quantity,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1)" data-original-title="Add to Cart">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="description item-desc hidden">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est . </p>
+                                    </div>
+                                    <div class="list-block hidden">
+                                        <button class="addToCart btn-button" type="button" title="Add to Cart" onclick="cart.add('101', '1');">
+                                            <i class="fa fa-shopping-basket"></i>
+                                        </button>
+                                        <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        // Initiate zoom effect:
+        imageZoom("myimage", "myresult");
+    </script>
+</div>
+<script src="../../Slider/example.js"></script>
+<link href="../../Slider/ImageViewer.scss" rel="stylesheet" type="text/css" />

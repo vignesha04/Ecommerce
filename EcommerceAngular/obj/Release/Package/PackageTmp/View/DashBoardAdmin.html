@@ -1,0 +1,558 @@
+﻿<div>
+    <div>
+        <style>
+            li > a {
+                color: rgb(203,52,244) !important;
+            }
+        </style>
+        <!-- Bootstrap Core CSS -->
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+
+        <!-- font-awesome icons CSS -->
+        <!--<link href="css/font-awesome.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <!-- //font-awesome icons CSS -->
+        <!-- side nav css file -->
+        <!--<link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <!-- side nav css file -->
+        <!-- js-->
+        <!--<script src="js/jquery-1.11.1.min.js"></script>-->
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <!--<script src="js/modernizr.custom.js"></script>-->
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+
+        <!--webfonts-->
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <!--//webfonts-->
+        <!-- Metis Menu -->
+        <!--<script src="js/metisMenu.min.js"></script>-->
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <!--<script src="js/custom.js"></script>-->
+        <script src="../js/AdminStyle/js/custom.js"></script>
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+
+        <!--<link href="css/custom.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+        <script src="../js/jquery.min.js"></script>
+
+        <script src="../js/Scripts/dirPagination.js"></script>
+        <!--//Metis Menu -->
+        <style>
+            rect {
+                fill: #689f39;
+                stroke: #689f39;
+            }
+
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+
+            .col-lg-6 {
+                /*width: 50%;*/
+                padding-bottom: 10px;
+            }
+
+            /*---------------Font-Face---------------*/
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+
+            h2, h3, h4, h5, th {
+                font-family: Nunito-Bold !important;
+            }
+
+            p, span, a, label {
+                font-family: Nunito-SemiBold !important;
+                color: black !important;
+                font-size: 1rem;
+            }
+
+            td {
+                font-family: Nunito-Regular !important;
+            }
+            /*---------------Font-Face---------------*/
+
+            input {
+                border-color: #B198CB !important;
+            }
+
+            @media (min-width:200px) and (max-width:768px) {
+                .chart svg {
+                    width: 100%;
+                }
+            }
+
+            @media(min-width:1025px) and (max-width:1400px) {
+                .stat1 {
+                    margin: 0px 10px;
+                }
+            }
+
+            #chart_wrap {
+                position: relative;
+                padding-bottom: 100%;
+                height: 0;
+                /*overflow: hidden;*/
+            }
+
+            #chart_div {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+    </div>
+    <div class="cbp-spmenu-push">
+        <div class="main-content">
+            <div ng-controller="AdminMainMenu">
+                <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+            </div>
+
+            <div id="page-wrapper" style="padding-top:150px;">
+                <div class="main-page">
+                    <div class="col_3">
+                        <div class="col-md-3 col-xs-12" style="border-radius:7px;height:80px;margin-left:15px;">
+                            <div class="r3_counter_box r3_counter_box1" style="border-radius:7px;min-height:80px;">
+                                <i class="pull-left">
+                                    <img src="../AdminStyle/images/tsa.png" width="40px" height="40px" />&nbsp;&nbsp;
+                                    <!--<img src="../AdminStyle/images/Icons/TotalSalesAmount.png" width="25px" height="25px" />-->
+                                </i>
+                                <div class="stats">
+                                    <h5><strong><span>&#8377;</span>{{TotalSalesAmount}}</strong></h5>
+                                    <span>Total Sales Amount</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12" style="border-radius:7px;height:80px;margin-left:15px;">
+                            <div class="r3_counter_box" style="border-radius:7px;min-height:80px;">
+                                <i class="pull-left">
+                                    <img src="../AdminStyle/images/tsc.png" width="40px" height="40px" />&nbsp;&nbsp;
+                                    <!--<img src="../AdminStyle/images/Icons/TotalSalCount.png" width="25px" height="25px" />-->
+                                </i>
+                                <div class="stats">
+                                    <h5><strong>{{TotalSalesCount}}</strong></h5>
+                                    <span>Total Sales Count</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12" style="border-radius:7px;height:80px;margin-left:15px;">
+                            <div class="r3_counter_box" style="border-radius:7px;min-height:80px;">
+                                <i class="pull-left">
+                                    <img src="../AdminStyle/images/np.png" width="30px" height="35px" />&nbsp;&nbsp;
+                                    <!--<img src="../AdminStyle/images/Icons/NewProductDas.png" width="25px" height="25px" />-->
+                                </i>
+                                <div class="stats">
+                                    <h5><strong>{{NewProductCount}}</strong></h5>
+                                    <span>New Products</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12" style="border-radius:7px;height:80px;margin-left:15px;">
+                            <div class="r3_counter_box" style="border-radius:7px;min-height:80px;">
+                                <i class="pull-left">
+                                    <img src="../AdminStyle/images/pc.png" width="30px" height="35px" />&nbsp;&nbsp;
+                                    <!--<img src="../AdminStyle/images/Icons/InactiveUsers.png" width="25px" height="25px" />-->
+                                </i>
+                                <div class="stats">
+                                    <h5><strong> {{NewProductCount}} </strong> </h5>
+                                    <label>Products Count </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <div class="row-one widgettable" style="padding-top:20px;">
+                        <div class="col-md-12 content-top-2 card" style="border-radius:7px;">
+                            <div class="agileinfo-cdr" style="height:500px;">
+                                <h4 style="color:#663398; " ng-show="ShowWeeklySales">Weekly Sales</h4>
+                                <h4 style="color:#663398; " ng-show="ShowMonthlySales">Monthly Sales</h4>
+                                <h4 style="color:#663398; " ng-show="ShowYearlySales">Yearly Sales</h4>
+                                <div style="padding-top:25px;float:right !important;">                                  
+                                        <button ng-click="week()" style="background-color:#4cb050;border:none;border-radius:7px;height:40px;color:white;">Weekly Sales</button>                                   
+                                        <button ng-click="Monthsales()" style="background-color:#f44236;border:none;border-radius:7px;height:40px;color:white;">Monthly Sales</button>                                   
+                                        <button ng-click="YearlySales()" style="background-color:#fec107;border:none;border-radius:7px;height:40px;">Yearly Sales</button>                                   
+                                </div>
+                                <div class="col-md-12" style="padding-top:25px;" ng-show="Weeksales">
+                                    <div class="col-md-1" style="padding-top:5px">
+                                        <label style="text-align:center;">From Date</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="date" class="form-control" ng-model="FromDate"/>
+                                    </div>
+                                    <div class="col-md-1" style="padding-top:5px">
+                                        <label style="text-align:center;">To Date</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="date" class="form-control" ng-model="ToDate"/>
+                                    </div>
+                                    <div class="col-md-2" style="text-align:center">
+                                        <button ng-click="weekreport()" style="background-color:#663398;color:white; ">View Report</button>
+                                        <p style="color:red !important;">{{msg}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" style="padding-top:25px;" ng-show="MonthSales">
+                                    <div class="col-md-1" style="padding-top:5px">
+                                        <label style="text-align:center;">From Month</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="date" class="form-control" ng-model="fromMonth" />
+                                    </div>
+                                   
+                                    <div class="col-md-1" style="padding-top:5px">
+                                        <label style="text-align:center;">To Month</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="date" class="form-control" ng-model="ToMonth" />
+                                    </div>
+
+                                    <div class="col-md-2" style="text-align:center">
+                                        <button ng-click="Monthreport()" style="background-color:#663398;color:white;">View Report</button>
+                                        <p style="color:red !important;">{{msg}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" style="padding-top:25px;" ng-show="YearlySales1">                                   
+                                        <div class="col-md-1" style="padding-top:5px">
+                                            <label style="text-align:center">From Year</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control" ng-model="FYear">
+                                                <option disabled selected="selected" value="">Select Year</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                            </select>
+                                        </div>                                  
+                                  
+                                        <div class="col-md-1" style="padding-top:5px">
+                                            <label style="text-align:center">To Year</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control" ng-model="TYear">
+                                                <option disabled selected="selected" value="">Select Year</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                            </select>
+                                        </div>
+                                   
+                                    <div class="col-md-2" style="text-align:center">
+                                        <button ng-click="Yearreport()" style="background-color:#663398;color:white; ">View Report</button>
+                                        <p style="color:red !important;">{{msg}}</p>
+                                    </div>
+                                </div>
+                                <div> <br/> </div>
+                                <div style="width: 98%; height: 450px">
+                                    <div class="chart"></div>
+                                </div>
+                                <!--<canvas id="line" class="chart chart-line" chart-data="data"
+                                chart-labels="labels" chart-series="series" chart-options="options"
+                                chart-dataset-override="datasetOverride" chart-click="drawChart"></canvas>-->
+                                <!--<div id="piechart"></div>-->
+                            </div>
+                        </div>
+                        <!--<div class="col-md-3 stat stat1">-->
+                        <!--<div class="content-top-1">
+                            <div class="col-md-6 top-content">
+                                <h5>Sales</h5>
+                                <label>{{TotalSalesCount}}+</label>
+                            </div>
+                            <div class="col-md-6 top-content1">
+                                <div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>-->
+                        <!--<div class="content-top-1">
+                            <div class="col-md-6 top-content">
+                                <h5>App Users</h5>
+                                <label>{{TotalUsers}}+</label>
+                            </div>
+                            <div class="col-md-6 top-content1">
+                                <div id="demo-pie-2" class="pie-title-center" data-percent="75"> <span class="pie-value"></span> </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>-->
+                        <!--<div class="content-top-1">
+                            <div class="col-md-6 top-content">
+                                <h5>Visitors</h5>
+                                <label>{{VisitorCountNo}}+</label>
+                            </div>
+                            <div class="col-md-6 top-content1">
+                                <div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span> </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="content-top-1">
+                            <div class="col-md-6 top-content">
+                                <h5>Back end User</h5>
+                                <label>{{UserDetails}}+</label>
+                            </div>
+                            <div class="col-md-6 top-content1">
+                                <div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span> </div>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-2 stat">-->
+                        <!--<div class="content-top">
+                            <div class="top-content facebook">
+                                 Products Count
+
+                            </div>
+                            <ul class="info">
+                                <li class="col-md-12"><b>{{NewProductCount}}</b><p><br /></p></li>
+
+                                <div class="clearfix"></div>
+                            </ul>
+                        </div>-->
+                        <!--<div class="content-top">
+                            <div class="top-content twitter">
+                                Active Products
+
+                            </div>
+                            <ul class="info">
+                                <li class="col-md-12"><b>{{NewProductCount}}</b><p><br /></p></li>
+
+                                <div class="clearfix"></div>
+                            </ul>
+                        </div>-->
+                        <!--<div class="content-top">
+                            <div class="top-content google-plus">
+                                InActive Products
+
+                            </div>
+                            <ul class="info">
+                                <li class="col-md-12"><b>{{ProductInActiveCount}}</b><p><br /></p></li>
+
+                                <div class="clearfix"></div>
+                            </ul>
+                        </div>-->
+                        <!--</div>-->
+                        <div class="clearfix"> </div>
+                    </div>
+
+
+
+
+                    <!-- for amcharts js -->
+                    <script src="../js/AdminStyle/js/amcharts.js"></script>
+                    <script src="../js/AdminStyle/js/serial.js"></script>
+                    <script src="../js/AdminStyle/js/export.min.js"></script>
+                    <link rel="stylesheet" href="../AdminStyle/css/export.css" type="text/css" media="all" />
+                    <script src="../js/AdminStyle/js/light.js"></script>
+                    <!-- for amcharts js -->
+
+                    <script src="../js/AdminStyle/js/index1.js"></script>
+
+                    <!--<div class="charts">
+                        <div class="mid-content-top charts-grids">
+                            <div class="middle-content">
+                                <h4 class="title">Carousel Slider</h4>
+
+                                <div id="owl-demo" class="owl-carousel text-center">
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider1.jpg" alt="name">
+                                    </div>
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider2.jpg" alt="name">
+                                    </div>
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider3.jpg" alt="name">
+                                    </div>
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider4.jpg" alt="name">
+                                    </div>
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider5.jpg" alt="name">
+                                    </div>
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider6.jpg" alt="name">
+                                    </div>
+                                    <div class="item">
+                                        <img class="lazyOwl img-responsive" data-src="images/slider7.jpg" alt="name">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>-->
+
+                    <div class="col_1">
+                        <div class="col-md-4 span_8">
+                            <div class="activity_box">
+                                <h3 style="background-color:white !important;color:#663398 !important">New Sales</h3>
+                                <div class="scrollbar" id="style-1">
+                                    <div class="activity-row" ng-repeat="ns in NewSales">
+                                        <!--<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt="" /></div>-->
+                                        <div class="col-xs-7 activity-desc">
+                                            <h5><a><b>Name : </b>{{ns.MemberName}}</a></h5>
+                                            <p><b>Order No : </b>{{ns.OrderNo}}</p>
+                                            <p><b>Order Value: </b> <span>&#8377;</span> {{ns.Amoount}}</p> 
+                                        </div>
+                                        <!--<div class="col-xs-2 activity-desc1"><h6>12:05 PM</h6></div>-->
+                                        <div class="clearfix"> </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 span_8">
+                            <div class="activity_box activity_box1">
+                                <h3 style="background-color:white !important;color:#663398 !important">New Products</h3>
+                                <div class="scrollbar" id="style-3">
+                                    <div class="activity-row activity-row1" ng-repeat="np in NewProducts">
+                                        <div class="col-xs-3 activity-img"><img ng-repeat="pim1 in np.Image1" src="{{pim1.ImageURL}}" alt="Product image" class="img-responsive"><span></span></div>
+                                        <div class="col-xs-5 activity-img1">
+                                            <div class="activity-desc-sub">
+                                                <h5> {{np.Title}}</h5>
+                                                <p><span>&#8377;</span>{{np.Price}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 activity-desc1"></div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 span_8">
+                            <div class="activity_box activity_box2">
+                                <h3 style="background-color:white !important;color:#663398 !important">Out of Stock</h3>
+                                <div class="scrollbar" id="style-2">
+                                    <div class="activity-row activity-row1">
+                                        <div class="single-bottom">
+                                            <div class="activity-row activity-row1" ng-repeat="os in OutOfProduct">
+                                                <div class="col-xs-3 activity-img">
+                                                    <img ng-repeat="pim1 in os.Image1" src="{{pim1.ImageURL}}" alt="Product image" class="img-responsive"><span></span>
+                                                </div>
+                                                <div class="col-xs-5 activity-img1">
+                                                    <div class="activity-desc-sub">
+                                                        <p><b style="color:black;">ProductId:</b> {{os.ProductId}}</p>
+                                                        <p><b style="color:black;">Title:</b>{{os.Title}}</p>
+                                                    </div>
+                                                    <div id="stockout" ng-show="Showstockout" class="stock" style="font-size:24px;"><span style="color:red;">out of stock</span></div>
+                                                </div>
+                                                <div class="col-xs-4 activity-desc1"></div>
+                                                <div class="clearfix"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="clearfix"> </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--footer-->
+            <div class="footer ">
+
+                <div class="col-lg-12 form-inline">
+                    <span>
+                        &copy; 20 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                            <img src="images/Powered by Cartyogi-1.png" height="25" />
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+            <!--//footer-->
+        </div>
+
+        <script src="../js/jquery.session.js"></script>
+        <!-- side nav js -->
+        <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+        <script>
+            $('.sidebar-menu').SidebarNav()
+        </script>
+        <!-- //side nav js -->
+        <!-- Classie --><!-- for toggle left push menu script -->
+        <script src="js/classie.js"></script>
+        <script>
+            var menuLeft = document.getElementById('cbp-spmenu-s1'),
+                showLeftPush = document.getElementById('showLeftPush'),
+                body = document.body;
+
+            showLeftPush.onclick = function () {
+                classie.toggle(this, 'active');
+                classie.toggle(body, 'cbp-spmenu-push-toright');
+                classie.toggle(menuLeft, 'cbp-spmenu-open');
+                disableOther('showLeftPush');
+            };
+
+            function disableOther(button) {
+                if (button !== 'showLeftPush') {
+                    classie.toggle(showLeftPush, 'disabled');
+                }
+            }
+        </script>
+        <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+        <script src="../js/AdminStyle/js/scripts.js"></script>
+        <script src="../js/AdminStyle/js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+        <script src="../js/AdminStyle/js/Chart.bundle.js"></script>
+        <script src="../js/AdminStyle/js/utils.js"></script>
+        <script src="../js/Scripts/angular-chart.js"></script>
+        <script src="../js/Scripts/angular-chart.min.js"></script>
+    </div>
+
+</div>
+

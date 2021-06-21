@@ -1,0 +1,285 @@
+﻿<div>
+    <div>
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <script src="../js/AdminStyle/js/custom.js"></script>
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <style>
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+
+            .arrow-down1:after, .arrow-up1:after {
+                content: ' ';
+                position: relative;
+                left: 2px;
+                border: 8px solid transparent;
+            }
+
+            .arrow-down1:after {
+                top: 12px;
+                border-top-color: blue;
+            }
+
+            .arrow-up1:after {
+                bottom: 13px;
+                border-bottom-color: blue;
+            }
+
+            .arrow-down1, .arrow-up1 {
+                padding-right: 10px;
+            }
+
+            /*---------------Font-Face---------------*/
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+
+            h2, h3, h4, h5, h6, th {
+                font-family: Nunito-Bold !important;
+            }
+
+            p, span, a, label {
+                font-family: Nunito-SemiBold !important;
+                font-size: 1rem;
+                color: black !important;
+            }
+
+            td {
+                font-family: Nunito-Regular !important;
+            }
+            /*---------------Font-Face---------------*/
+
+            input {
+                border-color: #B198CB !important;
+            }
+
+            /*   button {
+                border-radius: 6px !important;
+            }*/
+
+            /*Iphone 5/SE  */
+            @media(min-width:300px) and (max-width:568px) {
+                .iphonebtn {
+                    padding-top: 8px;
+                }
+            }
+
+            @media(min-width:300px) and (max-width:359px) {
+                .catbtn {
+                    width: 160Px !important
+                }
+
+                .catexport {
+                    width: 110px !important;
+                }
+            }
+
+            .accordion11 {
+                /*background-color: #eee;*/
+                /*color: #444;*/
+                cursor: pointer;
+                /*padding: 18px;*/
+                /*width: 100%;*/
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                /*transition: 0.4s;*/
+            }
+
+                .accordion11:hover {
+                    /*background-color: #ccc;*/
+                }
+
+            .panel11 {
+                padding: 0 18px;
+                background-color: white;
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+            }
+        </style>
+    </div>
+    <div class="cbp-spmenu-push">
+        <div class="main-content">
+            <div ng-controller="AdminMainMenu">
+                <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+            </div>
+            <div id="page-wrapper">
+                <div class="main-page">
+                    <div class="container">
+
+
+                        <div class="table" style="overflow:scroll;">
+                            <div class="bs-example widget-shadow" data-example-id="hoverable-table" style="border-top-left-radius:10px;border-top-right-radius:10px;">
+                                <div class="row" style="padding:30px 10px;">
+                                    <div class="col-lg-3" style="margin-right:7%;">
+                                        <h4 style="font-size:20px;color:#663398;"> Customer Details</h4>
+                                    </div>
+                                    <div class="col-lg-3" style="padding-right:10px;margin-right:13px;">
+                                        <div class="form-horizontal">
+                                            <input type="text" class="form-control" name="Searchtext" ng-model="Category.Search" placeholder="search" id="search">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div>
+                                            <!--<button type="button" class="btn btn-default" style="background-color:#f2b33f;" ng-style="myObj" ng-click="Search(Category.Search)"><img src="../AdminStyle/images/search.png" alt="menu" style="width:15px;" />&nbsp; Search</button>-->
+                                            <button type="button" class="btn btn-default" style="background-color:#f2b33f;" ng-style="myObj" ng-click="exportData()"><img src="../AdminStyle/images/ms_excel.png" alt="menu" style="width:15px;" />&nbsp;&nbsp; Export</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th style="font-weight:bold; width:50px;text-align:center;">S.No</th>
+                                            <th style="font-weight:bold; width:50px;text-align:center;">Customer Name</th>
+                                            <th style="font-weight:bold;text-align:center;">Contact No</th>
+                                            <th style="font-weight:bold;text-align:center;">Email ID</th>
+                                            <th style="font-weight:bold; width:60px;text-align:center;">Address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr ng-repeat="cat in ItemsByPage[currentPage] | orderBy:Name:reverse">
+                                            <td style="text-align:center">{{cat.Rownumber}}</td>
+                                            <td style="text-align:center">{{cat.MemberName}}</td>
+                                            <td>
+                                                {{cat.ContactNo}}
+                                            </td>
+                                            <td style="padding-top:30px;">{{cat.EmailId}}</td>
+                                            <td style="text-align:center">{{cat.AddressLine1}},{{cat.AddressLine2}}, <br />{{cat.City}},{{cat.State}}</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <table id="example1" class="table table-bordered" style="display:none;">
+                            <thead class="thead-bold">
+                                <tr style="background-color: #BFD0D8 !important;">
+                                    <th style="font-weight:bold; width:50px;text-align:center;">S.No</th>
+                                    <th style="font-weight:bold;text-align:center;">Customer Name</th>
+                                    <th style="font-weight:bold;text-align:center;">Contact No</th>
+                                    <th style="font-weight:bold;text-align:center;">Email ID</th>
+                                    <th style="font-weight:bold;text-align:center;">Address</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr ng-repeat="cat in allItems | orderBy:Name:reverse">
+                                    <td>{{cat.Rownumber}}</td>
+                                    <td style="text-transform:uppercase;">{{cat.MemberName}}</td>
+                                    <td>{{cat.ContactNo}}</td>
+                                    <td>{{cat.EmailId}}</td>
+                                    <td>{{cat.AddressLine1}} ,{{cat.AddressLine2}} , {{cat.City}} , {{cat.State}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <ul class="pagination pagination-sm">
+                            <li ng-class="{active:0}">
+                                <a ng-click="firstPage()">First</a>
+                            </li>
+                            <li ng-repeat="n in range(ItemsByPage.length)">
+                                <a ng-click="setPage()" ng-bind="n+1">1</a>
+                            </li>
+                            <li>
+                                <a ng-click="lastPage()">Last</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--footer-->
+            <div class="footer ">
+
+                <div class="col-lg-12 form-inline">
+                    <span>
+                        &copy; 20 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                            <img src="images/Powered by Cartyogi-1.png" height="25" />
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+            <!--//footer-->
+        </div>
+        <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+        <script>
+            $('.sidebar-menu').SidebarNav()
+        </script>
+        <script src="js/classie.js"></script>
+        <script>
+            var menuLeft = document.getElementById('cbp-spmenu-s1'),
+                showLeftPush = document.getElementById('showLeftPush'),
+                body = document.body;
+
+            showLeftPush.onclick = function () {
+                
+
+                classie.toggle(this, 'active');
+                classie.toggle(body, 'cbp-spmenu-push-toright');
+                classie.toggle(menuLeft, 'cbp-spmenu-open');
+                disableOther('showLeftPush');
+            };
+
+            function showleftmenu() {
+                classie.toggle(this, 'active');
+                classie.toggle(body, 'cbp-spmenu-push-toright');
+                classie.toggle(menuLeft, 'cbp-spmenu-open');
+                disableOther('showLeftPush');
+            }
+
+            function disableOther(button) {
+                if (button !== 'showLeftPush') {
+                    classie.toggle(showLeftPush, 'disabled');
+                }
+            }
+        </script>
+        <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+        <script src="../js/AdminStyle/js/scripts.js"></script>
+        <script src="../js/AdminStyle/js/chartinator.js"></script>
+        <script src="../js/AdminStyle/js/classie.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    </div>
+</div>

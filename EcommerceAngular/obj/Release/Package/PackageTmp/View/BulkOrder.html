@@ -1,0 +1,469 @@
+﻿<div>
+    <div>
+        <!-- Bootstrap Core CSS -->
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+
+        <!-- font-awesome icons CSS -->
+        <!--<link href="css/font-awesome.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <!-- //font-awesome icons CSS -->
+        <!-- side nav css file -->
+        <!--<link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <!-- side nav css file -->
+        <!-- js-->
+        <!--<script src="js/jquery-1.11.1.min.js"></script>-->
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <!--<script src="js/modernizr.custom.js"></script>-->
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+
+        <!--webfonts-->
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <!--//webfonts-->
+        <!-- Metis Menu -->
+        <!--<script src="js/metisMenu.min.js"></script>-->
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <!--<script src="js/custom.js"></script>-->
+        <script src="../js/AdminStyle/js/custom.js"></script>
+
+        <!--<link href="css/custom.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+        <!--//Metis Menu -->
+
+        <style>
+            
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+
+            input {
+                border-color: #B198CB !important;
+            }
+
+            button {
+                border-radius: 6px !important;
+            }
+
+            /*---------------Font-Face---------------*/
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+
+            h2, h3, h4, h5 {
+                font-family: Nunito-Bold !important;
+            }
+
+            p, span, th, td, a, label {
+                font-family: Nunito-SemiBold !important;
+                font-size: 1rem;
+                color: black !important;
+            }
+            /*---------------Font-Face---------------*/
+        </style>
+
+        <div class="cbp-spmenu-push">
+            <div class="main-content">
+                <div ng-controller="AdminMainMenu">
+                    <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+                </div>
+                <div id="page-wrapper" style="padding-top:75px;">
+                    <div class="main-page">
+                        <div class="container" style="width:100%;">
+                            <!--Form-->
+                            <div class="forms">
+                                <div class="form-two widget-shadow" style="border-radius:10px;">
+                                    <div class="form-body" data-example-id="simple-form-inline" style="width:100%;">
+                                        <div>
+                                            <div class="col-lg-6">
+                                                <div class="col-lg-6 form-inline">
+                                                    <label style="font-size:13px;">Invoice Number</label>
+                                                    <input type="text" class="form-control " ng-model="report.Invoicenumber" readonly style="float:right" />
+                                                </div>
+                                                <div class="col-lg-6 form-inline">
+                                                    <label style="font-size:13px;margin-left:.5em;">Invoice Date</label>
+                                                    <input type="text" class="form-control " ng-model="report.InvoiceDate" readonly style="float:right" />
+                                                </div>
+                                                <div class="col-lg-6 form-inline">
+                                                    <label style="font-size:13px;">SalesMan ID</label>
+                                                    <input type="text" class="form-control " ng-model="report.SalesPerson" readonly style="float:right" />
+                                                </div>
+                                                <div class="col-lg-6 form-inline">
+                                                    <label style="font-size:13px;margin-left:.5em;">GSTNo</label>
+                                                    <input type="text" class="form-control " ng-model="report.GstNo" readonly style="float:right" />
+                                                </div>
+                                                <div class="col-lg-6 form-inline">
+                                                    <label style="font-size:13px;">Delivery Mode</label>
+                                                    <input id="" type="text" ng-model="report.DeliveryMode" placeholder="Select Delivery Mode" list="DeliveryMode" class="form-control" style="float:right" />
+                                                    <datalist id="DeliveryMode">
+                                                        <option>Home Delivery</option>
+                                                        <option>Pick-UP</option>
+                                                    </datalist>
+                                                </div>
+                                                <div class="col-lg-6 form-inline">
+                                                    <label style="font-size:13px;margin-left:.5em;">Delivery Date</label>
+                                                    <input type="date" class="form-control" ng-model="report.DeliveryDate" style="float:right" date-format />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-6 form-inline">
+                                                <label style="font-size:13px;margin-left:.5em;">Customer No</label>
+                                                <input type="text" class="form-control" ng-blur="GetCustomerDetail()" id="MobileNumber" ng-model="report.ContactNo" style="float:right" />
+                                            </div>
+                                            <div class="col-lg-6 form-inline">
+                                                <label style="font-size:13px;margin-left:.5em;">Customer Name</label>
+                                                <input type="text" class="form-control" id="CustomerName" ng-model="report.MemberName" style="float:right" />
+                                            </div>
+                                            <div class="col-lg-6 form-inline">
+                                                <label style="font-size:13px;margin-left:.5em;">Address1</label>
+                                                <input type="text" class="form-control" id="AddressLine1" ng-model="report.AddressLine1" style="float:right" />
+                                            </div>
+                                            <div class="col-lg-6 form-inline">
+                                                <label style="font-size:13px;margin-left:.5em;">Address2</label>
+                                                <input type="text" class="form-control" id="AddressLine2" ng-model="report.AddressLine2" style="float:right" />
+                                            </div>
+                                            <div class="col-lg-6 form-inline">
+                                                <label style="font-size:13px;margin-left:.5em;">State</label>
+                                                <input type="text" class="form-control" ng-model="report.State" style="float:right" />
+                                            </div>
+                                            <div class="col-lg-6 form-inline">
+                                                <label style="font-size:13px;margin-left:.5em;">Pincode</label>
+                                                <input type="text" class="form-control" ng-model="report.Pincode" style="float:right" />
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" id="LengthValue" style="float:right;display:none;" />
+                                    </div>
+                                    <main>
+                                        <div class="row " style="padding-left:1em;padding-right:1em;">
+                                            <table class="bordered">
+                                                <thead style="border:solid 2px;">
+                                                    <tr style="background-color:lightgray!important">
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">S.NO</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">HSN CODE</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">PRODUCT</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">VARIANCE</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">QUANTITY</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">UNIT PRICE(&#x20B9;)</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">MRP(&#x20B9;)</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">Tax(&#x20B9;)</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">DISCOUNT(&#x20B9;)</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">TOTAL(&#x20B9;)</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">Remove</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="variant">
+                                                    <!--<tr>-->
+                                                    <!--<td style="text-align:center;width:8
+                                                        px">1</td>
+                                                    <td style="text-align:center;">
+                                                        <input id="ProductCodetxt1" type="text" ng-blur="getProductVariance()" class="form-control " style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input id="ProductNametxt1" type="text" class="form-control " style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input id="VarianceTypetxt1" type="text" class="form-control " style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input type="text" onkeypress="onTextBoxKeyPress()" id="QUANTITY1" ng-model="report.QUANTITY" class="form-control " ng-change="GetQuntity(report.QUANTITY)" style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input type="text" class="form-control" id="sellingPrice1" style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input type="text" class="form-control " id="VariancePrice1" style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input type="text" class="form-control " id="TaxPercentage1" style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                        <input type="text" class="form-control " id="DISCOUNT1" style="border:none;text-align:center;" />
+                                                    </td>
+                                                    <td style="text-align:center;" id="">
+                                                        <input type="text" class="form-control " id="TotalAmount1" style="border:none;text-align:center;" />
+                                                    </td>-->
+                                                    <!--<td style="text-align:center;" ng-show="Showtxtbox">
+                                                        <input type="text" class="form-control" id="txtbox" />
+                                                    </td>-->
+                                                    <!--</tr>-->
+                                                </tbody>
+                                                <tbody id="variant1"></tbody>
+                                            </table>
+                                            <div class="row" style="margin-top:2em;"> </div>
+                                            <div class="col-lg-6">
+                                                <div class="col-lg-5">
+                                                    <label>Order Notes</label>
+                                                    <input type="text" class="form-control " placeholder="Order Notes" ng-model="report.OrderNotes" style="height:75px;width:350px;" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="col-lg-8 form-inline" style="float:right;font-size:15px;">
+                                                    <label style="font-size:15px;"> GRAND TOTAL</label>
+                                                    <input type="text" placeholder="" id="GrandTotal" class="form-control" ng-model="report.Amoount" />
+                                                </div>
+
+                                                <div class="col-lg-8 form-inline" ng-show="ShowPaymentType" style="float:right;margin-top:.5em;">
+                                                    <label> Payment Type</label>
+                                                    <input id="Payment" type="text" ng-model="report.PaymentType" ng-change="ShowCashDetails()" list="PaymentType" class="form-control" />
+                                                    <datalist id="PaymentType">
+                                                        <option value="Pay On Delivery">Pay On Delivery</option>
+                                                        <option value="Pay Now">Pay Now</option>
+                                                        <option value="Cash">Cash</option>
+                                                        <option value="Card">Card</option>
+                                                    </datalist>
+                                                </div>
+
+                                                <div class="col-lg-8 form-inline" ng-show="ShowCashRecived" style="float:right;margin-top:.5em;">
+                                                    <label style="margin-right:.4em;"> Cash Recived</label>
+                                                    <input id="CashRecived" type="text" ng-blur="onTextBoxKeyPressEnter()" class="form-control" />
+
+                                                </div>
+
+                                                <div class="col-lg-8 form-inline" ng-show="ShowBalance" style="float:right;margin-top:.5em;">
+                                                    <label style="margin-right:2.75em;">Balance</label>
+                                                    <input id="Balance" type="text" class="form-control" />
+
+                                                </div>
+
+                                                <div class="col-lg-8" style="margin-top:1em;float:right;">
+                                                    <button type="button" class="btn btn-default" ng-style="myObj" ng-click="PlaceOrder()"><img src="../AdminStyle/images/update_tag_.png" height="18" width="18" /> &nbsp;Place Order</button>
+                                                    <button type="button" class="btn btn-default" ng-style="myObj" ng-click="Clear()"><img src="../AdminStyle/images/erase.png" height="18" width="18" /> &nbsp;Cancel </button>
+                                                    <!--<button type="submit" class="btn btn-primary" ng-click="printPage1('PrintBills')">Print</button>-->
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div id="PrintBills" class="col-lg-6 " style="width:300px;display:none">
+                                            <div class=" " style="font-size:13px;text-align:center">
+                                               <b>{{BillType}}</b> 
+                                            </div>
+                                            <div class="row" style="font-size:13px;text-align:center">
+                                                {{CompanyName}}
+                                            </div>
+                                            <div class="row" style="font-size:11px;text-align:center">
+                                                {{CompanyAddressLine1}} ,{{CompanyAddressLine2}}
+                                            </div>
+                                            <div class="row" style="font-size:11px;text-align:center">
+                                                {{CompanyCity}} , {{CompanyState}} , {{CompanyPinCode}}
+                                            </div>
+                                            <div class="row" style="font-size:11px;text-align:center">
+                                                {{CompanyGSTNo}}
+                                            </div>
+                                            <hr />
+                                            <div class="row" style="font-size:11px;">
+                                                <div class="col-lg-12 " >
+                                                    <div>
+                                                        Receipt No: {{invoicenumber}} &nbsp;&nbsp;&nbsp; Date : {{InvoiceDate1}}
+                                                    </div>                                           
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="font-size:11px;">
+                                                <div class="col-lg-12">
+                                                    <div>
+                                                        Cashier :{{Loginusername}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone: {{CompanyPhoneNo}}
+                                                    </div>                                                  
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <table>
+                                                
+                                                <thead>
+                                                    <tr  style="background-color:lightgray!important; border: 1px dotted black;">                                                
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">Item</th>                                                       
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">Qty</th>
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">Rate(&#x20B9;)</th>
+                                                        <!--<th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">MRP(&#x20B9;)</th>-->                                                  
+                                                        <th class="text-center" style="font-size:13px;border:solid 2px white;padding:5px 5px 5px 5px;">TOTAL(&#x20B9;)</th>                                                  
+                                                    </tr>
+                                                </thead>
+                                                <hr />
+                                                <tbody>
+                                                    <tr ng-repeat="Item in Order">
+                                                    <td style="text-align:left;">
+                                                        {{Item.ProductName}}&nbsp;{{Item.VarianceType}}
+                                                    </td>                                                   
+                                                    <td style="text-align:center;">
+                                                      {{Item.Qty}}
+                                                    </td>
+                                                    <td style="text-align:center;">
+                                                       {{Item.Price | number:2}}
+                                                    </td>
+                                                    <!--<td style="text-align:center;">
+                                                       {{Item.VariancePrice | number:2}}
+                                                    </td>-->                                                                                                    
+                                                    <td style="text-align:center;">
+                                                       {{Item.TotalAmount | number:2}}
+                                                    </td>                                                  
+                                                    </tr>
+                                                </tbody>                                               
+                                              
+                                            </table>   
+                                            
+                                            <div style="text-align:right">
+                                               <hr />
+                                                <div class="row">
+                                                    <span colspan="5"> Sub Total : {{SubTotalAmt | number:2}}</span>
+
+                                                </div>
+                                                <div class="row">
+                                                    <span colspan="5">CGST :{{CGSTTaxAmt | number:2}}</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span colspan="5">SGCT :{{SGSTTaxAmt | number:2}}</span>
+                                                </div>
+                                                <!--<div class="row">
+                                                    <span colspan="5"> Discount : {{OrderDiscountAmt | number:2}}</span>
+                                                </div>-->
+                                            </div>
+                                            <div style="text-align:right">
+                                                <hr />
+                                                <div class="row"> 
+                                                    <span colspan="5">Bill Total :{{OrdervalueAmount | number:2}}</span>
+                                                </div>
+                                                <div class="row" ng-show="ShowTender">
+                                                    <span colspan="5">Tendered : {{AmountRecived | number:2}}</span>
+                                                </div>
+                                                <div class="row" ng-show="ShowBalanceAmt">
+                                                    <span colspan="5"> Balance : {{BalanceTender | number:2}}</span>
+                                                </div>
+                                            </div>
+                                            <div style="font-size:11px;text-align:center">
+                                                <hr />
+                                                <div class="row">
+                                                    <span>
+                                                        Thank You
+                                                    </span>
+                                                </div>
+                                            </div>                                             
+                                        </div>
+                                    </main>
+                                </div>
+                                <div class="row text-center">
+                                    <div id="Order" class="modal fade in" role="dialog">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content-->
+                                            <div class="container" style="width:80%;">
+                                                <div class="modal-content" style="padding-top:20px;height:120px;">
+                                                    <div class="login-form-grids" style="width:80%; margin:auto;">
+                                                        <!-- Contact Us Form -->
+                                                        <form class="form-horizontal" role="form">
+                                                            <h4 style="text-align:center;color:black;">
+                                                                <!--<button type="button" id="close" class="close" ng-click="div_hide()" data-dismiss="modal">&times;</button>-->
+                                                                <b>Order Placed </b>
+                                                            </h4>
+                                                            <div class="form-group" style="margin-bottom:0px;padding-left:20px;">
+                                                                <div class="col-lg-8 form-group" style="float:left;margin-top:1em;">
+                                                                    <button type="submit" class="btn btn-primary" ng-click="Close()">OK</button>
+                                                                    <button type="submit" class="btn btn-primary" ng-click="Close()">Print</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+
+<div class="footer ">
+    <div class="footer ">
+        <div class="col-lg-12 form-inline">
+            <span>
+                &copy; 2019 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                    <img src="images/Powered by Cartyogi-1.png" height="25" />
+                </a>
+            </span>
+        </div>
+    </div>
+    <!--//footer-->
+    <!-- side nav js -->
+    <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+    <script>
+        $('.sidebar-menu').SidebarNav()
+    </script>
+    <!-- //side nav js -->
+    <!-- Classie --><!-- for toggle left push menu script -->
+    <script src="js/classie.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+        var menuLeft = document.getElementById('cbp-spmenu-s1'),
+            showLeftPush = document.getElementById('showLeftPush'),
+            body = document.body;
+
+        showLeftPush.onclick = function () {
+            classie.toggle(this, 'active');
+            classie.toggle(body, 'cbp-spmenu-push-toright');
+            classie.toggle(menuLeft, 'cbp-spmenu-open');
+            disableOther('showLeftPush');
+        };
+
+        function disableOther(button) {
+            if (button !== 'showLeftPush') {
+                classie.toggle(showLeftPush, 'disabled');
+            }
+        }
+
+
+    </script>
+    <!-- //Classie --><!-- //for toggle left push menu script -->
+    <!--scrolling js-->
+    <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+    <script src="../js/AdminStyle/js/scripts.js"></script>
+    <script src="../js/AdminStyle/js/chartinator.js"></script>
+    <script src="../js/AdminStyle/js/classie.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="../js/AdminStyle/js/bootstrap.js"></script>
+    <!--//scrolling js-->
+    <!-- Bootstrap Core JavaScript -->
+    <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+    <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+
+
+
+</div>

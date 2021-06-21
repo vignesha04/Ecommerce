@@ -1,0 +1,72 @@
+﻿<div>
+    <section>
+           <div class="con-page" style="background-image: url('../images/cc2.jpg'); ">
+              <div class="con-page-ri">
+                            <div class="con-com">
+                                <div class="cpn-pag-form">
+                                    <form>
+                                        <h3>Support and Contact Enquiry</h3>
+                                        <!--<p>It is a long established fact that a reader will be distracted by the readable.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here</p>-->
+                                        <div>
+                                            <div class="input-field col s12">
+                                                <input id="gfc_name" type="text" class="validate" required ng-model="Contact.Name">
+                                                <label for="gfc_name">Name</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="input-field col s12">
+                                                <input id="gfc_mob" type="number" class="validate" ng-model="Contact.Phone">
+                                                <label for="gfc_mob">Mobile</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="input-field col s12">
+                                                <input id="gfc_mail" type="email" class="validate" required ng-model="Contact.Email">
+                                                <label for="gfc_mail">Email</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="input-field col s12">
+                                                <textarea id="gfc_msg" class="validate" required ng-model="Contact.Message"></textarea>
+                                                <label for="gfc_msg">Message</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="input-field col s4">
+                                                <input type="submit" value="SUBMIT" class="waves-effect waves-light btn-large full-btn list-red-btn" ng-click="SendMail()">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="input-field col s12">
+                                                <span ng-show="ShowErrorEmail" style="color:red;">InValid EmailId</span>
+                                                <span ng-show="ShowError" style="color:red;">Mail Sent Failed, Please try again later.</span>
+                                                <span ng-show="ShowSuccess" style="color:green;">Mail Sent Successfully.</span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="con-com">
+                                <h4 class="con-tit-top-o">Address & Contact Info</h4>
+                                <p> SC Business, 52-F, 3rd Loop Road, Florence, SC 29505</p> <span><img src="images/icon/phone-icon.png" width="15px" height="15px" alt="" />  &nbsp;+01 12345 2541</span> <span><img src="images/icon/Email-Icon.png" width="17px" height="15px" alt="" />&nbsp; contact@scbusinez.com</span>
+                                <h4>Follow us on</h4>
+                                <!--<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here</p>-->
+                                <div class="share-btn">
+                                    <ul>
+                                        <li><a href="https://m.facebook.com/SC-Businez-2302801386448974/" target="_blank"><i class="fa fa-facebook fb1"></i> Share On Facebook</a> </li>
+                                        <li><a href="https://twitter.com/SCBusinez" target="_blank"><i class="fa fa-twitter tw1"></i> Share On Twitter</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="con-com con-pag-map con-com-mar-bot-o">
+                                <h4 class="con-tit-top-o">Touch with us</h4>
+                                <p>SC Business, 52-F, 3rd Loop Road, Florence, SC 29505</p>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6290413.804893654!2d-93.99620524741552!3d39.66116578737809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b2d386f6e2619%3A0x7f15825064115956!2sIllinois%2C+USA!5e0!3m2!1sen!2sin!4v1469954001005" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+     
+        </div>
+    </section>
+
+</div><br /><br />

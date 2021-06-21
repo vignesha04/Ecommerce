@@ -1,0 +1,442 @@
+﻿<div class="main-container container">
+    <!--<link href="../../Files/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="../../Files/bootstrap.min.css">
+    <link href="../../Files/font-awesome.min.css" rel="stylesheet">
+    <link href="../../Files/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../../Files/owl.carousel.css" rel="stylesheet">
+    <link href="../../Files/lib.css" rel="stylesheet">
+    <link href="../../Files/jquery-ui.min.css" rel="stylesheet">
+    <link href="../../Files/miniColors.css" rel="stylesheet">
+    <link href="../../Files/so_searchpro.css" rel="stylesheet">
+    <link href="../../Files/so_megamenu.css" rel="stylesheet">
+    <link href="../../Files/so-categories.css" rel="stylesheet">
+    <link href="../../Files/so-listing-tabs.css" rel="stylesheet">
+    <link href="../../Files/so-newletter-popup.css" rel="stylesheet">
+    <link href="../../Files/footer1.css" rel="stylesheet">
+    <link href="../../Files/header1.css" rel="stylesheet">
+    <link id="color_scheme" href="../../Files/theme.css" rel="stylesheet">
+    <link href="../../Files/responsive.css" rel="stylesheet">
+    <script src="../../js/Scripts/angular.min.js"></script>
+    <script src="../../js/Scripts/angular-route.min.js"></script>
+    <script src="../../js/Scripts/angular-ui.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.js"></script>
+    <script src="../../js/Scripts/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Files/owl.carousel.js"></script>
+    <script type="text/javascript" src="../../Files/libs.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.unveil.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.dcjqaccordion.2.8.min.js"></script>
+    <script type="text/javascript" src="../../Files/moment.js"></script>
+    <script type="text/javascript" src="../../Files/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../Files/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../../Files/jquery.miniColors.min.js"></script>
+    <script type="text/javascript" src="../../Files/application.js"></script>
+    <script type="text/javascript" src="../../Files/homepage.js"></script>
+    <script type="text/javascript" src="../../Files/toppanel.js"></script>
+    <script type="text/javascript" src="../../Files/addtocart.js"></script>
+    <script type="text/javascript" src="../../Files/so_megamenu.js"></script>
+    <script src="../../js/jquery.min.js"></script>-->
+    <style type="text/css">
+        .slider {
+            position: relative;
+            text-align: left;
+            border: 1px solid gray;
+            height: 0.6em;
+        }
+
+            .slider .handle {
+                position: absolute;
+                z-index: 2;
+                width: 1.2em;
+                height: 1.2em;
+                background-color: gray;
+            }
+
+        .handle {
+            top: -0.3em;
+            margin-left: -0.6em;
+        }
+
+        .slider .range {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            font-size: .7em;
+            background-color: red;
+            top: 0;
+            height: 100%;
+        }
+
+        [slider] {
+            position: relative;
+            height: 14px;
+            border-radius: 10px;
+            text-align: left;
+            margin: 45px 0 10px 0;
+        }
+
+            [slider] > div {
+                position: absolute;
+                left: 13px;
+                right: 15px;
+                height: 14px;
+            }
+
+                [slider] > div > [inverse-left] {
+                    position: absolute;
+                    left: 0;
+                    height: 14px;
+                    border-radius: 10px;
+                    background-color: #CCC;
+                    margin: 0 7px;
+                }
+
+                [slider] > div > [inverse-right] {
+                    position: absolute;
+                    right: 0;
+                    height: 14px;
+                    border-radius: 10px;
+                    background-color: #CCC;
+                    margin: 0 7px;
+                }
+
+                [slider] > div > [range] {
+                    position: absolute;
+                    left: 0;
+                    height: 14px;
+                    border-radius: 14px;
+                    background-color: #ff3c20;
+                }
+
+                [slider] > div > [thumb] {
+                    position: absolute;
+                    top: -7px;
+                    z-index: 2;
+                    height: 28px;
+                    width: 28px;
+                    text-align: left;
+                    margin-left: -11px;
+                    cursor: pointer;
+                    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+                    background-color: #FFF;
+                    border-radius: 50%;
+                    outline: none;
+                }
+
+            [slider] > input[type=range] {
+                position: absolute;
+                pointer-events: none;
+                -webkit-appearance: none;
+                z-index: 3;
+                height: 14px;
+                top: -2px;
+                width: 100%;
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                filter: alpha(opacity=0);
+                opacity: 0;
+            }
+
+        div[slider] > input[type=range]::-ms-track {
+            -webkit-appearance: none;
+            background: transparent;
+            color: transparent;
+        }
+
+        div[slider] > input[type=range]:-moz-range-track {
+            -moz-appearance: none;
+            background: transparent;
+            color: transparent;
+        }
+
+        div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+            background: transparent;
+            border: transparent;
+        }
+
+        div[slider] > input[type=range]:focus {
+            outline: none;
+        }
+
+        div[slider] > input[type=range]::-ms-thumb {
+            pointer-events: all;
+            width: 28px;
+            height: 28px;
+            border-radius: 0px;
+            border: 0 none;
+            background: red;
+        }
+
+        div[slider] > input[type=range]:-moz-range-thumb {
+            pointer-events: all;
+            width: 28px;
+            height: 28px;
+            border-radius: 0px;
+            border: 0 none;
+            background: red;
+        }
+
+        div[slider] > input[type=range]::-webkit-slider-thumb {
+            pointer-events: all;
+            width: 28px;
+            height: 28px;
+            border-radius: 0px;
+            border: 0 none;
+            background: red;
+            -webkit-appearance: none;
+        }
+
+        div[slider] > input[type=range]::-ms-fill-lower {
+            background: transparent;
+            border: 0 none;
+        }
+
+        div[slider] > input[type=range]::-ms-fill-upper {
+            background: transparent;
+            border: 0 none;
+        }
+
+        div[slider] > input[type=range]::-ms-tooltip {
+            display: none;
+        }
+
+        [slider] > div > [sign] {
+            opacity: 0;
+            position: absolute;
+            margin-left: -11px;
+            top: -39px;
+            z-index: 3;
+            background-color: #ff3c20;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 28px;
+            -webkit-border-radius: 28px;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+            [slider] > div > [sign]:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                border-radius: 16px;
+                top: 19px;
+                border-left: 14px solid transparent;
+                border-right: 14px solid transparent;
+                border-top-width: 16px;
+                border-top-style: solid;
+                border-top-color: #ff3c20;
+            }
+
+            [slider] > div > [sign] > span {
+                font-size: 12px;
+                font-weight: 700;
+                line-height: 28px;
+            }
+
+        [slider]:hover > div > [sign] {
+            opacity: 1;
+        }
+
+        @media(max-width:768px) {
+            .box-info-product {
+                display: block;
+            }
+
+            .product-image-container {
+                height: 200px !important;
+            }
+        }
+
+        @media(min-width:768px) {
+            .box-info-product {
+                display: none;
+            }
+        }
+    </style>
+    <div ng-show="loader">
+        <div class="row">
+            <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+            </div>
+        </div>
+    </div>
+    <ul class="breadcrumb">
+        <li><a href="" ng-click="aHomeClick()"><i class="fa fa-home"></i></a></li>
+        <li><a href="">{{RootHeading}}</a></li>
+    </ul>
+    <div class="row">
+        <div id="content" class="col-md-9 col-sm-8">
+            <div class="products-category">
+                <h3 class="title-category ">Products</h3>
+                <div class="products-list row nopadding-xs so-filter-gird grid">
+                    <div class="product-layout col-lg-15 col-md-4 col-sm-6 col-xs-12" ng-repeat="pl in ItemsByPage[currentPage]|unique:'ProductId'">
+                        <div class="product-item-container">
+                            <div class="col-lg-12 col-xs-6" style="padding:unset">
+                                <div class="left-block">
+                                    <div class="product-image-container second_img" style="width:100%; height:117px !important;">
+                                        <a href="#!Product/{{pl.ProductId}}" target="_self" title="{{pl.Title}}">
+                                            <img ng-repeat="pim1 in pl.Image1" src="{{pim1.ImageURL}}" class="img-1 img-responsive" alt="{{pl.Title}}">
+                                            <img ng-repeat="pim2 in pl.Image2" src="{{pim2.ImageURL}}" class="img-2 img-responsive" alt="{{pl.Title}}">
+                                        </a>
+                                    </div>
+                                    <div class="button-group so-quickview cartinfo--left" ng-repeat="var in pl.ProdVariance | limitTo:1">
+                                        <span ng-show="DiscountDetailsId1">{{pl.DiscountDetailsId}}</span>
+                                        <span ng-show="CouponId1">{{pl.CouponId}}</span>
+                                        <span ng-show="TaxDetail1">{{pl.TaxDetail}}</span>
+                                        <span ng-show="ProductId123">{{pl.ProductId}}</span>
+                                        <!--<button type="button" class="addToCart btn-button" title="Add to carts" ng-click="AddToCart(pl.Title,var.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1,var.ProductVarianceId,var.VariancePrice,var.Discountamt)">
+                                            <i class="fa fa-shopping-basket"></i>
+                                            <span>Add to cart </span>
+                                        </button>-->
+                                        <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="#!Product/{{pl.ProductId}}" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span> view</span></a>
+                                    </div>
+                                    <div class="form-group box-info-product">
+                                        <div class=" add-to-links wish_comp">
+                                            <ul class="blank list-inline"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-xs-6">
+                                <div class="right-block ">
+                                    <div class="button-group mobile-hide">
+                                        <button type="button" class="addToCart btn-button " ng-repeat="var in pl.ProdVariance | limitTo:1" 
+                                                style="background-color:#102985;color:white;border-radius:13px;height:30px;line-height: 
+                                                 30px;cursor:pointer;padding-bottom:8px;" title="Add to carts" 
+                                                ng-click="AddToCart(pl.Title,var.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1,var.ProductVarianceId,var.VariancePrice,var.Discountamt)">
+                                            <i class="fa fa-shopping-basket"></i>
+                                            <span>Add to cart </span>
+                                        </button>
+                                    </div>
+                                    <div class="caption">
+
+                                        <h4><a href="" title="Cupim should " target="_self" ng-model="Title" style="text-transform: capitalize;font-size:20px">{{pl.Title}} </a></h4>
+                                        <div class="price" ng-repeat="vari in pl.ProdVariance | limitTo:1">
+                                            <span class="price-new" id="price-new"><span>&#8377;</span>{{(vari.sellingPrice)}}</span>
+                                            <span class="price-old"><span>&#8377;</span>{{(vari.VariancePrice)}}</span>
+                                            <div class="form-group box-info-product">
+                                                <div class="option quantity">
+                                                    <div class="input-group quantity-control" type="number" unselectable="on" style="-webkit-user-select: none;">
+                                                        <label>Qty</label>
+                                                        <input class="form-control" type="tel" visibility=hidden name="quantity" value="1" ng-model="Quantity" min="1" max="99" ng-keypress="isNumber($event)" required>
+                                                        <input type="hidden" name="product_id" value={{ProductId}}>
+                                                    </div>
+                                                </div>
+                                                <div class="cart">
+                                                    <input type="button" class="addToCart btn-button " data-toggle="tooltip" title="" value="Add to Cart" data-loading-text="Loading..." id="button-cart" style=" background-color: #102985;color:white; border-radius: 13px; height: 30px; line-height: 30px; cursor: pointer; padding-bottom: 8px;"
+                                                           ng-click="AddToCart(pl.Title,vari.sellingPrice,pl.ProductId,pl.Picture,1,pl.DiscountDetailsId,pl.TaxDetailsId,pl.CouponId,pl.Image1,vari.ProductVarianceId,vari.VariancePrice,vari.Discountamt)" data-original-title="Add to Cart">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="description item-desc hidden">
+                                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est . </p>
+                                        </div>
+                                        <div class="list-block hidden">
+                                            <button class="addToCart btn-button" type="button" title="Add to Cart" onclick="cart.add('101', '1');">
+                                                <i class="fa fa-shopping-basket"></i>
+                                            </button>
+                                            <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="pagination pagination-sm" style="    float: right;
+    position: absolute;
+    margin-top: -40px;
+    right: 22px;
+}">
+                <li ng-class="{active:0}">
+                    <a ng-click="firstPage()">First</a>
+                </li>
+                <li ng-repeat="n in range(ItemsByPage.length)">
+                    <a ng-click="setPage()" ng-bind="n+1">1</a>
+                </li>
+                <li>
+                    <a ng-click="lastPage()">Last</a>
+                </li>
+            </ul>
+        </div>
+        <aside class="col-sm-4 col-md-3 content-aside" id="column-left">
+            <div class="module">
+                <h3 class="modtitle">Filter </h3>
+                <div class="modcontent ">
+                    <form class="type_2">
+                        <div class="table_layout filter-shopby">
+                            <div class="table_row">
+                                <div class="table_cell" style="z-index: 103;">
+                                    <legend>Search</legend>
+                                    <div class="row">
+                                        <div class="col-sm-8" style="padding:0px;padding-left:5px;">
+                                            <input class="autosearch-input form-control" type="text" value="" size="50" autocomplete="off" placeholder="Keyword here..." name="search" ng-model="FilterSearchTxt">
+                                        </div>
+                                        <div class="col-sm-4" style="padding:0px;">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="button-search btn btn-primary" name="submit_search" ng-click="SearchPriceList(vSearchText)"><i class="fa fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table_cell">
+                                    <p>Price Min: <input type="text" ng-model="search.price_min" /></p>
+                                    <p>Price Max: <input type="text" ng-model="search.price_max" /></p>
+                                </div>
+                            </div>
+                            <footer class="bottom_box">
+                                <div class="buttons_row">
+                                    <button type="submit" class="button_grey button_submit" ng-click="priceFiltering()" value="Filter">Search</button>
+                                    <button type="reset" class="button_grey filter_reset">Reset</button>
+                                </div>
+                                <div class="back-to-top"><i class="fa fa-angle-up"></i></div>
+                            </footer>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="module product-simple">
+                <h3 class="modtitle">
+                    <span>Latest products</span>
+                </h3>
+                <div class="modcontent">
+                    <div id="so_extra_slider_1" class="extraslider">
+                        <div class="yt-content-slider extraslider-inner">
+                            <div class="item ">
+                                <div class="product-layout item-inner style1 " ng-repeat="np in NewItems">
+                                    <div class="item-image">
+                                        <div class="item-img-info">
+                                            <a href="#!Product/{{np.ProductId}}" title="{{np.Title}}">
+                                                <img ng-repeat="im1 in np.Image1" src={{im1.ImageURL}} alt=" Product Image">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <div class="item-title">
+                                            <a href="#!Product/{{np.ProductId}}" title="{{np.Title}}" style="text-transform: capitalize">{{np.Title}} </a>
+                                        </div>
+                                        <div class="rating">
+                                        </div>
+                                        <div class="content_price price" style="display:{{np.showVariance}}">
+                                            <span class="price-new product-price"><span>&#8377;</span> {{(np.Price)+((np.Price*np.TaxPercentage)/100) | number:0}} </span>&nbsp;&nbsp;
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
+</div>

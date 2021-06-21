@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FishermanmarketModelStoreContainer" CdmEntityContainer="EcommerceEntities">
+    <EntitySetMapping Name="AboutUsAdmins">
+      <EntityTypeMapping TypeName="FishermanmarketModel.AboutUsAdmin">
+        <MappingFragment StoreEntitySet="AboutUsAdmin">
+          <ScalarProperty Name="AboutUsAdminId" ColumnName="AboutUsAdminId" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AboutUsFAQs">
+      <EntityTypeMapping TypeName="FishermanmarketModel.AboutUsFAQ">
+        <MappingFragment StoreEntitySet="AboutUsFAQ">
+          <ScalarProperty Name="FaqId" ColumnName="FaqId" />
+          <ScalarProperty Name="AboutUsAdminId" ColumnName="AboutUsAdminId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AddDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.AddDetail">
+        <MappingFragment StoreEntitySet="AddDetails">
+          <ScalarProperty Name="AddId" ColumnName="AddId" />
+          <ScalarProperty Name="AddName" ColumnName="AddName" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminLogins">
+      <EntityTypeMapping TypeName="FishermanmarketModel.AdminLogin">
+        <MappingFragment StoreEntitySet="AdminLogin">
+          <ScalarProperty Name="AdminLoginId" ColumnName="AdminLoginId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrandTypes">
+      <EntityTypeMapping TypeName="FishermanmarketModel.BrandType">
+        <MappingFragment StoreEntitySet="BrandType">
+          <ScalarProperty Name="BrandTypeId" ColumnName="BrandTypeId" />
+          <ScalarProperty Name="BrandTypeName" ColumnName="BrandTypeName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CancelledComments">
+      <EntityTypeMapping TypeName="FishermanmarketModel.CancelledComment">
+        <MappingFragment StoreEntitySet="CancelledComments">
+          <ScalarProperty Name="CancelledCommentsId" ColumnName="CancelledCommentsId" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaptchaTypes">
+      <EntityTypeMapping TypeName="FishermanmarketModel.CaptchaType">
+        <MappingFragment StoreEntitySet="CaptchaType">
+          <ScalarProperty Name="CaptchaId" ColumnName="CaptchaId" />
+          <ScalarProperty Name="CaptchaType1" ColumnName="CaptchaType" />
+          <ScalarProperty Name="SamplePicture" ColumnName="SamplePicture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="FishermanmarketModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoyName" ColumnName="CategoyName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.CompanyDetail">
+        <MappingFragment StoreEntitySet="CompanyDetail">
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="GSTNo" ColumnName="GSTNo" />
+          <ScalarProperty Name="CINno" ColumnName="CINno" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="WebsiteLink" ColumnName="WebsiteLink" />
+          <ScalarProperty Name="InvoiceLogo" ColumnName="InvoiceLogo" />
+          <ScalarProperty Name="WebsiteLogo" ColumnName="WebsiteLogo" />
+          <ScalarProperty Name="favicon" ColumnName="favicon" />
+          <ScalarProperty Name="PaymentGateway" ColumnName="PaymentGateway" />
+          <ScalarProperty Name="PaymentGatewayKey" ColumnName="PaymentGatewayKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUsAdmins">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ContactUsAdmin">
+        <MappingFragment StoreEntitySet="ContactUsAdmin">
+          <ScalarProperty Name="ContactUsAdminId" ColumnName="ContactUsAdminId" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="Iframe" ColumnName="Iframe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CopyRights">
+      <EntityTypeMapping TypeName="FishermanmarketModel.CopyRight">
+        <MappingFragment StoreEntitySet="CopyRights">
+          <ScalarProperty Name="CopyRightsId" ColumnName="CopyRightsId" />
+          <ScalarProperty Name="CopyRight1" ColumnName="CopyRight" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CouponDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.CouponDetail">
+        <MappingFragment StoreEntitySet="CouponDetails">
+          <ScalarProperty Name="CouponId" ColumnName="CouponId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="AmountFrom" ColumnName="AmountFrom" />
+          <ScalarProperty Name="AmountTo" ColumnName="AmountTo" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="OfferType" ColumnName="OfferType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourierDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.CourierDetail">
+        <MappingFragment StoreEntitySet="CourierDetail">
+          <ScalarProperty Name="CourierDetailId" ColumnName="CourierDetailId" />
+          <ScalarProperty Name="SalesOrderId" ColumnName="SalesOrderId" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="CourierName" ColumnName="CourierName" />
+          <ScalarProperty Name="CourierNo" ColumnName="CourierNo" />
+          <ScalarProperty Name="BookedDate" ColumnName="BookedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryCharges">
+      <EntityTypeMapping TypeName="FishermanmarketModel.DeliveryCharge">
+        <MappingFragment StoreEntitySet="DeliveryCharge">
+          <ScalarProperty Name="DeliveryChargeId" ColumnName="DeliveryChargeId" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="Fromprice" ColumnName="Fromprice" />
+          <ScalarProperty Name="Toprice" ColumnName="Toprice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryConfirmations">
+      <EntityTypeMapping TypeName="FishermanmarketModel.DeliveryConfirmation">
+        <MappingFragment StoreEntitySet="DeliveryConfirmation">
+          <ScalarProperty Name="DeliveryConfirmationId" ColumnName="DeliveryConfirmationId" />
+          <ScalarProperty Name="SalesOrderId" ColumnName="SalesOrderId" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DeliveredDate" ColumnName="DeliveredDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscountDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.DiscountDetail">
+        <MappingFragment StoreEntitySet="DiscountDetails">
+          <ScalarProperty Name="DiscountDetailsId" ColumnName="DiscountDetailsId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeBannerImages">
+      <EntityTypeMapping TypeName="FishermanmarketModel.HomeBannerImage">
+        <MappingFragment StoreEntitySet="HomeBannerImage">
+          <ScalarProperty Name="HomeBannerImageId" ColumnName="HomeBannerImageId" />
+          <ScalarProperty Name="HomePageSettingsId" ColumnName="HomePageSettingsId" />
+          <ScalarProperty Name="BannerImageURL" ColumnName="BannerImageURL" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomePageSettings">
+      <EntityTypeMapping TypeName="FishermanmarketModel.HomePageSetting">
+        <MappingFragment StoreEntitySet="HomePageSettings">
+          <ScalarProperty Name="HomePageSettingsId" ColumnName="HomePageSettingsId" />
+          <ScalarProperty Name="ShowSlider" ColumnName="ShowSlider" />
+          <ScalarProperty Name="ShowTrendingItems" ColumnName="ShowTrendingItems" />
+          <ScalarProperty Name="ShowNewItems" ColumnName="ShowNewItems" />
+          <ScalarProperty Name="DisplayBannerImages" ColumnName="DisplayBannerImages" />
+          <ScalarProperty Name="ShowAdvertisement" ColumnName="ShowAdvertisement" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeSliders">
+      <EntityTypeMapping TypeName="FishermanmarketModel.HomeSlider">
+        <MappingFragment StoreEntitySet="HomeSlider">
+          <ScalarProperty Name="HomeSliderId" ColumnName="HomeSliderId" />
+          <ScalarProperty Name="SliderName" ColumnName="SliderName" />
+          <ScalarProperty Name="CutofDate" ColumnName="CutofDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="CompanydetailsId" ColumnName="CompanydetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeSliderImages">
+      <EntityTypeMapping TypeName="FishermanmarketModel.HomeSliderImage">
+        <MappingFragment StoreEntitySet="HomeSliderImage">
+          <ScalarProperty Name="HomeSliderImageId" ColumnName="HomeSliderImageId" />
+          <ScalarProperty Name="HomePageSettingsId" ColumnName="HomePageSettingsId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceNumbers">
+      <EntityTypeMapping TypeName="FishermanmarketModel.InvoiceNumber">
+        <MappingFragment StoreEntitySet="InvoiceNumber">
+          <ScalarProperty Name="InvoiceNumberId" ColumnName="InvoiceNumberId" />
+          <ScalarProperty Name="InvoiceNumber1" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="Companyid" ColumnName="Companyid" />
+          <ScalarProperty Name="invoiceprefix" ColumnName="invoiceprefix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberCarts">
+      <EntityTypeMapping TypeName="FishermanmarketModel.MemberCart">
+        <MappingFragment StoreEntitySet="MemberCart">
+          <ScalarProperty Name="MemberCartId" ColumnName="MemberCartId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.MemberDetail">
+        <MappingFragment StoreEntitySet="MemberDetails">
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ConfirmationCode" ColumnName="ConfirmationCode" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="MobileToken" ColumnName="MobileToken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberOrders">
+      <EntityTypeMapping TypeName="FishermanmarketModel.MemberOrder">
+        <MappingFragment StoreEntitySet="MemberOrders">
+          <ScalarProperty Name="MemberOrderId" ColumnName="MemberOrderId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CouponDiscountPercentage" ColumnName="CouponDiscountPercentage" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+          <ScalarProperty Name="TaxPercentage" ColumnName="TaxPercentage" />
+          <ScalarProperty Name="OrderedDate" ColumnName="OrderedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageAlerts">
+      <EntityTypeMapping TypeName="FishermanmarketModel.MessageAlert">
+        <MappingFragment StoreEntitySet="MessageAlert">
+          <ScalarProperty Name="MessageAlertId" ColumnName="MessageAlertId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentOptions">
+      <EntityTypeMapping TypeName="FishermanmarketModel.PaymentOption">
+        <MappingFragment StoreEntitySet="PaymentOption">
+          <ScalarProperty Name="PaymentOptionId" ColumnName="PaymentOptionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrivacyPolicies">
+      <EntityTypeMapping TypeName="FishermanmarketModel.PrivacyPolicy">
+        <MappingFragment StoreEntitySet="PrivacyPolicy">
+          <ScalarProperty Name="PrivacyPolicyId" ColumnName="PrivacyPolicyId" />
+          <ScalarProperty Name="PrivacyPolicies" ColumnName="PrivacyPolicies" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductDetail">
+        <MappingFragment StoreEntitySet="ProductDetail">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="TaxDetailsId" ColumnName="TaxDetailsId" />
+          <ScalarProperty Name="DiscountDetailsId" ColumnName="DiscountDetailsId" />
+          <ScalarProperty Name="CouponId" ColumnName="CouponId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ProdFeatures" ColumnName="ProdFeatures" />
+          <ScalarProperty Name="ProdTecDetails" ColumnName="ProdTecDetails" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="Variance" ColumnName="Variance" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="BrandTypeId" ColumnName="BrandTypeId" />
+          <ScalarProperty Name="wholesale" ColumnName="wholesale" />
+          <ScalarProperty Name="colorcode" ColumnName="colorcode" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="Description3" ColumnName="Description3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductFeatures">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductFeature">
+        <MappingFragment StoreEntitySet="ProductFeatures">
+          <ScalarProperty Name="ProductFeaturesID" ColumnName="ProductFeaturesID" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Features" ColumnName="Features" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImages">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductImage">
+        <MappingFragment StoreEntitySet="ProductImages">
+          <ScalarProperty Name="ProductImageId" ColumnName="ProductImageId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="productvarinceid" ColumnName="productvarinceid" />
+          <ScalarProperty Name="ProductVarianceId" ColumnName="ProductVarianceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductReviews">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductReview">
+        <MappingFragment StoreEntitySet="ProductReview">
+          <ScalarProperty Name="ProductReviewId" ColumnName="ProductReviewId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="ReviewComments" ColumnName="ReviewComments" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductStocks">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductStock">
+        <MappingFragment StoreEntitySet="ProductStock">
+          <ScalarProperty Name="StockId" ColumnName="StockId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="StockCount" ColumnName="StockCount" />
+          <ScalarProperty Name="ShowToUser" ColumnName="ShowToUser" />
+          <ScalarProperty Name="ShowIfNoStock" ColumnName="ShowIfNoStock" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="ProductVarianceId" ColumnName="ProductVarianceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTecDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductTecDetail">
+        <MappingFragment StoreEntitySet="ProductTecDetail">
+          <ScalarProperty Name="ProductTecDetailsId" ColumnName="ProductTecDetailsId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TechinalDetails" ColumnName="TechinalDetails" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductVariances">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ProductVariance">
+        <MappingFragment StoreEntitySet="ProductVariance">
+          <ScalarProperty Name="ProductVarianceId" ColumnName="ProductVarianceId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="VarianceType" ColumnName="VarianceType" />
+          <ScalarProperty Name="VariancePrice" ColumnName="VariancePrice" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="sellingPrice" ColumnName="sellingPrice" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="VarianceActive" ColumnName="VarianceActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesOrders">
+      <EntityTypeMapping TypeName="FishermanmarketModel.SalesOrder">
+        <MappingFragment StoreEntitySet="SalesOrder">
+          <ScalarProperty Name="SalesOrderId" ColumnName="SalesOrderId" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="Amoount" ColumnName="Amoount" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="DeliveryAddressLine1" ColumnName="DeliveryAddressLine1" />
+          <ScalarProperty Name="DeliveryAddressLine2" ColumnName="DeliveryAddressLine2" />
+          <ScalarProperty Name="DeliveryCity" ColumnName="DeliveryCity" />
+          <ScalarProperty Name="DeliveryState" ColumnName="DeliveryState" />
+          <ScalarProperty Name="DeliveryPinCode" ColumnName="DeliveryPinCode" />
+          <ScalarProperty Name="DeliveryLandMark" ColumnName="DeliveryLandMark" />
+          <ScalarProperty Name="DeliveryName" ColumnName="DeliveryName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="InProgressDate" ColumnName="InProgressDate" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="DeliveryContactNo" ColumnName="DeliveryContactNo" />
+          <ScalarProperty Name="DeliveryEmail" ColumnName="DeliveryEmail" />
+          <ScalarProperty Name="CancelledDate" ColumnName="CancelledDate" />
+          <ScalarProperty Name="CancelledComments" ColumnName="CancelledComments" />
+          <ScalarProperty Name="CancelledBy" ColumnName="CancelledBy" />
+          <ScalarProperty Name="OrderDeliveryCharge" ColumnName="OrderDeliveryCharge" />
+          <ScalarProperty Name="OfferType" ColumnName="OfferType" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="CouponCode" ColumnName="CouponCode" />
+          <ScalarProperty Name="FreeProductId" ColumnName="FreeProductId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="SalesPersonName" ColumnName="SalesPersonName" />
+          <ScalarProperty Name="DeliveryMode" ColumnName="DeliveryMode" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="OrderNotes" ColumnName="OrderNotes" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="DeliveryCharge" ColumnName="DeliveryCharge" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesOrderItems">
+      <EntityTypeMapping TypeName="FishermanmarketModel.SalesOrderItem">
+        <MappingFragment StoreEntitySet="SalesOrderItem">
+          <ScalarProperty Name="SalesOrderItemId" ColumnName="SalesOrderItemId" />
+          <ScalarProperty Name="SalesOrderId" ColumnName="SalesOrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CouponPercentage" ColumnName="CouponPercentage" />
+          <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+          <ScalarProperty Name="TaxPercentage" ColumnName="TaxPercentage" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="ProductVarianceId" ColumnName="ProductVarianceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="FishermanmarketModel.Setting">
+        <MappingFragment StoreEntitySet="Setting">
+          <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+          <ScalarProperty Name="CaptchaId" ColumnName="CaptchaId" />
+          <ScalarProperty Name="DateFormat" ColumnName="DateFormat" />
+          <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+          <ScalarProperty Name="GridSizeAdmin" ColumnName="GridSizeAdmin" />
+          <ScalarProperty Name="GridSizeClient" ColumnName="GridSizeClient" />
+          <ScalarProperty Name="ButtonColorAdmin" ColumnName="ButtonColorAdmin" />
+          <ScalarProperty Name="FacebookSignup" ColumnName="FacebookSignup" />
+          <ScalarProperty Name="CouponApplicable" ColumnName="CouponApplicable" />
+          <ScalarProperty Name="DiscountApplicable" ColumnName="DiscountApplicable" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="MetaTag" ColumnName="MetaTag" />
+          <ScalarProperty Name="colorApplicable" ColumnName="colorApplicable" />
+          <ScalarProperty Name="FotterImage" ColumnName="FotterImage" />
+          <ScalarProperty Name="Themecolour" ColumnName="Themecolour" />
+          <ScalarProperty Name="favicon" ColumnName="favicon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialMedias">
+      <EntityTypeMapping TypeName="FishermanmarketModel.SocialMedia">
+        <MappingFragment StoreEntitySet="SocialMedia">
+          <ScalarProperty Name="SocialMediaId" ColumnName="SocialMediaId" />
+          <ScalarProperty Name="SocialMediaType" ColumnName="SocialMediaType" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialMediaLinks">
+      <EntityTypeMapping TypeName="FishermanmarketModel.SocialMediaLink">
+        <MappingFragment StoreEntitySet="SocialMediaLink">
+          <ScalarProperty Name="SocialMediaLinkId" ColumnName="SocialMediaLinkId" />
+          <ScalarProperty Name="SocialMediaId" ColumnName="SocialMediaId" />
+          <ScalarProperty Name="SocialMediaLink1" ColumnName="SocialMediaLink" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategories">
+      <EntityTypeMapping TypeName="FishermanmarketModel.SubCategory">
+        <MappingFragment StoreEntitySet="SubCategory">
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PictureURL" ColumnName="PictureURL" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="orderno" ColumnName="orderno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.TaxDetail">
+        <MappingFragment StoreEntitySet="TaxDetails">
+          <ScalarProperty Name="TaxDetailsId" ColumnName="TaxDetailsId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CGSTPercentage" ColumnName="CGSTPercentage" />
+          <ScalarProperty Name="SGSTPercentage" ColumnName="SGSTPercentage" />
+          <ScalarProperty Name="IGSTPercentage" ColumnName="IGSTPercentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermsAndConditions">
+      <EntityTypeMapping TypeName="FishermanmarketModel.TermsAndCondition">
+        <MappingFragment StoreEntitySet="TermsAndCondition">
+          <ScalarProperty Name="TermsAndConditionId" ColumnName="TermsAndConditionId" />
+          <ScalarProperty Name="TermsAndConditions" ColumnName="TermsAndConditions" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermsAndConditionInvoives">
+      <EntityTypeMapping TypeName="FishermanmarketModel.TermsAndConditionInvoive">
+        <MappingFragment StoreEntitySet="TermsAndConditionInvoive">
+          <ScalarProperty Name="InvoiveTermsAndConditionId" ColumnName="InvoiveTermsAndConditionId" />
+          <ScalarProperty Name="InvoiceTermsAndCondition" ColumnName="InvoiceTermsAndCondition" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThemeDetails">
+      <EntityTypeMapping TypeName="FishermanmarketModel.ThemeDetail">
+        <MappingFragment StoreEntitySet="ThemeDetails">
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
+          <ScalarProperty Name="ThemeImage" ColumnName="ThemeImage" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TodayDeals">
+      <EntityTypeMapping TypeName="FishermanmarketModel.TodayDeal">
+        <MappingFragment StoreEntitySet="TodayDeal">
+          <ScalarProperty Name="TodayDealId" ColumnName="TodayDealId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TodayDiscountAmount" ColumnName="TodayDiscountAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Variancecolorcodes">
+      <EntityTypeMapping TypeName="FishermanmarketModel.Variancecolorcode">
+        <MappingFragment StoreEntitySet="Variancecolorcode">
+          <ScalarProperty Name="VariancecolorcodeId" ColumnName="VariancecolorcodeId" />
+          <ScalarProperty Name="colorcode" ColumnName="colorcode" />
+          <ScalarProperty Name="ProductVarianceId" ColumnName="ProductVarianceId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisitorCounts">
+      <EntityTypeMapping TypeName="FishermanmarketModel.VisitorCount">
+        <MappingFragment StoreEntitySet="VisitorCount">
+          <ScalarProperty Name="VisitorCountNo" ColumnName="VisitorCountNo" />
+          <ScalarProperty Name="VisitorCountId" ColumnName="VisitorCountId" />
+          <ScalarProperty Name="CompanyDetailId" ColumnName="CompanyDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wholesaleprices">
+      <EntityTypeMapping TypeName="FishermanmarketModel.Wholesaleprice">
+        <MappingFragment StoreEntitySet="Wholesaleprice">
+          <ScalarProperty Name="WholesalepriceId" ColumnName="WholesalepriceId" />
+          <ScalarProperty Name="productVarianceId" ColumnName="productVarianceId" />
+          <ScalarProperty Name="wholesaleFromQty" ColumnName="wholesaleFromQty" />
+          <ScalarProperty Name="wholesaleToQty" ColumnName="wholesaleToQty" />
+          <ScalarProperty Name="wholesaleprize" ColumnName="wholesaleprize" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

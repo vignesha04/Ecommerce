@@ -1,0 +1,8 @@
+﻿<table>
+    <tr><td>SubcategoryName</td><td>SubcategoryStatus</td></tr>
+    <tr ng-repeat="tut in tutorial"><td>{{tut.SubcategoryName}}</td><td>{{tut.SubcategoryStatus}}</td></tr>
+</table>
+
+Name: <input type="text" ng-model="Data.SubcategoryName" /><br />
+Desc: <input type="text" ng-model="Data.SubcategoryStatus" /><br />
+<input type="button" value="Add" ng-click="Save()" /><br />

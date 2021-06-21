@@ -1,0 +1,6 @@
+'use strict'; Ecom.controller('LoginController', function ($scope, $http) {
+    var vUrl ="http://webapi.kasimedufishandmeat.in/api/";$scope.Showsave=true;$scope.msgStatus='';$scope.msg='';$scope.Get=function()
+{if($scope.member.EmailId==undefined||$scope.member.EmailId==null||$scope.member.EmailId==""){$scope.msg='Please Enter The valid EmailId';$scope.showmsg=false;return false;}
+if($scope.member.Password==undefined||$scope.member.Password==null||$scope.member.Password==""){$scope.msg='Please Enter the valid Password';return false;}
+var vEmailId=$scope.member.EmailId;var vPassword=$scope.member.Password;$scope.msgStatus='';$scope.msg='';$scope.showmsg=false;$http({url:vUrl+"MemberLogin/GetMemberDetailsByEmailId",method:'GET',params:{EmailId:vEmailId,Password:vPassword},headers:{"Content-Type":JSON}}).then(function mySuccess(response){var result=response.data;if(response.data.length!=0){$scope.msgStatus="Logged in successfully";$scope.showmsg=true;}
+else{$scope.msg="please enter the valid emailid and password";$scope.showmsgError=true;}}).catch(function(response){})};});

@@ -1,0 +1,13 @@
+'use strict'; Ecom.controller('RegisterController', function ($scope, $http, $timeout) {
+    var vUrl ="http://webapi.kasimedufishandmeat.in/api/";$scope.ShowSave=true;$scope.Save=function(){$scope.msgStatus='';$scope.msg='';$scope.showmsg=false;if($scope.member.MemberName==undefined||$scope.member.MemberName==null||$scope.member.MemberName==""){$scope.msg='Please Enter the MemberName';$scope.showmsgError=true;return false;}
+if($scope.member.ContactNo==undefined||$scope.member.ContactNo==null||$scope.member.ContactNo==""){$scope.msg='Please Enter the valid ContactNo';$scope.showmsgError=true;return false;}
+if($scope.member.EmailId==undefined||$scope.member.EmailId==null||$scope.member.EmailId==""){$scope.msg='Please Enter The valid EmailId';$scope.showmsgError=true;return false;}
+if($scope.member.Password==undefined||$scope.member.Password==null||$scope.member.Password==""){$scope.msg='Please Enter the valid Password';$scope.showmsgError=true;return false;}
+if($scope.member.AddressLine1==undefined||$scope.member.AddressLine1==null||$scope.member.AddressLine1==""){$scope.msg='Please Enter the valid Address';$scope.showmsgError=true;return false;}
+if($scope.member.City==undefined||$scope.member.City==null||$scope.member.City==""){$scope.msg='Please Enter the City';$scope.showmsgError=true;return false;}
+if($scope.member.State==undefined||$scope.member.State==null||$scope.member.State==""){$scope.msg='Please Enter the State';$scope.showmsgError=true;return false;}
+if($scope.member.PinCode==undefined||$scope.member.PinCode==null||$scope.member.PinCode==""){$scope.msg='Please Enter the PinCode';$scope.showmsgError=true;return false;}
+var reg=/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;if(reg.test(document.getElementById("ContactNo").value)==false){$scope.msg='Please Enter the valid ContactNo';$scope.showmsgError=true;return false;}
+var reg=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;if(reg.test(document.getElementById("EmailId").value)==false){$scope.msg='EmailID is not valid';$scope.showmsgError=true;return false;}
+var member=$scope.member;$http({url:vUrl+"MemberDetail/InsertMemberDetail",dataType:'json',method:'POST',data:member,headers:{"Content-Type":"application/json"}}).then(function(response){var vExist=response.data;if(vExist=="Exist"){$scope.msg="EmailId is already exist";$scope.showmsgError=true;}
+else{$scope.msgStatus='Registered SuccessFully';$scope.showmsg=true;$scope.member.MemberName="";$scope.member.ContactNo="";$scope.member.EmailId="";$scope.member.Password="";$scope.member.AddressLine1="";$scope.member.AddressLine2="";$scope.member.City="";$scope.member.State="";$scope.member.PinCode="";}}).catch(function(response){});}});

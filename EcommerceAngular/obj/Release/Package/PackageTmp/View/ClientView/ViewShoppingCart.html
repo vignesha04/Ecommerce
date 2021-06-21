@@ -1,0 +1,611 @@
+﻿<div>
+    
+    <style>
+        @media (min-width:850px) {
+            .modal-dialog {
+                margin-left: 50em;
+            }
+
+            .desk {
+                width: 60%;
+            }
+        }
+    </style>
+    <div class="main-container container" ng-show="divShoppingCart">
+        <ul class="breadcrumb">
+            <li><a href="" ng-click="aHomeClick()"><i class="fa fa-home"></i></a></li>
+            <li><a href="">Shopping Cart</a></li>
+        </ul>
+        <div class="row">
+            <div id="content" class="col-sm-12">
+                <h2 class="title">Shopping Cart</h2>
+                <div class="table-responsive form-group mobile-hide">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <!--<td class="text-center"></td>-->
+                                <td colspan="2" class="text-center">Product</td>
+                                <td class="text-center">Quantity</td>
+                                <td class="text-center">Selling Price (<span>&#8377;</span>)</td> 
+                                <!--<td class="text-center"> Price(<span>&#8377;</span>)</td>-->
+                                <td class="text-center">MRP Price(<span>&#8377;</span>)</td>
+                                <td class="text-center">GST Rate</td> 
+                                <td class="text-center">GST Amount</td>
+                                <td class="text-center">Discount(<span>&#8377;</span>)</td>
+                                <td class="text-center">Total (<span>&#8377;</span>)</td>
+                                <td class="text-center">Copoun Code :</td>
+                                <td></td>
+                               <!--<td class="text-center">Copoun Discount Amount</td>-->
+                                <td class="text-center">Remove</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="ci in CartItems1 track by $index">
+                                <td class="text-center" style="vertical-align:middle;">
+                                    <a href=""><img width="50px" src={{ci.ImageURL}} alt=" Product Image" title="" class="img-thumbnail"></a>
+                                    <!--<span style="margin-left:.3em;" href="">{{ci.Title}} &nbsp;{{ci.VarienceType}}</span>-->
+                                </td>
+                                <td class="text-center" style="vertical-align:middle;">
+                                    <a href="">{{ci.Title}} {{ci.VarienceType}}</a><br>
+                                </td>
+                                <td class="text-center" width="125px" style="vertical-align:middle;">
+                                    <div class="input-group btn-block quantity">
+                                        <input type="number" name="quantity" size="1" class="form-control" ng-model="tex['id'+($index+1)]" ng-value="{{ci.Qty}}" ng-change="UpdateCountFromCart(ci.ProductId,tex['id'+($index+1)],ci.VarianceId,CopounCode['id'+($index+1)])" min="1" ng-pattern="/^[0-9]{1,5}$/">
+                                        <!--<span class="input-group-btn">-->
+                                        <!--<button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary" data-original-title="Update"><i class="fa fa-clone"></i></button>-->
+                                        <!--</span>-->
+                                    </div>
+                                </td>
+                                <td class="text-center" style="vertical-align:middle;">{{ci.Price}}</td>
+
+                                <td class="text-center" style="vertical-align:middle;">{{ci.MrpPrice}}</td>
+                                <!--<td class="text-center" style="vertical-align:middle;">{{ci.Qty*ci.Price| number:2}}</td>-->
+                                <td class="text-center" style="vertical-align:middle;">{{ci.GSTPercentage}} %</td>
+                                <td class="text-center" style="vertical-align:middle;">{{ci.Qty*ci.Tax| number:2}}</td>
+                                <td class="text-center" style="vertical-align:middle;">{{ ci.Qty * ((ci.Discount) + (ci.MrpPrice  - ci.Price))| number:2}}</td>
+                                <td class="text-center" style="vertical-align:middle;">{{(ci.Qty*ci.Price)-(ci.Discount*ci.Qty)  + (ci.Tax*ci.Qty) | number:2}}</td>
+                                <td class="text-center" style="vertical-align:middle;"><input type="text" name="quantity" size="1" class="form-control"  id="CoupounTextBox{{$index}}" ng-model="CoupounCode['id'+($index+1)]" ></td>
+                                <td class="text-center" style="vertical-align:middle;"><button  data-toggle="tooltip" title="Apply Copoun" class="btn btn-primary" id="vbtnid{{$index}}"  ng-click="ApplyCopounCode(['vbtnid'+($index)],ci.ProductId,ci.Price,ci.Tax,ci.Qty,ci.VarianceId,['CoupounTextBox'+($index)],CoupounCode['id'+($index+1)])" >Apply</button></td>
+                                <!--<td class="text-center" style="vertical-align:middle;color:green;">{{CoupounDiscountAmt | number:2}}</td>-->
+                                <td class="text-center" style="vertical-align:middle;"><button type="button" data-toggle="tooltip" title="Remove From Cart" class="btn btn-danger" data-original-title="Remove" ng-click="RemoveFromCart(ci.VarianceId)"><i class="fa fa-times-circle"></i></button></td>
+                            </tr>
+
+
+                            <!--<tr ng-show="Couponshow">
+                               <td colspan="4"></td>
+                                <td colspan="8" class="text-right"><strong>Copoun Code :</strong></td>
+                                <td class="text-right">
+                                    <input type="text" ng-model="CopounCode['id'+($index+1)]" name="quantity" size="1" class="form-control" >
+                                    
+                                </td>
+                                <td class="text-center" style="vertical-align:middle;"><button type="submit" data-toggle="tooltip" title="Apply Copoun" class="btn btn-primary" data-original-title="Update" ng-click="ApplyCopounTotaly(ci.ProductId,CopounCode['id'+($index+1)])" >Apply</button></td>
+                            </tr>-->
+
+                            <tr>
+
+                                <td colspan="8" class="text-right"><strong>Sub Total :</strong></td>
+                                <td class="text-center" style="vertical-align:middle;">
+                                    (<span>&#8377;</span>) {{Subtotal | number:2}}
+                                </td>
+                                <td></td>
+                            </tr>
+
+
+                            <tr ng-show="CouponshowAmt">
+                               
+                                <td colspan="8" class="text-right"><strong>Copoun Discount Amount :</strong></td>
+                                <td class="text-center" style="vertical-align:middle;color:green;">
+                                    (<span>&#8377;</span>) {{CoupounDiscountAmt | number:2}}
+
+                                </td>
+                                <td></td>
+                            </tr>
+
+                          
+
+
+
+                            <tr >
+                                <!--<td colspan="4"></td>-->
+                                <td colspan="8" class="text-right"><strong>Delivery Charge  :</strong></td>
+                                <td class="text-center" style="vertical-align:middle;">
+                                    (<span>&#8377;</span>) {{DeliveryCharges | number:2}}
+                                </td>
+                                <td></td>
+                            </tr>
+
+
+                            <tr>
+                                <!--<td colspan="5"></td>-->
+                                <td colspan="8" class="text-right" style="vertical-align:middle;"><strong>Total Amount :</strong></td>
+                                <td class="text-center" style="vertical-align:middle;">(<span>&#8377;</span>) {{TotalAmount| number:2}}</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="buttons">
+                        <div class="pull-left"><a href="#!HomePage" class="btn btn-primary">Continue Shopping</a></div>
+                        <div class="pull-right"><a href="" class="btn btn-primary" id="shoppingcart" ng-click="btnCheckoutClick()">Place Order</a></div>
+                    </div>
+                
+                </div>
+
+                <div class="desktop-hide" ng-repeat="ci in CartItems1 track by $index">
+                    <div class="table-responsive form-group">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td class="text-left" style="font-weight:600;">Image</td>
+                                <td class="text-center"><a href=""><img width="80px" src={{ci.ImageURL}} alt=" Product Image" title="" class="img-thumbnail"></a></td>
+                            </tr>
+                            <tr>
+                                <td class="text-left" style="font-weight:600;">Product Name</td>
+                                <td class="text-right">
+                                    <a href="">{{ci.Title}}{{ci.VarienceType}}</a><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left" style="font-weight:600;">Quantity</td>
+                                <td class="text-left" width="200px">
+                                    <div class="input-group btn-block quantity">
+                                        <input type="number" name="quantity" size="1" class="form-control" ng-model="tex['id'+($index+1)]" ng-value="{{ci.Qty}}" ng-change="UpdateCountFromCart(ci.ProductId,tex['id'+($index+1)],ci.VarianceId)" min="1" ng-pattern="/^[0-9]{1,5}$/">
+                                        <!--<span class="input-group-btn">-->
+                                        <!--<button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary" data-original-title="Update" ><i class="fa fa-clone"></i></button>-->
+                                        <!--</span>-->
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-left" style="font-weight:600;">Selling Price (<span>&#8377;</span>)</td>
+                                <td class="text-right">{{ci.Price| number:2}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left" style="font-weight:600;">MRP Price(<span>&#8377;</span>)</td>
+                                <td class="text-right">{{ci.MrpPrice| number:2}}</td>
+                            </tr>
+                            <tr>
+
+                                <td class="text-left" style="font-weight:600;">GST Rate</td>
+                                <td class="text-right" >{{ci.GSTPercentage}} %</td>
+                            </tr>
+                            <tr>
+
+                                <td class="text-left" style="font-weight:600;">GST Amount(<span>&#8377;</span>)</td>
+                                <td class="text-right" >{{ci.Qty*ci.Tax| number:2}}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-left" style="font-weight:600;">Discount(<span>&#8377;</span>)</td>
+                                <td class="text-right">{{ ci.Qty * ((ci.Discount) + (ci.MrpPrice  - ci.Price))| number:2}}</td>
+                            </tr>                          
+                            <tr>
+
+                                <td class="text-left" style="font-weight:600;">Total (<span>&#8377;</span>)</td>
+                                <td class="text-right">{{(ci.Qty*ci.Price)-(ci.Discount*ci.Qty)  + (ci.Tax*ci.Qty) | number:2}}</td>
+                            </tr>
+
+                            <tr ng-show="Couponshow">
+
+                                <td class="text-left" style="font-weight:600;">Coupoun Code </td>
+                                <td class="text-center" style="vertical-align:middle;">
+                                <input type="text" name="quantity" size="1" class="form-control" id="CoupounTextBoxMobile{{$index}}" ng-model="CoupounCodeMobile['id'+($index+1)]">
+                                    <button data-toggle="tooltip" title="Apply Copoun" class="btn btn-primary"  data-original-title="Update" id="vbtnidMobile{{$index}}"  ng-click="ApplyCopounCodeforMobile(['vbtnidMobile'+($index)],ci.ProductId,ci.Price,ci.Tax,ci.Qty,ci.VarianceId,['CoupounTextBoxMobile'+($index)],CoupounCodeMobile['id'+($index+1)])" >Apply</button></td>
+                                
+                            </tr>
+
+                         
+                            <tr>
+
+                                <td class="text-left" style="font-weight:600;">Remove</td>
+                                <td class="text-right">
+                                    <button type="button" data-toggle="tooltip"
+                                            title="Remove From Cart" class="btn btn-danger" data-original-title="Remove"
+                                            ng-click="RemoveFromCart(ci.VarianceId)">
+                                        <i class="fa fa-times-circle"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <table class="desktop-hide table table-bordered">
+                   
+                    <tr>
+                        <td colspan="3"></td>
+                        <td><strong>Sub Total :</strong></td>
+                        <td class="text-right">
+                            (<span>&#8377;</span>) {{Subtotal | number:2}}
+                        </td>
+                    </tr>
+
+                    <tr ng-show="Couponshow">
+                        <td colspan="3"></td>
+                        <td><strong>Copoun Discount Amount :</strong></td>
+                        <td class="text-right">
+                            (<span>&#8377;</span>) {{CoupounDiscountAmt | number:2}}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3"></td>
+                        <td><strong>Delivery Charge :</strong></td>
+                        <td class="text-right">
+                            (<span>&#8377;</span>) {{DeliveryCharges | number:2}}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3"></td>
+                        <td><strong>Total Amount :</strong></td>
+                        <td class="text-right"><span>&#8377;</span> {{TotalAmount | number:2}}</td>
+                    </tr>
+                </table>
+
+
+                <div class="buttons desktop-hide">
+                    <div class="pull-left"><a href="#!HomePage" class="btn btn-primary">Continue Shopping</a></div>
+                    <div class="pull-right"><a href="" class="btn btn-primary" ng-click="btnCheckoutClick()">Place Order</a></div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-sm-10 col-md-8 " ng-show="deliveryhide" style="float:left">
+                        <h2>Delivery Charges</h2>
+                        <table style="width:100%" class="table-bordered">
+                            <thead>
+                                <tr style="text-align:center">
+                                    <td>
+                                        Order Value From (<span>&#8377;</span>)
+                                    </td>
+                                    <td>
+                                        Order Value To (<span>&#8377;</span>)
+                                    </td>
+                                    <td>
+                                        Delivery Charge (<span>&#8377;</span>)
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="pv in Deliverycharges">
+                                <tr style="text-align:center">
+                                    <td>
+                                        {{pv.Fromprice}}
+                                    </td>
+                                    <td>
+                                        {{pv.Toprice}}
+                                    </td>
+                                    <td>
+                                        {{pv.Price}}
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!--<div ng-show="showdeliveryfree" class="text-center">
+                            <h4>
+
+                                Free Delivery for the Order Value above <span>&#8377;</span>{{Toprice}}.
+
+                            </h4>
+
+                        </div>-->
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="myModalDelAddress" class="modal fade" role="dialog">
+                <div class="modal-dialog" style="margin-right:3em;">
+                    <div class="container" style="width:100%;">
+                        <div class="modal-content desk" style="width:unset;">
+                            <div class="login-form-grids" style="width:80%; margin:auto;">
+                                <form class="form-horizontal" role="form">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h3 style="text-align:left;color:black;"><b>Billing Address</b></h3>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-user"></span>
+                                                    </div>
+                                                    <input type="text" id="BillingAddressMemberName3" placeholder="Name" ng-model="Profile.MemberName" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-lock"></span>
+                                                    </div>
+                                                    <input type="tel" id="BillingAddressContact" placeholder="ContactNo" ng-model="Profile.ContactNo" ng-keypress="isNumber($event)" required class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <span class="fa fa-envelope"></span>
+                                                </div>
+                                                <input type="email" id="BillingAddressEmail" placeholder="EmailId" ng-model="Profile.EmailId" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="BillingAddressAddressLine1" placeholder="AddressLine1" ng-model="Profile.AddressLine1" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="BillingAddressAddressLine2" placeholder="AddressLine2" ng-model="Profile.AddressLine2" required class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="BillingAddressCity" placeholder="BillingAddressCity" ng-model="Profile.City" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div >
+                                              
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <select id="BillingAddressState" ng-model="Profile.State" class="form-control" placeholder="Billing AddressState" style="width:199px;" required>
+                                                        <option value="0" disabled selected>Select State</option>
+                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                        <option value="Assam">Assam</option>
+                                                        <option value="Bihar">Bihar</option>
+                                                        <option value="Chandigarh">Chandigarh</option>
+                                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                                        <option value="Daman and Diu">Daman and Diu</option>
+                                                        <option value="Delhi">Delhi</option>
+                                                        <option value="Lakshadweep">Lakshadweep</option>
+                                                        <option value="Puducherry">Puducherry</option>
+                                                        <option value="Goa">Goa</option>
+                                                        <option value="Gujarat">Gujarat</option>
+                                                        <option value="Haryana">Haryana</option>
+                                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                        <option value="Jharkhand">Jharkhand</option>
+                                                        <option value="Karnataka">Karnataka</option>
+                                                        <option value="Kerala">Kerala</option>
+                                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                        <option value="Maharashtra">Maharashtra</option>
+                                                        <option value="Manipur">Manipur</option>
+                                                        <option value="Meghalaya">Meghalaya</option>
+                                                        <option value="Mizoram">Mizoram</option>
+                                                        <option value="Nagaland">Nagaland</option>
+                                                        <option value="Odisha">Odisha</option>
+                                                        <option value="Punjab">Punjab</option>
+                                                        <option value="Rajasthan">Rajasthan</option>
+                                                        <option value="Sikkim">Sikkim</option>
+                                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                                        <option value="Telangana">Telangana</option>
+                                                        <option value="Tripura">Tripura</option>
+                                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                        <option value="Uttarakhand">Uttarakhand</option>
+                                                        <option value="West Bengal">West Bengal</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-file-zip-o"></span>
+                                                    </div>
+                                                    <input type="tel" id="BillingAddressPinCode" placeholder="BillingAddressPinCode" ng-model="Profile.PinCode" ng-keypress="isNumber($event)" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="BillingAddressLandmar" placeholder="BillingAddressLandmar" ng-model="Profile.Landmark" value="{{Landmark}}" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <h3 style="text-align:left;color:black;"><b>Delivery Address</b><br /><label for="sameasAddress"><input type="checkbox" id="sameasAddress" ng-click="sameasAddress()" style="cursor:pointer"><small style="cursor:pointer;color:blue;font-size:12px; ">&nbsp;    Same as Billing Address</small></label></h3>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-user"></span>
+                                                    </div>
+                                                    <input type="text" id="MemberName3" placeholder="Name" ng-model="Profile.MemberName1" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-lock"></span>
+                                                    </div>
+                                                    <input type="tel" id="Contact" placeholder="ContactNo" ng-model="Profile.ContactNo1" ng-keypress="isNumber($event)" required class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <span class="fa fa-envelope"></span>
+                                                </div>
+                                                <input type="email" id="Email" placeholder="EmailId" ng-disabled="EmailId3" ng-model="Profile.EmailId1" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="AddressLine1" placeholder="AddressLine1" ng-model="Profile.AddressLine11" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="AddressLine2" placeholder="AddressLine2" ng-model="Profile.AddressLine21" required class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="City" placeholder="City" ng-model="Profile.City1" required class="form-control">
+                                                </div>
+                                            </div>
+                                         
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <select type="text" id="State" placeholder="State" ng-model="Profile.State1" required class="form-control" style="width:199px;">
+                                                        <option value="0" disabled selected>Select State</option>
+                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                        <option value="Assam">Assam</option>
+                                                        <option value="Bihar">Bihar</option>
+                                                        <option value="Chandigarh">Chandigarh</option>
+                                                        <option value="Chhattisgarh">Chhattisgarh</option>
+                                                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                                        <option value="Daman and Diu">Daman and Diu</option>
+                                                        <option value="Delhi">Delhi</option>
+                                                        <option value="Lakshadweep">Lakshadweep</option>
+                                                        <option value="Puducherry">Puducherry</option>
+                                                        <option value="Goa">Goa</option>
+                                                        <option value="Gujarat">Gujarat</option>
+                                                        <option value="Haryana">Haryana</option>
+                                                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                        <option value="Jharkhand">Jharkhand</option>
+                                                        <option value="Karnataka">Karnataka</option>
+                                                        <option value="Kerala">Kerala</option>
+                                                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                        <option value="Maharashtra">Maharashtra</option>
+                                                        <option value="Manipur">Manipur</option>
+                                                        <option value="Meghalaya">Meghalaya</option>
+                                                        <option value="Mizoram">Mizoram</option>
+                                                        <option value="Nagaland">Nagaland</option>
+                                                        <option value="Odisha">Odisha</option>
+                                                        <option value="Punjab">Punjab</option>
+                                                        <option value="Rajasthan">Rajasthan</option>
+                                                        <option value="Sikkim">Sikkim</option>
+                                                        <option value="Tamil Nadu">Tamil Nadu</option>
+                                                        <option value="Telangana">Telangana</option>
+                                                        <option value="Tripura">Tripura</option>
+                                                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                        <option value="Uttarakhand">Uttarakhand</option>
+                                                        <option value="West Bengal">West Bengal</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-file-zip-o"></span>
+                                                    </div>
+                                                    <input type="tel" id="PinCode" placeholder="PinCode" ng-model="Profile.PinCode1" ng-keypress="isNumber($event)" required class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 col-sm-12 col-md-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-home"></span>
+                                                    </div>
+                                                    <input type="text" id="Landmar" placeholder="Landmark" ng-model="Profile.Landmark1" required class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="pull-right"><a href="" class="btn btn-primary" id="shoppingcart" ng-click="btnPayClick()">Pay </a></div>-->
+                                    <button type="submit" class="btn btn-primary" ng-click="btnContinueClick()">OK Continue</button>
+                                    <div class="row" style="padding-left:10px;">
+                                        <span style="color:red" ng-show="showmsgErrorUpdate">{{msgUpdate}}</span><span style="color:green" ng-show="showmsgUpdate">{{msgStatusUpdate}}</span><br />
+                                        <span ng-model="MemberId" ng-show="Showhide"></span>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <br /><br />
+    </div>
+    <!--<button ng-click="btnClick()">Click to Pay</button>-->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+       
+    </script>
+    <div ng-show="divPaytm" ng-bind-html="paytmData"></div>
+</div>

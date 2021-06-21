@@ -1,0 +1,460 @@
+﻿<div>
+    <div>
+        <!-- Bootstrap Core CSS -->
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <!--<link href="css/style.css" rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/style.css" rel="stylesheet" />
+
+        <!-- font-awesome icons CSS -->
+        <!--<link href="css/font-awesome.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/font-awesome.css" rel="stylesheet" />
+        <!-- //font-awesome icons CSS -->
+        <!-- side nav css file -->
+        <!--<link href='css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css' />-->
+        <link href="../AdminStyle/css/SidebarNav.min.css" rel="stylesheet" />
+        <!-- side nav css file -->
+        <!-- js-->
+        <!--<script src="js/jquery-1.11.1.min.js"></script>-->
+        <script src="../js/AdminStyle/js/jquery-1.11.1.min.js"></script>
+        <!--<script src="js/modernizr.custom.js"></script>-->
+        <script src="../js/AdminStyle/js/modernizr.custom.js"></script>
+
+        <!--webfonts-->
+        <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <!--//webfonts-->
+        <!-- Metis Menu -->
+        <!--<script src="js/metisMenu.min.js"></script>-->
+        <script src="../js/AdminStyle/js/metisMenu.min.js"></script>
+        <!--<script src="js/custom.js"></script>-->
+        <script src="../js/AdminStyle/js/custom.js"></script>
+
+        <!--<link href="css/custom.css" rel="stylesheet">-->
+        <link href="../AdminStyle/css/tabview.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+        <!--//Metis Menu -->
+
+        <style>
+            #myLinks {
+                display: none;
+                background-color: #222D32;
+                color: white !important;
+                padding-top: 3.8em;
+                padding-left: 15px;
+            }
+
+                #myLinks a {
+                    color: white !important;
+                }
+            input {
+                border-color: #B198CB !important;
+            }
+            button {
+                border-radius: 6px !important;
+            }
+
+            /*---------------Font-Face---------------*/           
+            @font-face {
+                font-family: 'Nunito-Bold';
+                src: url('../fonts/Nunito-Bold.ttf') format('truetype');
+            }
+            @font-face {
+                font-family: 'Nunito-Regular';
+                src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+            }
+            @font-face {
+                font-family: 'Nunito-SemiBold';
+                src: url('../fonts/Nunito-SemiBold.ttf') format('truetype');
+            }
+            @font-face {
+                font-family: 'Nunito-Light';
+                src: url('../fonts/Nunito-Light.ttf') format('truetype');
+            }
+            h2,h3,h4,h5{
+                font-family:Nunito-Bold !important;
+            }
+            p, span, th, td, a, label {
+                font-family: Nunito-SemiBold !important;
+                font-size: 1rem;
+                color: black !important;
+            }
+            /*---------------Font-Face---------------*/  
+            
+        </style>
+
+        <div class="cbp-spmenu-push">
+            <div class="main-content">
+                <div ng-controller="AdminMainMenu">
+                    <ng-include src="'View/AdminMainMenu.html'"></ng-include>
+                </div>
+                <div id="page-wrapper" style="padding-top:75px;">
+                    <div class="main-page" ng-show="OrderSlip">
+                        <div class="container" style="width:100%;">
+                            <!--Form-->
+                            <div class="forms">
+                                <div class="form-two widget-shadow" style="border-radius:10px;">
+                                    <div class="form-body" data-example-id="simple-form-inline" style="width:100%;">
+                                        <div class="form-group" style="width:100%;">
+                                            <a href="" data-toggle="tooltip" class="large-tooltip" title="You Can Check Sales Reports Here!">
+                                                <h4 style="font-size:20px;color:#663398 ;padding-bottom:25px;padding-top:0px;">
+                                                    Order Slip
+                                                </h4>
+                                            </a>
+                                            <div class="col-lg-12">
+                                                <div class="col-lg-2 mobile-hide" style="width: 6%">
+                                                    <label for="ValidFrom"> From Date </label>
+                                                </div>
+                                                <div class="col-lg-4 desktop-hide">
+                                                    <label for="ValidFrom">From Date</label>
+                                                </div>
+                                                <div class="col-lg-3 mobile-hide" style="width: 15%;">
+                                                    <input type="date" id="FromDate" class="form-control distexbox" placeholder="FromDate" ng-change="salesorderdate()" ng-model="report.FromDate" date-format />
+                                                </div>
+                                                <div class="col-lg-4 desktop-hide">
+                                                    <input type="date" id="FromDate" class="form-control" placeholder="FromDate" ng-change="salesorderdate()" ng-model="report.FromDate" date-format />
+                                                </div>
+                                                <div class="col-lg-2 mobile-hide" style="width: 4.66666667%;margin-left:20px;">
+                                                    <label for="ValidTo" class="text-right"> To Date</label>
+                                                </div>
+                                                <div class="col-lg-4 desktop-hide">
+                                                    <label for="ValidTo"> To Date</label>
+                                                </div>
+                                                <div class="col-lg-3 mobile-hide" style="width:15%;">
+                                                    <input type="date" placeholder="ToDate" id="ToDate" class="form-control distexbox" ng-model="report.ToDate" date-format ng-change="salesorderdate()" />
+                                                </div> &nbsp;
+                                                <div class="col-lg-4 desktop-hide">
+                                                    <input type="date" placeholder="ToDate" id="ToDate" class="form-control" ng-model="report.ToDate" date-format />
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="col-lg-4 mobile-hide" style="width: 8.66666667%;margin-left:20px;">
+                                                    <label for="SalesReport">
+                                                        Sales Order No
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-6 col-md-12  desktop-hide">
+                                                    <label for="SalesReport">
+                                                        Sales Order No
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-4 mobile-hide" style="width:23%;">
+                                                    <select id="SalesOrderId" ng-model="report.SalesOrderId" ng-change="salesorderdate()" class="form-control">
+                                                        <option value="" disabled selected>Select Order No</option>
+                                                        <option ng-selected="report.SalesOrderId == order.SalesOrderId" ng-repeat="order in salOrderNo" value="{{order.SalesOrderId}}">{{order.OrderNo}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-6 desktop-hide" style="padding-bottom:15px;">
+                                                    <select id="SalesOrderId" ng-model="report.SalesOrderId" ng-change="salesorderdate()" class="form-control">
+                                                        <option value="" disabled selected>Select Order No</option>
+                                                        <option ng-selected="report.SalesOrderId == order.SalesOrderId" ng-repeat="order in salOrderNo" value="{{order.SalesOrderId}}">{{order.OrderNo}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-2 col-md-4 col-xs-12" style="margin-left: 20px;">
+                                                    <button type="button" ng-style="myObj" ng-click="GenarateInvoice()" class="btn btn-default">
+                                                        View
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-left:10px;">
+                                            <span style="color:red">{{msg}}</span><span style="color:green">{{msgStatus}}</span><br />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn" ng-show="SlipHide">
+                        <button ng-click="Backto()" class="btn btn-success">Back</button>
+                    </div>
+                    <div class="bs-example widget-shadow" style="border-radius:10px;">
+                        <div class="row" style="padding:15px 20px;">
+                            <div class="col-lg-3" style="padding-top:5px;">
+                                <h4 style="font-size:20px;color:#663398 ;">Invoice</h4>
+                            </div>
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="col-lg-3">
+                            </div>
+                            <div class="col-lg-3" style="padding-top:5px; padding-left:10px;">
+                                <button type="submit" class="btn btn-default" style="background-color:#f2b33f;" ng-style="myObj" id="ShowPrint" ng-show="ShowPrint" ng-click="printPage('Salesreport')">
+                                    <img src="../AdminStyle/images/printer.png" style="width:20px;" /> &nbsp;View
+                                </button>
+                            </div>
+                        </div>
+
+                        <div style="padding:10px 15px 10px 20px;">
+                            <div id="Salesreport" class="mobile-hide" ng-show="ShowSalesreport">
+                                <div class="row" style="text-align:center;padding-bottom:15px;">
+                                    <h3> SALES INVOICE</h3>
+                                </div>
+                                <header class="row">
+                                    <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                                        <img src="{{InvoiceLogo}}" style="width:200px;">
+                                        <h3 class="name">{{CompanyName}}</h3>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6" style="text-align:right;">
+                                        <!--<div>
+                                            <b>GST No: </b>{{GSTNo}}
+                                        </div>
+                                        <div> <b>CIN No: </b>{{CINno}}</div>-->
+                                        <div> <b>Order Date:</b> {{OrderDate}}</div>
+                                        <div> <b>Order No: </b>{{OrderNo}}</div>
+
+
+
+                                        <!--<div>{{PhoneNo}}</div>
+                                        <div><a href="mailto:{{EmailId}}">{{EmailId}}</a></div>-->
+                                    </div>
+                                </header>
+                                
+                                <main>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                                            <div class="to"><b>Company Address: </b></div>
+                                            <div class="name">{{CompanyName}}</div>
+                                            <div>{{PhoneNo}}</div>
+                                            <div>{{AddressLine1}},<br /> {{AddressLine2}},<br /> {{City}},{{State}}-{{PinCode}}</div>
+                                            <div><a href="mailto:{{EmailId}}">{{EmailId}}</a></div>
+                                        </div>
+                                        
+                                    
+                                        <div class="col-lg-6 col-sm-6" style="text-align:right;">
+                                            <div class="to"><b>Billing Address: </b></div>
+                                            <div class="name">{{MemberName}}</div>
+                                            <div>{{DeliveryContactNo}}</div>
+                                            <div>{{DeliveryAddressLine1}},<br /> {{DeliveryAddressLine2}},<br /> {{DeliveryCity}},{{DeliveryState}}-{{DeliveryPinCode}}</div>
+                                            <div><a href="mailto:{{DeliveryEmail}}">{{DeliveryEmail}}</a></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row " style="padding-top:40px;">
+                                        <table border="1px" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">S.NO</th>
+                                                    <th class="text-center">PRODUCT</th>
+                                                    <th class="text-center">QUANTITY</th>
+                                                    <th class="text-center">UNIT PRICE(<span>&#8377;</span>)</th>
+                                                    <th class="text-center"  ng-show="Discountshow">DISCOUNT(<span>&#8377;</span>)</th>
+                                                    <th class="text-center" ng-show="Couponshow">COUPON</th>
+                                                    <th class="text-center" ng-show="Taxshow">Tax(<span>&#8377;</span>)</th>
+                                                    <th class="text-center">TOTAL(<span>&#8377;</span>)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody style="">
+                                                <tr ng-repeat="soi in SalOrderItem | orderBy:'ProductType':false">
+                                                    <td class="SNO" style="text-align:center;">{{soi.sno}}</td>
+                                                    <td class="PRODUCT" style="padding:2px 6px 2px 6px;">{{soi.product}} <span ng-repeat="SalVar in soi.Variance">{{SalVar.VarianceType}}</span></td>
+                                                    <td class="QUANTITY" style="text-align:center;">{{soi.Quantity}}</td>
+                                                    <td class="UNITPRICE" style="text-align:center;padding:2px 6px 2px 6px;">{{soi.ProductPrice}}</td>
+                                                    <td class="DISCOUNT" ng-show="Discountshow" style="text-align:center;padding:2px 6px 2px 6px;">{{soi.DiscountPercentage}}</td>
+                                                    <td class="COUPON" ng-show="Couponshow"  style="text-align:center;padding:2px 6px 2px 6px;">{{soi.CouponPercentage}}</td>
+                                                    <td class="Tax" ng-show="Taxshow"  style="text-align:center;padding:2px 6px 2px 6px;">{{soi.TaxPercentage}}</td>
+                                                    <td class="total" style="text-align:center;padding:2px 6px 2px 6px;">{{(soi.Quantity*soi.ProductPrice)-(soi.DiscountPercentage)-(soi.CouponPercentage)+(soi.TaxPercentage) | number:2}}</td>
+                                                </tr>
+                                            </tbody>
+                                            <!--<tfoot style="padding-top:10px;">
+                                                <tr>
+                                                   
+                                                    <td  class="text-right">
+                                                        Delivery Charges (<span>&#8377;</span>)
+                                                    </td>
+                                                    <td class="text-center" style=" vertical-align:middle;text-align:center">{{OrderDeliveryCharge}}</td>
+                                                </tr>
+                                                <tr>
+                                                  
+                                                    <td  class="text-right">GRAND TOTAL(<span>&#8377;</span>)</td>
+                                                    <td class="text-right" style="padding:2px 6px 2px 6px;">{{Amoount | number:2}}</td>
+                                                </tr>
+                                            </tfoot>-->
+                                        </table> 
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 col-sm-offset-8">
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-right">
+                                                            <strong>Delivery Charges (<span>&#8377;</span>)</strong>
+                                                        </td>
+                                                        <td class="text-right">{{OrderDeliveryCharge}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-right">
+                                                            <strong>GRAND TOTAL(<span>&#8377;</span>)</strong>
+                                                        </td>
+                                                        <td class="text-right">{{Amoount | number:2}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </main>
+                                <div style="padding-top:2em;">
+                                    <b> Terms & Conditions</b>
+                                    <ul style="font-size:12px;list-style-type:lower-roman ;">
+                                        <li ng-repeat="sales in salesinvoice">
+                                            {{sales.InvoiceTermsAndCondition}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div id="Salesreportmobile" class="desktop-hide" ng-show="ShowSalesreportmobile">
+
+                                <header class="row">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <img src="{{InvoiceLogo}}" style="width:100px;">
+                                        <h3 class="name">{{CompanyName}}</h3>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <div>
+                                            <b>GST No: </b>{{GSTNo}}
+                                        </div>
+                                        <div> <b>CIN No: </b>{{CINno}}</div>
+                                        <div>{{PhoneNo}}</div>
+                                        <div><a href="mailto:{{EmailId}}">{{EmailId}}</a></div>
+                                    </div>
+
+                                </header>
+                                <div class="row" style="text-align:center;padding-bottom:15px;">
+                                    <h3> SALES INVOICE</h3>
+                                </div>
+                                <main>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div class="to"><b>Delivery Address: </b></div>
+                                            <div class="name">{{MemberName}}</div>
+                                            <div>{{DeliveryContactNo}}</div>
+                                            <div>{{DeliveryAddressLine1}},<br /> {{DeliveryAddressLine2}},<br /> {{DeliveryCity}},<br />{{DeliveryState}}-{{DeliveryPinCode}}</div>
+                                            <div><a href="mailto:{{DeliveryEmail}}">{{DeliveryEmail}}</a></div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <div> <b>Order Date:</b> {{OrderDate}}</div>
+                                            <div> <b>Order No: </b>{{OrderNo}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive form-group desktop-hide" style="padding-top:40px;">
+                                        <table class="table table-bordered" ng-repeat="soi in SalOrderItem">
+                                            <tr>
+                                                <td class="text-left" style="font-weight:600;">PRODUCT</td>
+                                                <td class="text-center">{{soi.product}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left" style="font-weight:600;">QUANTITY</td>
+                                                <td class="text-center" style="text-align:center;">{{soi.Quantity}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left" style="font-weight:600;">UNIT PRICE(<span>&#8377;</span>)</td>
+                                                <td class="text-center" style="text-align:right;">{{soi.ProductPrice}}</td>
+                                            </tr>
+                                            <tr ng-show="Discountshow">
+                                                <td class="text-left" style="font-weight:600;">DISCOUNT(<span>&#8377;</span>)</td>
+                                                <td class="text-center" style="text-align:right;">{{soi.DiscountPercentage}}</td>
+                                            </tr>
+                                            <tr ng-show="Couponshow">
+                                                <td class="text-left" style="font-weight:600;">COUPON</td>
+                                                <td class="text-center" style="text-align:right;">{{((soi.Quantity*soi.ProductPrice)*soi.CouponPercentage)/100}}</td>
+                                            </tr>
+                                            <tr ng-show="Taxshow">
+                                                <td class="text-left" style="font-weight:600;">Tax(<span>&#8377;</span>)</td>
+                                                <td class="text-center" style="text-align:right;">{{soi.TaxPercentage}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left" style="font-weight:600;">TOTAL(<span>&#8377;</span>)</td>
+                                                <td class="text-center" style="text-align:right;">{{(soi.Quantity*soi.ProductPrice)-(soi.DiscountPercentage)-(((soi.Quantity*soi.ProductPrice)*soi.CouponPercentage)/100)+(soi.TaxPercentage) | number:2}}</td>
+                                            </tr>
+                                        </table>
+                                        <table>
+                                            <tr>
+                                                <td class="text-left"> <strong>GRAND TOTAL (<span>&#8377;</span>)</strong></td>
+                                                <td class="text-center" style="text-align:right;">{{Amoount | number:2}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </main>
+                                <div style="padding-top:2em;">
+                                    <b> Terms & Conditions</b>
+                                    <ul style="font-size:10px;list-style-type:lower-roman;">
+                                        <li ng-repeat="sales in salesinvoice">
+                                            {{sales.InvoiceTermsAndCondition}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <div class="footer ">
+
+            <div class="col-lg-12 form-inline">
+                <span>
+                    &copy; 20 - 2021. All Rights Reserved  Powered by<a target="_blank" href="https://cartyogi.com/#!/">
+                        <img src="images/Powered by Cartyogi-1.png" height="25" />
+                    </a>
+                </span>
+
+            </div>
+        </div>
+        <!--//footer-->
+        <!-- side nav js -->
+        <script src='js/SidebarNav.min.js' type='text/javascript'></script>
+        <script>
+            $('.sidebar-menu').SidebarNav()
+        </script>
+        <!-- //side nav js -->
+        <!-- Classie --><!-- for toggle left push menu script -->
+        <script src="js/classie.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+            var menuLeft = document.getElementById('cbp-spmenu-s1'),
+                showLeftPush = document.getElementById('showLeftPush'),
+                body = document.body;
+
+            showLeftPush.onclick = function () {
+                classie.toggle(this, 'active');
+                classie.toggle(body, 'cbp-spmenu-push-toright');
+                classie.toggle(menuLeft, 'cbp-spmenu-open');
+                disableOther('showLeftPush');
+            };
+
+            function disableOther(button) {
+                if (button !== 'showLeftPush') {
+                    classie.toggle(showLeftPush, 'disabled');
+                }
+            }
+
+
+        </script>
+        <!-- //Classie --><!-- //for toggle left push menu script -->
+        <!--scrolling js-->
+        <script src="../js/AdminStyle/js/jquery.nicescroll.js"></script>
+        <script src="../js/AdminStyle/js/scripts.js"></script>
+        <script src="../js/AdminStyle/js/chartinator.js"></script>
+        <script src="../js/AdminStyle/js/classie.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="../js/AdminStyle/js/bootstrap.js"></script>
+        <!--//scrolling js-->
+        <!-- Bootstrap Core JavaScript -->
+        <link href="../AdminStyle/css/dp-custom.css" rel="stylesheet" />
+        <link href="../AdminStyle/css/dp-mobile.css" rel="stylesheet" />
+
+
+
+    </div>
+</div>

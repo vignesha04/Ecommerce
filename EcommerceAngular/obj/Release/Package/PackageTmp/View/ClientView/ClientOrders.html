@@ -1,0 +1,441 @@
+﻿<div>
+    
+    <style>
+        .modal-content {
+            position: absolute;
+            width: 350px;
+        }
+
+        .modal {
+            left: 15%;
+        }
+        .cancelbutton {
+            margin-right: 25em;
+            margin-top: 10em;
+        }
+
+        @media(min-width:200px) and (max-width:768px) {
+            .cancelbutton {
+                margin-right: unset;
+                margin-top: unset;
+            }
+
+            .form-horizontal .form-group {
+                margin-left: unset;
+            }
+        }
+    </style>
+    <div ng-show="loader">
+        <div class="row">
+            <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container container">
+        <ul class="breadcrumb">
+            <li><a href="" ng-click="aHomeClick()"><i class="fa fa-home"></i></a></li>
+            <li><a href="">{{MemberName}} Orders</a></li>
+        </ul>
+        <div class="row">
+            <h2 class="title">My Orders</h2>
+            <div id="content" class="col-sm-12">
+                <div class="table-responsive form-group">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td class="text-center">S.No</td>
+                                <td class="text-center">Order No</td>
+                                <td class="text-center">Order Date</td>
+                                <td class="text-center">Amount (<span>&#8377;</span>)</td>
+                                <td class="text-center">Status</td>
+                                <td class="text-center mobile-hide">Invoice</td>
+                                <td class="text-center">View order</td>
+                                <td class="text-center">Reorder</td>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="od in ItemsByPage[currentPage]| orderBy:column:reverse">
+                            <tr>
+                                <td class="text-center" style="vertical-align:middle;" >{{od.sno}}</td>
+                                <td class="text-center" style="vertical-align:middle;" >{{od.OrderNo}}</td>
+                                <td class="text-center" style="vertical-align:middle;" >{{od.OrderDate}}</td>
+                                <td class="text-center" style="vertical-align:middle;" >{{(od.TotalAmoount)| number:2}}</td>
+                                <td class="text-center" style="vertical-align:middle;">  {{od.Status}}  </td>
+                                <td class="text-center mobile-hide" style="vertical-align:middle;"><button type="button" class="btn btn-primary" ng-click="GenarateInvoice(od.SalesOrderId)">View Invoice</button></td>
+                                <td class="text-center" style="vertical-align:middle;"><a ng-click="ShowOrderItems(od.OrderNo,od.OrderNo1,od.Status)" class="btn btn-primary small" ><i class="fa fa-eye"></i>&nbsp;View order</a></td>
+                                <td class="text-center" style="vertical-align:middle;"><a ng-click="ReOrder(od.SalesOrderId)" class="btn btn-primary small" ><i class="fa fa-reorder"></i>&nbsp;Reorder</a></td>
+                            </tr>
+                            <tr id="{{od.OrderNo}}" style="display:none">
+                                <td colspan="3">
+                                    <table width="100%" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <td class="text-center">
+                                                    <b>Product</b>
+                                                </td>
+                                                <td class="text-center"><b>Unit Price(<span>&#8377;</span>)</b></td>
+                                                <td class="text-center"><b>Qty</b></td>
+                                                <td class="text-center"><b>Discount(<span>&#8377;</span>)</b></td>
+                                                <!--<td class="text-center" ng-show="Couponshow"><b>Coupon</b></td>-->
+                                                <td class="text-center" ng-show="Taxshow"><b>Tax(<span>&#8377;</span>)</b></td>
+                                                <td class="text-center"><b>Total(<span>&#8377;</span>)</b></td>
+                                                <td class="text-center" ng-show="ShowratingTH" ><b>Rate our Products</b></td>
+                                            </tr>
+                                        </thead>
+                                        <tr ng-repeat="SalItm in od.OrderItems">
+                                            <td class="text-center" style="vertical-align:middle;text-transform:capitalize;">{{SalItm.product}} <span ng-repeat="SalVar in SalItm.Variance">{{SalVar.VarianceType}}</span></td>
+                                            <td class="text-center" style="vertical-align:middle;">{{SalItm.ProductPrice}}</td>
+                                            <td class="text-center" style="vertical-align:middle;">
+                                                {{SalItm.Quantity}}
+                                            </td>
+                                            <td class="text-center"  ng-repeat="SalVar1 in SalItm.ProVariancePrice" style="vertical-align:middle;"><span ng-show="ShowPrice">{{SalVar1.VariancePrice}}</span>{{(SalItm.DiscountPercentage) + (SalVar1.VariancePrice - SalItm.ProductPrice)}}</td>
+                                            <!--<td class="text-center" style="vertical-align:middle;" ng-show="Couponshow">{{SalItm.CouponPercentage}}</td>-->
+
+                                            <td class="text-center" style="vertical-align:middle;" ng-show="Taxshow">{{SalItm.TaxPercentage}}</td>
+                                            <td class="text-center" style="vertical-align:middle;">{{(SalItm.Quantity*SalItm.ProductPrice)-(SalItm.DiscountPercentage)-(SalItm.CouponPercentage)+(SalItm.TaxPercentage) | number:2}}</td>
+                                            <td ng-show="ShowratingTD"><a data-toggle="modal" data-target="#myModalRating" id="{{od.OrderNo2}}" class="badge badge-primary" style="display:{{od.Completed}}" ng-click="OpenReview(SalItm.ProductId)"><span style="cursor:pointer;" >Product Review </span></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6">
+                                                <table class="table table-bordered">
+                                                    <tbody class="table table-bordered">
+
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <strong>Sub Total (<span>&#8377;</span>):</strong>
+                                                            </td>
+                                                            <td class="text-right"> {{od.Subtotal | number:2}}</td>
+                                                        </tr>
+
+                                                        <tr ng-show="Couponshow">
+                                                            <td class="text-right">
+                                                                <strong>Copoun Discount Amount (<span>&#8377;</span>):</strong>
+                                                            </td>
+                                                            <td class="text-right"> {{od.CouponCode | number:2}}</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <strong>Delivery Charges (<span>&#8377;</span>):</strong>
+                                                            </td>
+                                                            <td class="text-right"> {{od.DeliveryCharge | number:2}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-right">
+                                                                <strong>Total Amount (<span>&#8377;</span>) :</strong>
+                                                            </td>
+                                                            <td class="text-right"> {{od.TotalAmoount | number:2}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td colspan="2">
+                                    <table width="100%" class="table table-bordered">
+                                        <tr><td><b style="text-transform:capitalize">DeliveryAddress : </b>{{od.DeliveryName}}</td></tr>
+
+                                        <tr>
+                                            <td>{{od.DeliveryAddressLine1}}, {{od.DeliveryAddressLine2}}, {{od.DeliveryCity}}, {{od.DeliveryState}}, {{od.DeliveryPinCode}} <br />LandMark :  {{od.DeliveryLandMark}}</td>
+                                            <td style="display:none;"> order CancelledDate: {{od.CancelledDate}}</td>
+                                            <td><button type="button" id="{{od.OrderNo1}}" data-target="#myModalcancel" data-toggle="modal" class="btn btn-primary" style="display:block;" ng-click="OpenPopUp(od.SalesOrderId)">Cancel Order</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-repeat="SalItm in od.Courier">
+                                                <b>CourierDetails: </b>{{SalItm.CourierName}}, {{SalItm.CourierNo}}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div id="divSalInv" ng-show="ShowdivSalInv">
+                        <div class="row" style="text-align:center;padding-bottom:15px;">
+                            <h3> SALES INVOICE</h3>
+                        </div>
+                        <!--<h3 style="color:green;"> {{Heading}}</h3>-->
+                        <header class="row">
+                            <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                                <img src="{{InvoiceLogo}}" style="width:200px;">
+
+                            </div>
+                            <div class="col-lg-6 col-sm-6" style="text-align:right;">
+
+                                <div> <b>Order Date:</b> {{OrderDate}}</div>
+                                <div> <b>Order No: </b>{{OrderNo}}</div>
+                            </div>
+                        </header>
+
+                        <main>
+                            <div class="row" style="margin-bottom:1em;">
+                                <div class="col-lg-6 col-sm-6" style="text-align:left;">
+                                    <!--<div class="to"><b>Company Address: </b></div>-->
+                                    <h3 class="name">{{CompanyName}}</h3>
+
+                                    <div class="to"><b>Company Address: </b></div>
+                                    <!--<div class="name">{{MemberName}}</div>-->
+                                    <div>{{PhoneNo}}</div>
+                                    <div>{{AddressLine1}},<br /> {{AddressLine2}},<br /> {{City}},{{State}}-{{PinCode}}</div>
+                                    <div><a href="mailto:{{EmailId}}">{{EmailId}}</a></div>
+
+                                </div>
+                                <div class="col-lg-6 col-sm-6" style="text-align:right;">
+                                    <div class="to"><b>Billing Address: </b></div>
+                                    <div class="name" style="text-transform:capitalize">{{MemberName}}</div>
+                                    <div>{{DeliveryContactNo}}</div>
+                                    <div>{{DeliveryAddressLine1}},<br /> {{DeliveryAddressLine2}},<br /> {{DeliveryCity}},{{DeliveryState}}-{{DeliveryPinCode}}</div>
+                                    <div><a href="mailto:{{DeliveryEmail}}">{{DeliveryEmail}}</a></div>
+                                </div>
+                            </div>
+                            <div id="content" class="col-sm-12">
+                                <div class="table-responsive form-group">
+                                    <table class="table table-bordered" border="1">
+                                        <thead>
+                                            <tr>
+                                                <!--<td class="text-center">Image</td>-->
+                                                <td class="text-center">Product Name</td>
+                                                <td class="text-center">Quantity</td>
+                                                <!--<td class="text-center">Unit Price (<span>&#8377;</span>)</td>-->
+                                                <td class="text-center">Price(<span>&#8377;</span>)</td>
+                                                <td class="text-center" ng-show="Discountshow">Discount(<span>&#8377;</span>)</td>
+                                                <!--<td class="text-center" ng-show="Couponshow">Copoun</td>-->
+                                                <td class="text-center" ng-show="SGSTshow">SGST</td>
+                                                <td class="text-center" ng-show="CGSTshow">CGST</td>
+                                                <td class="text-center" ng-show="IGSTshow">IGST</td>
+                                                <td class="text-center">Total(<span>&#8377;</span>)</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="ci in CartItems2">
+                                                <!--<td class="text-center" style="vertical-align:middle;"><a href=""><img width="70px" src={{ci.ImageURL}} alt="ProductImage" title="" class="img-thumbnail" style="border:0;"></a></td>-->
+                                                <td class="text-center" style="vertical-align:middle;text-transform:capitalize">
+                                                    <a href="">{{ci.product}} &nbsp;{{ci.VarienceType}}</a><br>
+                                                </td>
+                                                <td class="text-center" style="vertical-align:middle;">
+                                                    {{ci.Quantity}}
+                                                </td>
+                                                <!--<td class="text-center" style="vertical-align:middle;">{{ci.ProductPrice}}</td>-->
+                                                <td class="text-center" style="vertical-align:middle;">{{ci.ProductPrice}}</td>
+                                                <td class="text-center" style="vertical-align:middle;" ng-show="Discountshow">{{ci.DiscountPercentage}}</td>
+                                                <!--<td class="text-center" style="vertical-align:middle;" ng-show="Couponshow">
+                                                    {{ci.CouponPercentage}}
+                                                </td>-->
+                                                <td class="text-center" style="vertical-align:middle;" ng-show="SGSTshowTD">{{((ci.Qty*ci.Tax)/ 2 )| number:2}}</td>
+                                                <td class="text-center" style="vertical-align:middle;" ng-show="CGSTshowTD">{{((ci.Qty*ci.Tax)/ 2)| number:2}}</td>
+                                                <td class="text-center" style="vertical-align:middle;" ng-show="IGSTshowTD">{{((ci.Qty*ci.Tax)/ 2) | number:2}}</td>
+
+                                                <td class="text-center" style="vertical-align:middle;">{{(ci.Quantity*ci.ProductPrice)-(ci.DiscountPercentage*ci.Quantity)-(ci.CouponPercentage*ci.Quantity)+(ci.TaxPercentage*ci.Quantity) | number:2}}</td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                </div>
+                                <div class="row">
+
+                                    <table class="table table-bordered">
+                                        <tbody class="table table-bordered">
+                                            <tr>
+                                                <td colspan="6">
+                                                    <table class="table table-bordered">
+                                                        <tbody class="table table-bordered">
+                                                            <tr>
+                                                                <td class="text-right">
+                                                                    <strong>Sub Total (<span>&#8377;</span>):</strong>
+                                                                </td>
+                                                                <td class="text-right"> {{Subtotal | number:2}}</td>
+                                                            </tr>
+
+                                                            <tr ng-show="Couponshow">
+                                                                <td class="text-right">
+                                                                    <strong>Copoun Discount Amount (<span>&#8377;</span>):</strong>
+                                                                </td>
+                                                                <td class="text-right"> {{CouponCode | number:2}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">
+                                                                    <strong>Delivery Charges (<span>&#8377;</span>):</strong>
+                                                                </td>
+                                                                <td class="text-right"> {{DeliveryCharge | number:2}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-right">
+                                                                    <strong>Total Amount (<span>&#8377;</span>) :</strong>
+                                                                </td>
+                                                                <td class="text-right"> {{TotalAmoount| number:2}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>               
+                            </div>
+                        </main>
+                        <div style="padding-top:2em;">
+                            <b> Terms & Conditions</b>
+                            <ul style="font-size:12px;list-style-type:lower-roman ;">
+                                <li ng-repeat="sales in salesinvoice">
+                                    {{sales.InvoiceTermsAndCondition}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="myModalcancel" class="modal fade" role="dialog">
+                        <div class="modal-dialog" id="cancelbutton">
+                            <div class="container" style="width:80%;">
+                                <div class="modal-content" style="width:unset">
+                                    <div class="login-form-grids" style="width:80%; margin:auto;">
+                                        <form class="form-horizontal" role="form">
+                                            <h3 style="text-align:center;color:black;">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <b>Order Cancellation</b>
+                                            </h3>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label for="commentbox"><b>Reson For Cancellation... </b></label>
+                                                    <div class="col-lg-12" style="padding-bottom:10px;">
+                                                        <select id="paymentid" class="form-control" name="type" ng-model="Comments" required>
+                                                            <option disabled selected>--Select Reson For Cancellation--</option>
+                                                            <option ng-selected="od.CancelledCommentsId == can.CancelledCommentsId" ng-repeat="can in cancellation" value="{{can.Comments}}">{{can.Comments}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 form-group">
+                                                        <button type="submit" class="btn btn-primary" ng-click="ChangeStatus()">Cancel Order</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="row">
+                                                        <span ng-show="Showmsg" style="color:red;padding-left:30px;">{{msg}}</span><span style="color:green;padding-left:30px;" ng-show="ShowmsgStatus">{{msgStatus}}</span><br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="myModalRating" class="modal fade" role="dialog">
+                        <div class="modal-dialog" style="margin-right:25em;margin-top:10em;">
+                            <div class="container" style="width:80%;">
+                                <div class="modal-content" style="width:260px;">
+                                    <div class="login-form-grids" style="width:80%; margin:auto;">
+                                        <form class="form-horizontal" role="form">
+                                            <h3 style="text-align:center;color:black;">
+                                                <button type="button" class="close" data-dismiss="modal" style="cursor:pointer">&times;</button>
+                                                <b ng-show="ShowProductReview">Product Review</b>
+                                                <b ng-show="ShowReviewProduct">Product Review Already Done</b>
+                                            </h3>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label for="commentbox"><b>Give your Feedback here </b></label>
+                                                    <div class="col-lg-12" style="padding-bottom:10px;">
+                                                        <div class="col-sm-12">
+                                                            <input type="text" placeholder="Write Your Feedback here.." ng-model="od.ReviewComments" required class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-12">
+                                                    <label for="commentbox"><b>Rate Our Product here... </b></label>
+                                                    <div class="col-lg-12" style="padding-bottom:10px;">
+                                                        <div class="col-sm-12">
+                                                            <span class="list-inline" ng-show="ShowStars">
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" ng-click="StarRating('star1')" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" ng-click="StarRating('star2')" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" ng-click="StarRating('star3')" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" ng-click="StarRating('star4')" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" ng-click="StarRating('star5')" />
+                                                            </span>
+                                                            <span class="list-inline" ng-show="Showstar1">
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;cursor:pointer;" />
+                                                            </span>
+                                                            <span class="list-inline" ng-show="Showstar2">
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;" />
+                                                            </span>
+                                                            <span class="list-inline" ng-show="Showstar3">
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;" />
+                                                            </span>
+                                                            <span class="list-inline" ng-show="Showstar4">
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/star.png" alt="star" style="width:20px;" />
+                                                            </span>
+                                                            <span class="list-inline" ng-show="Showstar5">
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                                <img src="../../AdminStyle/images/Icons/favorite.png" alt="star" style="width:20px;" />
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-lg-3 form-group text-center">
+                                                        <button type="submit" class="btn btn-primary" id="SubmitBtn" ng-click="SubmitReview()" style="cursor:pointer;">Submit</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="row">
+                                                        <span style="color:red;padding-left:30px;" ng-show="Showmsgerror">{{msg}}</span><span style="color:green;padding-left:30px;" ng-show="Showmsgsuccess">{{msgStatus}}</span><br />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="pagination pagination-sm" style="float: right; margin: 0 0 20px 0;">
+                    <li ng-class="{active:0}">
+                        <a ng-click="firstPage()">First</a>
+                    </li>
+                    <li ng-repeat="n in range(ItemsByPage.length)">
+                        <a ng-click="setPage()" ng-bind="n+1">1</a>
+                    </li>
+                    <li>
+                        <a ng-click="lastPage()">Last</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

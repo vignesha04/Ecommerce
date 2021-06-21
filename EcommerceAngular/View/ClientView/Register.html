@@ -1,0 +1,333 @@
+﻿<div style="background-image: url('../../ClientView/images/background3.png'); ">
+
+    <!--style-->
+    <style>
+
+        *[role="form"] {
+            width: 40%;
+            padding: 50px;
+            margin: 0em auto;
+            float: right;
+            border-radius: 2em;
+            border: double green;
+        }
+
+            *[role="form"] h2 {
+                font-size: 40px;
+                font-weight: 600;
+                color: white;
+                margin-top: 8%;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+            }
+        msg-error {
+            color: #c65848;
+        }
+
+        .g-recaptcha.error {
+            border: solid 2px #c64848;
+            padding: .2em;
+            width: 19em;
+        }
+    </style>
+    <!--style-->
+
+    <!--Mobile-Hide-->
+    <div class="mobile-hide">
+        <div class="container" style="padding:3em;">
+            <!--form-group -->
+            <form class="form-horizontal" role="form" style="margin: 0em -6em">
+                <h3 style="text-align:center;padding-bottom:5px;"><b>Sign Up</b></h3>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div> <input type="text" id="firstName" placeholder="MemberName" ng-model="member.MemberName" required class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-phone"></span>
+                            </div>
+                            <input type="tel" id="ContactNo" placeholder="ContactNo" ng-model="member.ContactNo" required class="form-control">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="Email" id="EmailId" placeholder="EmailId" ng-model="member.EmailId" required class="form-control" name="EmailId">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="password" id="password" placeholder="Password" ng-model="member.Password" required class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="password" id="Conformpassword" placeholder="Conformpassword" required class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="AddressLine1" placeholder="AddressLine1" ng-model="member.AddressLine1" required class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="AddressLine2" placeholder="AddressLine2" ng-model="member.AddressLine2" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="City" placeholder="City" ng-model="member.City" required class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="State" placeholder="State" ng-model="member.State" required class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-yen"></span>
+                            </div>
+                            <input type="tel"
+                                   id="Pincode" placeholder="Pincode" ng-model="member.PinCode" required class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <!-- START CAPTCHA -->
+                <div class="form-group">
+                    <div class="col-sm-6">
+
+                        <input type="text" id="captcha" class="g-reCAPTCHA" data-sitekey="6LffdqgUAAAAAFGmU_Ihq0fdBYkXKBVXCabuL4Sg" disabled /><br /><br />
+                        <input type="text" id="inputText" /><br /><br />
+                        <button onclick="generateCaptcha()" class="btn-primary">Refresh</button>
+                        <button onclick="check()" class="btn-primary">Submit</button>
+                    </div>
+                </div>
+                <!-- END CAPTCHA -->
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <span class="help-block" style="color:red;">*Required fields</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" ng-click="Save()">Sign Up</button>
+                <div class="row" style="padding-left:10px;">
+                    <span style="color:red" ng-show="showmsgError">{{msg}}</span><span style="color:green" ng-show="showmsg">{{msgStatus}}</span><br />
+                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                </div>
+            </form>
+            <!-- /form -->
+        </div>
+
+    </div>
+    <!--/.Mobile-Hide-->
+
+    <!--Desktop-Hide-->
+    <div class="desktop-hide">
+
+        <div class="container">
+            <!-- /.form-group -->
+            <form class="form-horizontal" role="form" style="width:100%;">
+                <h3 style="text-align:center;padding-bottom:5px;"><b>Sign Up</b></h3>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </div> <input type="text" id="firstName" placeholder="MemberName" ng-model="member.MemberName" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-phone"></span>
+                            </div>
+                            <input type="number" id="ContactNo" placeholder="ContactNo" ng-model="member.ContactNo" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </div>
+                            <input type="Email" id="EmailId" placeholder="EmailId" ng-model="member.EmailId" class="form-control" name="EmailId">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="password" id="password" placeholder="Password" ng-model="member.Password" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-lock"></span>
+                            </div>
+                            <input type="password" id="Conformpassword" placeholder="Conformpassword" ng-model="member.Password" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="AddressLine1" placeholder="AddressLine1" ng-model="member.AddressLine1" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="AddressLine2" placeholder="AddressLine2" ng-model="member.AddressLine2" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="City" placeholder="City" ng-model="member.City" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </div>
+                            <input type="text" id="State" placeholder="State" ng-model="member.State" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-yen"></span>
+                            </div>
+                            <input type="text" id="Pincode" placeholder="Pincode" ng-model="member.PinCode" class="form-control" autofocus>
+                        </div>
+                    </div>
+                </div>
+                <!-- START CAPTCHA -->
+                <div class="form-group">
+                    <div class="col-sm-6">
+
+                        <input type="text" id="captcha" class="g-reCAPTCHA" data-sitekey="6LffdqgUAAAAAFGmU_Ihq0fdBYkXKBVXCabuL4Sg" disabled /><br /><br />
+                        <input type="text" id="inputText" /><br /><br />
+                        <button onclick="generateCaptcha()" class="btn-primary">Refresh</button>
+                        <button onclick="check()" class="btn-primary">Submit</button>
+                    </div>
+                </div>
+
+                <!-- END CAPTCHA -->
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <span class="help-block" style="color:red;">*Required fields</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" onsubmit="return verifyCaptcha();" ng-click="Save()">Sign Up</button>
+                <div class="row" style="padding-left:10px;">
+                    <span style="color:red" ng-show="showmsgError">{{msg}}</span><span style="color:green" ng-show="showmsg">{{msgStatus}}</span><br />
+                    <span ng-model="MemberId" ng-show="Showhide"></span>
+                </div>
+            </form>
+            <!-- /form -->
+        </div>
+    </div>
+    <!--/.Desktop-Hide-->
+
+    <!--stylesheets-->
+    <link href="../../AdminStyle/css/style.css" rel="stylesheet" />
+    <link href="../../AdminStyle/css/bootstrap.css" rel="stylesheet" />
+    <!--/.stylesheets-->
+
+    <!--Javascript for captcha -->
+    <script>
+        function submitUserForm() {
+            var response = grecaptcha.getResponse();
+            if (response.length == 0) {
+                document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+                return false;
+            }
+            return true;
+        }
+
+        function verifyCaptcha() {
+            document.getElementById('g-recaptcha-error').innerHTML = '';
+        }
+    </script>
+
+    <!--/.Javascript-->
+
+
+
+
+</div>

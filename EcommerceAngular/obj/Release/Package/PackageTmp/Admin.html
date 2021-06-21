@@ -1,0 +1,153 @@
+<div>
+    <div>
+        <script>
+
+        </script>
+        <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+        <link href="AdminStyle/css/stylelogin.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Barlow:300,400,500" rel="stylesheet">
+        <style>
+            @media (min-width:320px) and (max-width:767px) {
+                .logimage {
+                    display: none !important;
+                }
+
+                .art-bothside {
+                    width: 73% !important;
+                    height: 95% !important;
+                }
+
+                .form-left-to-w3l {
+                    padding-left: 16%;
+                    padding-right: 32%;
+                }
+            }
+
+            @media(max-width:375px) {
+                .art-left-w3ls, .art-right-w3ls {
+                    padding: 1.5em 1.5em 0em !important;
+                }
+            }
+
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover,
+            textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+                /*-webkit-text-fill-color: white;*/
+                transition: background-color 5000s ease-in-out 0s;
+            }
+
+            input {
+                border-color: #B198CB !important;
+            }
+        </style>
+    </div>
+    <div>
+        <h1 class="header-w3ls"></h1>
+        <div class="art-bothside col-lg-12" style="width:60%;padding-top:80px;">
+            <div class="mid-cls" style="border: 2px solid #d5d4d3;background-color:#fff;">
+                <div class="art-right-w3ls col-lg-6" style="background-color: #fff;">
+                    <h2 style="text-align: center;padding-top: 26%;"><img src="{{InvoiceLogo}}" /></h2>
+                    <!--<div class="banner-agileits-btm" style="padding-top:30px;">
+                        <div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+                            <div class="agileits_modal_body">
+                                <div class="letter-w3ls">
+                                    <form>
+                                    </form>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="art-left-w3ls col-lg-6">
+                    <h2 style="font-weight:500;font-size:21px;padding-top:25px;">Welcome</h2>
+                    <h6 style="color:#919191; padding-bottom:50px;">Login to My shop</h6>
+                    <div ng-show="ShowUserlogin">
+                        <div class="form-left-to-w3l">
+                            <input type="text" name="name" ng-model="admin.Username" class="logintxtbox" placeholder="Name" required="" style="text-align:left;">
+                        </div>
+
+                        <div class="form-right-w3ls ">
+                            <input type="password" ng-model="admin.Password" class="logintxtbox" name="password" placeholder="Password" required="" style="text-align:left;">
+                        </div>
+                        <div class="btnn">
+                            <button ng-click="Login()" type="submit">LOGIN</button><br>
+                        </div>
+                    </div>
+                    <div class="form-left-to-w3l col-lg-6  mobile-hide" ng-show="ShoWOtp">
+                        <img src="AdminStyle/images/userTie.png" />
+                        <input type="text" name="name" id="mobile" disabled ng-model="MobileNo" class="logintxtbox" placeholder="Mobile" required="" style="text-align:left;width:60%;height:30px;border:1px solid #d5d4d3;background-color:white !important;color:black !important;">
+                    </div>
+
+                    <div class="form-left-to-w3l col-lg-6 col-xs-12 mobile-hide">
+                        <img src="AdminStyle/images/UserLock.png" ng-show="Otp" />
+                        <input type="text" ng-model="Mobileotp" ng-show="Otp" class="logintxtbox" placeholder="Enter Otp" style="text-align:left;width:60%;height:30px;border:1px solid #d5d4d3;background-color:white !important;color:black !important;">
+                    </div>
+                    <span ng-show="UserloginDetails" ng-click="UserLogin()" style="cursor:pointer"> User Login ?</span>
+                    <span ng-show="AdminloginDetails" ng-click="AdminLogin()" style="cursor:pointer"> Admin Login ?</span>
+                    <div class="form-left-to-w3l col-md-12 col-xs-12 desktop-hide">
+                        <div class="input-group-addon">
+                            <img src="AdminStyle/images/userTie.png" />
+                        </div>
+                        <input type="text" name="name" id="mobile" disabled ng-model="MobileNo" class="form-control " placeholder="Mobile" required="" style="text-align:left;width:90%;height:30px;border:1px solid #d5d4d3;background-color:white !important;color:black !important;">
+                    </div>
+                    <div class="form-left-to-w3l col-md-12 col-xs-12 desktop-hide">
+                        <img src="AdminStyle/images/UserLock.png" ng-show="Otp" />
+                        <input type="text" ng-model="Mobileotp" ng-show="Otp" class="logintxtbox" placeholder="Enter Otp" style="text-align:left;width:90%; height:30px;border:1px solid #d5d4d3;background-color:white !important;color:black !important;">
+                    </div>
+
+                    <div class="form-group" ng-show="OtpDesktop">
+                        <div class="col-sm-12">
+                            <input type="text" value="{{HiddenOtpDesktop}}" id="HiddenOtpDesktop" ng-model="HiddenOtpDesktop" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div ng-show="otpverify">
+                        <a ng-click="Getotppass()" style="color:#919191;cursor: pointer;font-size:13px;"> Re-send</a>
+                    </div>
+                    <div class="btnn" ng-show="Getotp" style="margin-bottom:2em;">
+                        <button ng-click="Getotppass()" type="submit" style="background-color:#663398;color:white;border-radius:3px;margin-left:130px;width:100px;height:40px;">Otp</button><br>
+                    </div>
+
+                    <div ng-show="otpverify" style="text-align:center;margin-bottom:2em;">
+                        <button ng-click="Save()" type="submit" style="text-align:center;background-color:#663398;color:white;border-radius:3px;height:40px;width:120px;">Verify</button><br>
+                    </div>
+                    <br />
+                    <div><span style="color:red !important;">{{msg}}</span><span style="color:green !important;">{{msgStatus}}</span></div>
+
+                    <span>
+                        &copy; 20 - 2021. All Rights Reserved  Powered by<a href="https://cartyogi.com/#!/">
+                            <img src="images/Powered by Cartyogi-1.png" height="25" />
+                        </a>
+                    </span>
+
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            var password = document.getElementById("password")
+                , confirm_password = document.getElementById("confirm_password");
+
+            function validatePassword() {
+                if (password.value != confirm_password.value) {
+                    confirm_password.setCustomValidity("Passwords Don't Match");
+                } else {
+                    confirm_password.setCustomValidity('');
+                }
+            }
+
+            password.onchange = validatePassword;
+            confirm_password.onkeyup = validatePassword;
+        </script>
+        <script src="js/AdminStyle/js/jquery-2.2.3.min.js"></script>
+    </div>
+</div>

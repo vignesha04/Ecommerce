@@ -1,0 +1,106 @@
+﻿
+
+<div>
+    <div>
+        <style>
+            @media(max-width:768px) {
+                .right-block {
+                }
+            }
+        </style>
+    </div>
+    <div ng-show="loader">
+        <div class="row">
+            <div class=" col-lg-12 col-sm-12 col-md-12 col-sm-12">
+                <img src="../images/New folder/loader.gif" class="center-block" alt="image" />
+            </div>
+        </div>
+    </div>
+    <div style="overflow:hidden;">
+        <div class="slider-container row" ng-show="ShowSlider">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="module sohomepage-slider ">
+                    <div class="yt-content-slider owl2-carousel owl2-theme owl2-responsive-1200 owl2-loaded" data-rtl="yes" data-autoplay="no" data-autoheight="no" data-delay="4" data-speed="0.6" data-margin="0" data-items_column0="1" data-items_column1="1" data-items_column2="1" data-items_column3="1" data-items_column4="1" data-arrows="no" data-pagination="yes" data-lazyload="yes" data-loop="no" data-hoverpause="yes">
+                        <div class="owl2-stage-outer OwalOuter">
+                            <div class="owl2-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;">
+                                <img class="imgSlider" alt="slider image" ng-src="{{Customer.ImageUrl}}" style="width:100%" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loadeding"></div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container container">
+            <div id="content">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-right">
+                        <div class="module listingtab1-custom listingtab-layout1" ng-repeat="itm in Categoryitm">
+                            <h3 class="modtitle"><span>{{itm.SubCategoryName}}</span><a style="float:right" href="#!ViewProduct/{{itm.SubCategoryId}}/{{itm.CategoryId}}">View All</a></h3>
+                            <div id="so_listing_tabs_2" class="so-listing-tabs first-load">
+                                <div class="loadeding"></div>
+                                <div class="ltabs-wrap">
+                                    <div class="ltabs-tabs-container" data-delay="300" data-duration="600" data-effect="starwars" data-ajaxurl="" data-type_source="0" data-lg="1" data-md="1" data-sm="1" data-xs="1" data-margin="0">
+                                    </div>
+                                    <div class="ltabs-items-container products-list grid">
+                                        <div class="ltabs-items ltabs-items-selected items-category-51" data-total="14">
+                                            <div class="ltabs-items-inner ltabs-slider owl2-carousel owl2-theme owl2-loaded">
+                                                <div class="owl2-stage-outer">
+                                                    <div class="owl2-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;">
+                                                        <div class="owl2-item active" style="margin-right: 0px; width:100%">
+                                                            <div class="ltabs-item">
+                                                                <div class="item-inner product-layout transition product-grid" ng-repeat="subcat in itm.ProDetail">
+                                                                    <div class="product-item-container" style="position:unset;">
+                                                                        <div class="left-block">
+                                                                            <div class="product-image-container " style="width:100%; height:180px;padding-top:30px;">
+                                                                                <a href="#!Product/{{subcat.ProductId}}" title="{{subcat.Title}}">
+                                                                                    <img ng-repeat="pim1 in subcat.Image1" src="{{pim1.ImageURL}}" class="img-1 img-responsive" alt="{{subcat.Title}}">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="button-group so-quickview cartinfo--left">
+                                                                                <span ng-show="DiscountDetailsId1">{{subcat.DiscountDetailsId}}</span>
+                                                                                <span ng-show="CouponId1">{{subcat.CouponId}}</span>
+                                                                                <span ng-show="TaxDetail1">{{subcat.TaxDetail}}</span>
+                                                                                <span ng-show="ProductId123">{{subcat.ProductId}}</span>
+                                                                                <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="#!Product/{{subcat.ProductId}}" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i><span> view</span></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="right-block">
+                                                                            <div class="button-group">
+                                                                                <button type="button" class="addToCart btn-button " ng-repeat="var in subcat.ProdVariance | limitTo:1" style="background-color:#102985;color:white;border-radius:13px;height:30px;line-height: 30px;cursor:pointer;padding-bottom:8px;" title="Add to carts" ng-click="AddToCart(subcat.Title,var.sellingPrice,subcat.ProductId,subcat.Picture,1,subcat.DiscountDetailsId,subcat.TaxDetailsId,subcat.CouponId,subcat.Image1,var.ProductVarianceId,var.VariancePrice)">
+                                                                                    <i class="fa fa-shopping-basket"></i>
+                                                                                    <span>Add to cart </span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="caption">
+                                                                                <h4><a href="" title="Cupim should " target="_self">{{subcat.Title}} </a></h4>
+                                                                                <div class="price" ng-repeat="vari in subcat.ProdVariance | limitTo:1">
+                                                                                    <span class="price-new" id="price-new">&#x20B9;{{(vari.sellingPrice)}}</span>
+                                                                                    <span class="price-old">&#x20B9;{{(vari.VariancePrice)}}</span>
+                                                                                </div>
+                                                                                <div class="list-block hidden">
+                                                                                    <button class="addToCart btn-button" type="button" ng-click="AddToCart(subcat.Title,vari.sellingPrice,subcat.ProductId,subcat.Picture,Quantity,subcat.DiscountDetailsId,subcat.TaxDetailsId,subcat.CouponId,subcat.Image1)" data-original-title="Add to Cart">
+                                                                                        <i class="fa fa-shopping-basket"></i>
+                                                                                    </button>
+                                                                                    <a class="iframe-link btn-button quickview quickview_handler visible-lg" href="quickview.html" title="Quick view" data-fancybox-type="iframe"><i class="fa fa-eye"></i></a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
